@@ -11,23 +11,27 @@
 
         public int[] TwoSum(int[] nums, int target)
         {
+            // O(n)
+            var dic = new Dictionary<int, int>();
+
             for (var i = 0; i < nums.Length; i++)
             {
-                var value = nums[i];
-                var index = nums.LastOrDefault(x => x + value == target, -1);
+                // target = x + y;
+                var x = nums[i];
+                var y = target - x;
 
-                if (index != -1)
+                if (dic.TryGetValue(y, out var yIndex))
                 {
-                    var ii = Array.LastIndexOf(nums, index, i + 1);
-
-                    if (ii != i)
-                    {
-                        return new int[2] { i, ii };
-                    }
+                    return new int[2] { yIndex, i };
+                }
+                else
+                {
+                    if (!dic.ContainsKey(x))
+                        dic.Add(x, i);
                 }
             }
 
-            return new int[2];
+            throw new ArgumentException("No solution found");
         }
     }
 }

@@ -9,6 +9,7 @@
             _logger = logger;
         }
 
+        /// <inheritdoc/>
         public int[] TwoSum(int[] nums, int target)
         {
             // O(n)
@@ -32,6 +33,17 @@
             }
 
             throw new ArgumentException("No solution found");
+        }
+
+        /// <inheritdoc/>
+        public bool IsPalindrome(int x)
+        {
+            if (x < 0) return false;
+            if (x < 10) return true;
+
+            var value = x.ToString();
+
+            return value == new string(value.Reverse().ToArray());
         }
     }
 }

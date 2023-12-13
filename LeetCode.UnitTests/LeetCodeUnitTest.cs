@@ -25,6 +25,21 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData(121, true)]
+        [InlineData(-121, false)]
+        public void IsPalindrome(int x, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.IsPalindrome(x);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

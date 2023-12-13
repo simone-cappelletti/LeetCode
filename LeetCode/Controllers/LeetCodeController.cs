@@ -26,5 +26,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool IsPalindrome(int x)
+        {
+            _logger.LogInformation(nameof(IsPalindrome), x);
+
+            var result = _leetCodeBusiness.IsPalindrome(x);
+
+            return result;
+        }
     }
 }

@@ -40,6 +40,22 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData(new int[] { 3, 2, 2, 3 }, 3, 2)]
+        [InlineData(new int[] { 0, 1, 2, 2, 3, 0, 4, 2 }, 2, 5)]
+        [InlineData(new int[] { 2, 2, 3 }, 2, 1)]
+        public void RemoveElement(int[] nums, int val, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RemoveElement(nums, val);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

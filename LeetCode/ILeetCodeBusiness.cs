@@ -16,5 +16,13 @@
         /// <param name="x"></param>
         /// <returns></returns>
         bool IsPalindrome(int x);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-element/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        int RemoveElement(int[] nums, int val);
     }
 }

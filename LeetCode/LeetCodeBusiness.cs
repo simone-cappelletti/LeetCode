@@ -45,5 +45,21 @@
 
             return value == new string(value.Reverse().ToArray());
         }
+
+        /// <inheritdoc/>
+        public int RemoveElement(int[] nums, int val)
+        {
+            var result = 0;
+
+            foreach (var num in nums)
+            {
+                if (num != val)
+                {
+                    nums[result++] = num;
+                }
+            }
+
+            return result;
+        }
     }
 }

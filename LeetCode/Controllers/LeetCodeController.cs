@@ -36,5 +36,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int RemoveElement(int[] nums, int val)
+        {
+            _logger.LogInformation(nameof(RemoveElement), nums, val);
+
+            var result = _leetCodeBusiness.RemoveElement(nums, val);
+
+            return result;
+        }
     }
 }

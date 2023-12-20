@@ -56,17 +56,22 @@
         /// <inheritdoc/>
         public int RemoveElement(int[] nums, int val)
         {
-            var result = 0;
+            var numsLength = nums.Length;
+            var i = 0;
 
-            foreach (var num in nums)
+            while (i < numsLength)
             {
-                if (num != val)
+                if (nums[i] == val)
                 {
-                    nums[result++] = num;
+                    nums[i] = nums[--numsLength];
+                }
+                else
+                {
+                    i++;
                 }
             }
 
-            return result;
+            return numsLength;
         }
     }
 }

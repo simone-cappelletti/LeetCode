@@ -26,8 +26,11 @@ namespace LeetCode.UnitTests
         }
 
         [Theory]
+        [InlineData(10, false)]
         [InlineData(121, true)]
         [InlineData(-121, false)]
+        [InlineData(4224, true)]
+        [InlineData(4227, false)]
         public void IsPalindrome(int x, bool solution)
         {
             // Arrange

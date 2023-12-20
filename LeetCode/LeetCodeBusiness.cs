@@ -39,11 +39,18 @@
         public bool IsPalindrome(int x)
         {
             if (x < 0) return false;
-            if (x < 10) return true;
+            if (x % 10 == 0 && x != 0) return false;
 
-            var value = x.ToString();
+            var myValue = 0;
 
-            return value == new string(value.Reverse().ToArray());
+            while (x > myValue)
+            {
+                myValue = myValue * 10 + x % 10;
+
+                x /= 10;
+            }
+
+            return myValue == x || myValue / 10 == x;
         }
 
         /// <inheritdoc/>

@@ -12,7 +12,6 @@
         /// <inheritdoc/>
         public int[] TwoSum(int[] nums, int target)
         {
-            // O(n)
             var dic = new Dictionary<int, int>();
 
             for (var i = 0; i < nums.Length; i++)
@@ -72,6 +71,22 @@
             }
 
             return numsLength;
+        }
+
+        public int RemoveDuplicates(int[] nums)
+        {
+            var k = 1;
+
+            for (var i = 1; i < nums.Length; i++)
+            {
+                var value = nums[i];
+                if (value != nums[i-1])
+                {
+                    nums[k++] = value;
+                }
+            }
+
+            return k;
         }
     }
 }

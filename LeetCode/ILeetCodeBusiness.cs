@@ -24,5 +24,12 @@
         /// <param name="val"></param>
         /// <returns></returns>
         int RemoveElement(int[] nums, int val);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int RemoveDuplicates(int[] nums);
     }
 }

@@ -46,5 +46,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int RemoveDuplicates(int[] nums)
+        {
+            _logger.LogInformation(nameof(RemoveDuplicates), nums);
+
+            var result = _leetCodeBusiness.RemoveDuplicates(nums);
+
+            return result;
+        }
     }
 }

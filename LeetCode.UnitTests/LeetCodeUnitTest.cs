@@ -59,6 +59,21 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData(new int[] { 1, 1, 2 }, 2)]
+        [InlineData(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, 5)]
+        public void RemoveDuplicates(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RemoveDuplicates(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

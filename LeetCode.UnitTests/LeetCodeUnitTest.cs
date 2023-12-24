@@ -74,6 +74,26 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData("eceba", 3)]
+        [InlineData("ccaabbb", 5)]
+        [InlineData("ababffzzeee", 5)]
+        [InlineData("ababcbcbaaabbdef", 6)]
+        [InlineData("leeetcode", 4)]
+        [InlineData("abaccc", 4)]
+        [InlineData("abc", 2)]
+        public void LengthOfLongestSubstringTwoDistinct(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LengthOfLongestSubstringTwoDistinct(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

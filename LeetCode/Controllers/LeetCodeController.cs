@@ -56,5 +56,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LengthOfLongestSubstringTwoDistinct(string s)
+        {
+            _logger.LogInformation(nameof(LengthOfLongestSubstringTwoDistinct), s);
+
+            var result = _leetCodeBusiness.LengthOfLongestSubstringTwoDistinct(s);
+
+            return result;
+        }
     }
 }

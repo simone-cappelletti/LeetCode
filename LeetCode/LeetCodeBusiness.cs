@@ -73,6 +73,7 @@
             return numsLength;
         }
 
+        /// <inheritdoc/>
         public int RemoveDuplicates(int[] nums)
         {
             var k = 1;
@@ -80,13 +81,42 @@
             for (var i = 1; i < nums.Length; i++)
             {
                 var value = nums[i];
-                if (value != nums[i-1])
+                if (value != nums[i - 1])
                 {
                     nums[k++] = value;
                 }
             }
 
             return k;
+        }
+
+        /// <inheritdoc/>
+        public int LengthOfLongestSubstringTwoDistinct(string s)
+        {
+            var characters = new Dictionary<char, int>();
+            var maxLength = 0;
+
+            for (int left = 0, right = 0; right < s.Length; right++)
+            {
+                characters.TryGetValue(s[right], out int count);
+                characters[s[right]] = count + 1;
+
+                while (characters.Count > 2)
+                {
+                    characters[s[left]]--;
+
+                    if (characters[s[left]] < 1)
+                    {
+                        characters.Remove(s[left]);
+                    }
+
+                    left++;
+                }
+
+                maxLength = Math.Max(maxLength, right - left + 1);
+            }
+
+            return maxLength;
         }
     }
 }

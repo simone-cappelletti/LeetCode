@@ -31,5 +31,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int RemoveDuplicates(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public int LengthOfLongestSubstringTwoDistinct(string s);
     }
 }

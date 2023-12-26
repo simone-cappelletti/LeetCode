@@ -198,5 +198,65 @@
 
             return maxValue;
         }
+
+        /// <inheritdoc/>
+        public ListNode MergeTwoSortedListsRecursive(ListNode list1, ListNode list2)
+        {
+            if (list1 is null) return list2;
+            else if (list2 is null) return list1;
+            else if (list1.val > list2.val)
+            {
+                list2.next = MergeTwoSortedListsRecursive(list1, list2.next);
+
+                return list2;
+            }
+            else
+            {
+                list1.next = MergeTwoSortedListsRecursive(list1.next, list2);
+
+                return list1;
+            }
+        }
+
+        /// <inheritdoc/>
+        public ListNode MergeTwoSortedListsIterative(ListNode list1, ListNode list2)
+        {
+            var head = new ListNode();
+            var dummy = new ListNode();
+
+            head.next = dummy;
+
+            while (list1 is not null || list2 is not null)
+            {
+                if (list1 is null)
+                {
+                    dummy.next = new ListNode(list2.val);
+
+                    list2 = list2.next;
+                }
+                else if (list2 is null)
+                {
+                    dummy.next = new ListNode(list1.val);
+
+                    list1 = list1.next;
+                }
+                else if (list1.val > list2.val)
+                {
+                    dummy.next = new ListNode(list2.val);
+
+                    list2 = list2.next;
+                }
+                else
+                {
+                    dummy.next = new ListNode(list1.val);
+
+                    list1 = list1.next;
+                }
+
+                dummy = dummy.next;
+            }
+
+            return head.next.next;
+        }
     }
 }

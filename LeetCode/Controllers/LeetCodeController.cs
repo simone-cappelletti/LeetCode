@@ -86,5 +86,25 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode MergeTwoSortedListsRecursive(ListNode list1, ListNode list2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(MergeTwoSortedListsRecursive), list1, list2);
+
+            var result = _leetCodeBusiness.MergeTwoSortedListsRecursive(list1, list2);
+
+            return result;
+        }
+
+        [HttpPost]
+        public ListNode MergeTwoSortedListsIterative(ListNode list1, ListNode list2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(MergeTwoSortedListsIterative), list1, list2);
+
+            var result = _leetCodeBusiness.MergeTwoSortedListsIterative(list1, list2);
+
+            return result;
+        }
     }
 }

@@ -52,5 +52,21 @@
         /// <param name="prices"></param>
         /// <returns></returns>
         public int BestTimeToBuyAndSellStock(int[] prices);
+
+        /// <summary>
+        /// https://leetcode.com/problems/merge-two-sorted-lists/
+        /// </summary>
+        /// <param name="list1"></param>
+        /// <param name="list2"></param>
+        /// <returns></returns>
+        ListNode MergeTwoSortedListsRecursive(ListNode list1, ListNode list2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/merge-two-sorted-lists/
+        /// </summary>
+        /// <param name="list1"></param>
+        /// <param name="list2"></param>
+        /// <returns></returns>
+        ListNode MergeTwoSortedListsIterative(ListNode list1, ListNode list2);
     }
 }

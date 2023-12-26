@@ -124,6 +124,52 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Fact]
+        public void MergeTwoSortedListsRecursive()
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            var list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+            var resultList = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
+
+            // Act
+            var result = business.MergeTwoSortedListsRecursive(list1, list2);
+
+            // Assert
+            while(resultList.next is not null)
+            {
+                Assert.Equal(result.val, resultList.val);
+
+                resultList = resultList.next;
+                result = result.next;
+            }
+        }
+
+        [Fact]
+        public void MergeTwoSortedListsIterative()
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            var list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+            var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+            var resultList = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
+
+            // Act
+            var result = business.MergeTwoSortedListsIterative(list1, list2);
+
+            // Assert
+            while (resultList.next is not null)
+            {
+                Assert.Equal(result.val, resultList.val);
+
+                resultList = resultList.next;
+                result = result.next;
+            }
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

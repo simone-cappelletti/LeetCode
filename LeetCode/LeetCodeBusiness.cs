@@ -127,7 +127,7 @@
             const char closedRoundPar = ')';
 
             const char openSquarePar = '[';
-            const char closeSquarePar = ']';
+            const char closedSquarePar = ']';
 
             const char openBracketPar = '{';
             const char closedBracketPar = '}';
@@ -146,8 +146,7 @@
 
                     case closedRoundPar:
 
-                        characters.TryPop(out var currentOpenRoundPar);
-                        if (currentOpenRoundPar.Equals('\0') ||
+                        if (!characters.TryPop(out var currentOpenRoundPar) ||
                             !currentOpenRoundPar.Equals(openRoundPar))
                         {
                             return false;
@@ -155,10 +154,9 @@
 
                         break;
 
-                    case closeSquarePar:
+                    case closedSquarePar:
 
-                        characters.TryPop(out var currentOpenSquarePar);
-                        if (currentOpenSquarePar.Equals('\0') ||
+                        if (!characters.TryPop(out var currentOpenSquarePar) ||
                             !currentOpenSquarePar.Equals(openSquarePar))
                         {
                             return false;
@@ -168,9 +166,7 @@
 
                     case closedBracketPar:
 
-
-                        characters.TryPop(out var currentOpenBracketPar);
-                        if (currentOpenBracketPar.Equals('\0') ||
+                        if (!characters.TryPop(out var currentOpenBracketPar) ||
                             !currentOpenBracketPar.Equals(openBracketPar))
                         {
                             return false;

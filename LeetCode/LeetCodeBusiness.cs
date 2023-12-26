@@ -119,6 +119,7 @@
             return maxLength;
         }
 
+        /// <inheritdoc/>
         public bool ValidParentheses(string s)
         {
             var characters = new Stack<char>();
@@ -181,6 +182,21 @@
             }
 
             return characters.Count == 0;
+        }
+
+        /// <inheritdoc/>
+        public int BestTimeToBuyAndSellStock(int[] prices)
+        {
+            var minPrice = prices[0];
+            var maxValue = 0;
+
+            for (var i = 0; i < prices.Length; i++)
+            {
+                minPrice = Math.Min(minPrice, prices[i]);
+                maxValue = Math.Max(maxValue, prices[i] - minPrice);
+            }
+
+            return maxValue;
         }
     }
 }

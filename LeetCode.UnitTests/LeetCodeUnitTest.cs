@@ -95,6 +95,21 @@ namespace LeetCode.UnitTests
         }
 
         [Theory]
+        [InlineData(new int[] { 7, 1, 5, 3, 6, 4 }, 5)]
+        [InlineData(new int[] { 7, 6, 4, 3, 1 }, 0)]
+        public void BestTimeToBuyAndSellStock(int[] prices, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.BestTimeToBuyAndSellStock(prices);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Theory]
         [InlineData("()", true)]
         [InlineData("([)]", false)]
         public void ValidParentheses(string s, bool solution)

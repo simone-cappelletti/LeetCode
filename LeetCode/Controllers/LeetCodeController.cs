@@ -76,5 +76,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int BestTimeToBuyAndSellStock(int[] prices)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(BestTimeToBuyAndSellStock), prices);
+
+            var result = _leetCodeBusiness.BestTimeToBuyAndSellStock(prices);
+
+            return result;
+        }
     }
 }

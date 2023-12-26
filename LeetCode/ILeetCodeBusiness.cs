@@ -45,5 +45,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         public bool ValidParentheses(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public int BestTimeToBuyAndSellStock(int[] prices);
     }
 }

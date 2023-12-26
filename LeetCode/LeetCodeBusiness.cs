@@ -35,7 +35,7 @@
         }
 
         /// <inheritdoc/>
-        public bool IsPalindrome(int x)
+        public bool PalindromeNumber(int x)
         {
             if (x < 0) return false;
             if (x % 10 == 0 && x != 0) return false;
@@ -74,7 +74,7 @@
         }
 
         /// <inheritdoc/>
-        public int RemoveDuplicates(int[] nums)
+        public int RemoveDuplicatesFromSortedArray(int[] nums)
         {
             var k = 1;
 
@@ -117,6 +117,74 @@
             }
 
             return maxLength;
+        }
+
+        public bool ValidParentheses(string s)
+        {
+            var characters = new Stack<char>();
+
+            const char openRoundPar = '(';
+            const char closedRoundPar = ')';
+
+            const char openSquarePar = '[';
+            const char closeSquarePar = ']';
+
+            const char openBracketPar = '{';
+            const char closedBracketPar = '}';
+
+            foreach (var @char in s)
+            {
+                switch (@char)
+                {
+                    case openRoundPar:
+                    case openSquarePar:
+                    case openBracketPar:
+
+                        characters.Push(@char);
+
+                        break;
+
+                    case closedRoundPar:
+
+                        characters.TryPop(out var currentOpenRoundPar);
+                        if (currentOpenRoundPar.Equals('\0') ||
+                            !currentOpenRoundPar.Equals(openRoundPar))
+                        {
+                            return false;
+                        }
+
+                        break;
+
+                    case closeSquarePar:
+
+                        characters.TryPop(out var currentOpenSquarePar);
+                        if (currentOpenSquarePar.Equals('\0') ||
+                            !currentOpenSquarePar.Equals(openSquarePar))
+                        {
+                            return false;
+                        }
+
+                        break;
+
+                    case closedBracketPar:
+
+
+                        characters.TryPop(out var currentOpenBracketPar);
+                        if (currentOpenBracketPar.Equals('\0') ||
+                            !currentOpenBracketPar.Equals(openBracketPar))
+                        {
+                            return false;
+                        }
+
+                        break;
+
+                    default:
+
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            return characters.Count == 0;
         }
     }
 }

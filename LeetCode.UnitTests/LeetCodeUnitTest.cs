@@ -31,13 +31,13 @@ namespace LeetCode.UnitTests
         [InlineData(-121, false)]
         [InlineData(4224, true)]
         [InlineData(4227, false)]
-        public void IsPalindrome(int x, bool solution)
+        public void PalindromeNumber(int x, bool solution)
         {
             // Arrange
             var business = CreateBusiness();
 
             // Act
-            var result = business.IsPalindrome(x);
+            var result = business.PalindromeNumber(x);
 
             // Assert
             Assert.Equal(result, solution);
@@ -62,13 +62,13 @@ namespace LeetCode.UnitTests
         [Theory]
         [InlineData(new int[] { 1, 1, 2 }, 2)]
         [InlineData(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }, 5)]
-        public void RemoveDuplicates(int[] nums, int solution)
+        public void RemoveDuplicatesFromSortedArray(int[] nums, int solution)
         {
             // Arrange
             var business = CreateBusiness();
 
             // Act
-            var result = business.RemoveDuplicates(nums);
+            var result = business.RemoveDuplicatesFromSortedArray(nums);
 
             // Assert
             Assert.Equal(result, solution);
@@ -89,6 +89,21 @@ namespace LeetCode.UnitTests
 
             // Act
             var result = business.LengthOfLongestSubstringTwoDistinct(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Theory]
+        [InlineData("()", true)]
+        [InlineData("([)]", false)]
+        public void ValidParentheses(string s, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ValidParentheses(s);
 
             // Assert
             Assert.Equal(result, solution);

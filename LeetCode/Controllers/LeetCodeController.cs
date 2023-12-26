@@ -20,7 +20,7 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int[] TwoSum(int[] nums, int target)
         {
-            _logger.LogInformation(nameof(TwoSum), nums, target);
+            _logger.LogInformation("{method} - {arg}", nameof(TwoSum), nums, target);
 
             var result = _leetCodeBusiness.TwoSum(nums, target);
 
@@ -30,9 +30,9 @@ namespace LeetCode.Controllers
         [HttpPost]
         public bool IsPalindrome(int x)
         {
-            _logger.LogInformation(nameof(IsPalindrome), x);
+            _logger.LogInformation("{method} - {arg}", nameof(IsPalindrome), x);
 
-            var result = _leetCodeBusiness.IsPalindrome(x);
+            var result = _leetCodeBusiness.PalindromeNumber(x);
 
             return result;
         }
@@ -40,7 +40,7 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int RemoveElement(int[] nums, int val)
         {
-            _logger.LogInformation(nameof(RemoveElement), nums, val);
+            _logger.LogInformation("{method} - {arg}", nameof(RemoveElement), nums, val);
 
             var result = _leetCodeBusiness.RemoveElement(nums, val);
 
@@ -50,9 +50,9 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int RemoveDuplicates(int[] nums)
         {
-            _logger.LogInformation(nameof(RemoveDuplicates), nums);
+            _logger.LogInformation("{method} - {arg}", nameof(RemoveDuplicates), nums);
 
-            var result = _leetCodeBusiness.RemoveDuplicates(nums);
+            var result = _leetCodeBusiness.RemoveDuplicatesFromSortedArray(nums);
 
             return result;
         }
@@ -60,9 +60,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int LengthOfLongestSubstringTwoDistinct(string s)
         {
-            _logger.LogInformation(nameof(LengthOfLongestSubstringTwoDistinct), s);
+            _logger.LogInformation("{method} - {arg}", nameof(LengthOfLongestSubstringTwoDistinct), s);
 
             var result = _leetCodeBusiness.LengthOfLongestSubstringTwoDistinct(s);
+
+            return result;
+        }
+
+        [HttpPost]
+        public bool ValidParentheses(string s)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ValidParentheses), s);
+
+            var result = _leetCodeBusiness.ValidParentheses(s);
 
             return result;
         }

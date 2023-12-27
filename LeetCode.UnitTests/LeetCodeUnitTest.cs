@@ -170,6 +170,22 @@ namespace LeetCode.UnitTests
             }
         }
 
+        [Theory]
+        [InlineData("A man, a plan, a canal: Panama", true)]
+        [InlineData("race a car", false)]
+        [InlineData(" ", true)]
+        public void ValidPalindromeString(string s, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ValidPalindromeString(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

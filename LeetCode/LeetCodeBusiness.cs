@@ -254,5 +254,36 @@
 
             return head.next.next;
         }
+
+        /// <inheritdoc/>
+        public bool ValidPalindromeString(string s)
+        {
+            var left = 0;
+            var right = s.Length - 1;
+
+            s = s.ToLower();
+
+            while (left < right)
+            {
+                if (!char.IsAsciiLetterOrDigit(s[left]))
+                {
+                    left++;
+                }
+                else if (!char.IsAsciiLetterOrDigit(s[right]))
+                {
+                    right--;
+                }
+                else
+                {
+                    if (s[left] != s[right])
+                        return false;
+
+                    left++;
+                    right--;
+                }
+            }
+
+            return true;
+        }
     }
 }

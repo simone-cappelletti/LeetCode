@@ -106,5 +106,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool ValidPalindromeString(string s)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ValidPalindromeString), s);
+
+            var result = _leetCodeBusiness.ValidPalindromeString(s);
+
+            return result;
+        }
     }
 }

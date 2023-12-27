@@ -68,5 +68,11 @@
         /// <param name="list2"></param>
         /// <returns></returns>
         ListNode MergeTwoSortedListsIterative(ListNode list1, ListNode list2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/valid-palindrome/description/
+        /// </summary>
+        /// <param name="s"></param>
+        bool ValidPalindromeString(string s);
     }
 }

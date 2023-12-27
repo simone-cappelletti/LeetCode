@@ -138,7 +138,7 @@ namespace LeetCode.UnitTests
             var result = business.MergeTwoSortedListsRecursive(list1, list2);
 
             // Assert
-            while(resultList.next is not null)
+            while (resultList.next is not null)
             {
                 Assert.Equal(result.val, resultList.val);
 
@@ -181,6 +181,23 @@ namespace LeetCode.UnitTests
 
             // Act
             var result = business.ValidPalindromeString(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Fact]
+        public void InsertInterval()
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            var intervals = new int[][] { [1, 2], [3, 5], [6, 7], [8, 10], [12, 16] };
+            var newInterval = new int[] { 4, 8 };
+            var solution = new int[][] { [1, 2], [3, 10], [12, 16] };
+
+            // Act
+            var result = business.InsertInterval(intervals, newInterval);
 
             // Assert
             Assert.Equal(result, solution);

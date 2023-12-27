@@ -116,5 +116,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[][] InsertInterval(int[][] intervals, int[] newInterval)
+        {
+            _logger.LogInformation("{method} - {arg1}, {args2}", nameof(InsertInterval), intervals, newInterval);
+
+            var result = _leetCodeBusiness.InsertInterval(intervals, newInterval);
+
+            return result;
+        }
     }
 }

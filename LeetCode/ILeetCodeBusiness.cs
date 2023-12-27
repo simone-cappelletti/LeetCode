@@ -74,5 +74,13 @@
         /// </summary>
         /// <param name="s"></param>
         bool ValidPalindromeString(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/insert-interval/
+        /// </summary>
+        /// <param name="intervals"></param>
+        /// <param name="newInterval"></param>
+        /// <returns></returns>
+        int[][] InsertInterval(int[][] intervals, int[] newInterval);
     }
 }

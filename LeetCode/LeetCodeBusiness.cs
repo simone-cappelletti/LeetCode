@@ -313,5 +313,45 @@
 
             return result.ToArray();
         }
+
+        /// <inheritdoc/>
+        public int LongestSubstringWithoutRepeatingCharacters(string s)
+        {
+            if (s.Length < 2)
+                return s.Length;
+
+            var dic = new Dictionary<char, int>();
+
+            var maxLength = 0;
+            var left = 0;
+            var right = 0;
+
+            while (right < s.Length)
+            {
+                if (dic.TryGetValue(s[right], out var value))
+                {
+                    if (value >= left)
+                    {
+                        maxLength = Math.Max(maxLength, right - left);
+                        left = value + 1;
+                    }
+                    else
+                    {
+                        maxLength = Math.Max(maxLength, right - left + 1);
+                    }
+
+                    dic[s[right]] = right;
+                }
+                else
+                {
+                    maxLength = Math.Max(maxLength, right - left + 1);
+                    dic.Add(s[right], right);
+                }
+
+                right++;
+            }
+
+            return maxLength;
+        }
     }
 }

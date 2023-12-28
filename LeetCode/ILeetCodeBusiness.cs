@@ -82,5 +82,12 @@
         /// <param name="newInterval"></param>
         /// <returns></returns>
         int[][] InsertInterval(int[][] intervals, int[] newInterval);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public int LongestSubstringWithoutRepeatingCharacters(string s);
     }
 }

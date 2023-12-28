@@ -126,5 +126,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LongestSubstringWithoutRepeatingCharacters(string s)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(LongestSubstringWithoutRepeatingCharacters), s);
+
+            var result = _leetCodeBusiness.LongestSubstringWithoutRepeatingCharacters(s);
+
+            return result;
+        }
     }
 }

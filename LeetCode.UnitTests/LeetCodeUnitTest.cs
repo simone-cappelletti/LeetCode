@@ -203,6 +203,22 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData("abcabcbb", 3)]
+        [InlineData("abba", 2)]
+        [InlineData("tmmzuxt", 5)]
+        public void LongestSubstringWithoutRepeatingCharacters(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LongestSubstringWithoutRepeatingCharacters(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

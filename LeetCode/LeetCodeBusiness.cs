@@ -353,5 +353,37 @@
 
             return maxLength;
         }
+
+        /// <inheritdoc/>
+        public int EvaluateReversePolishNotation(string[] tokens)
+        {
+            var stack = new Stack<int>();
+
+            foreach (var token in tokens)
+            {
+                if (int.TryParse(token, out var value))
+                {
+                    stack.Push(value);
+                }
+                else
+                {
+                    var secondOperand = stack.Pop();
+                    var firstOperand = stack.Pop();
+
+                    var result = token switch
+                    {
+                        "+" => firstOperand + secondOperand,
+                        "-" => firstOperand - secondOperand,
+                        "*" => firstOperand * secondOperand,
+                        "/" => firstOperand / secondOperand,
+                        _ => throw new ArgumentOutOfRangeException(token)
+                    };
+
+                    stack.Push(result);
+                }
+            }
+
+            return stack.Pop();
+        }
     }
 }

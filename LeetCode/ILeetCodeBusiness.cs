@@ -89,5 +89,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         public int LongestSubstringWithoutRepeatingCharacters(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/evaluate-reverse-polish-notation/
+        /// </summary>
+        /// <param name="tokens"></param>
+        /// <returns></returns>
+        public int EvaluateReversePolishNotation(string[] tokens);
     }
 }

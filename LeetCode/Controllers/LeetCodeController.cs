@@ -136,5 +136,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int EvaluateReversePolishNotation(string[] tokens)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(EvaluateReversePolishNotation), tokens);
+
+            var result = _leetCodeBusiness.EvaluateReversePolishNotation(tokens);
+
+            return result;
+        }
     }
 }

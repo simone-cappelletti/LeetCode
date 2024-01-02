@@ -219,6 +219,23 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Theory]
+        [InlineData(new string[] { "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+" }, 22)]
+        [InlineData(new string[] { "4", "13", "5", "/", "+" }, 6)]
+        [InlineData(new string[] { "2", "1", "+", "3", "*" }, 9)]
+        [InlineData(new string[] { "3", "11", "+", "5", "-" }, 9)]
+        public void EvaluateReversePolishNotation(string[] tokens, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.EvaluateReversePolishNotation(tokens);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

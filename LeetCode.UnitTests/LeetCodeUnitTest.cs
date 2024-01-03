@@ -26,6 +26,24 @@ namespace LeetCode.UnitTests
         }
 
         [Theory]
+        [InlineData(new int[4] { 2, 7, 11, 15 }, 9, new int[2] { 1, 2 })]
+        [InlineData(new int[3] { 2, 3, 4 }, 6, new int[2] { 1, 3 })]
+        [InlineData(new int[2] { -1, 0 }, -1, new int[2] { 1, 2 })]
+        [InlineData(new int[4] { 0, 0, 3, 4 }, 0, new int[2] { 1, 2 })]
+        [InlineData(new int[4] { -3, 3, 4, 90 }, 0, new int[2] { 1, 2 })]
+        public void TwoSumII(int[] numbers, int target, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.TwoSumII(numbers, target);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Theory]
         [InlineData(10, false)]
         [InlineData(121, true)]
         [InlineData(-121, false)]

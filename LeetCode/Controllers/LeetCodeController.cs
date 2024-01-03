@@ -28,6 +28,16 @@ namespace LeetCode.Controllers
         }
 
         [HttpPost]
+        public int[] TwoSumII(int[] numbers, int target)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(TwoSumII), numbers, target);
+
+            var result = _leetCodeBusiness.TwoSumII(numbers, target);
+
+            return result;
+        }
+
+        [HttpPost]
         public bool IsPalindrome(int x)
         {
             _logger.LogInformation("{method} - {arg}", nameof(IsPalindrome), x);

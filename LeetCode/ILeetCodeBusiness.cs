@@ -11,6 +11,14 @@
         int[] TwoSum(int[] nums, int target);
 
         /// <summary>
+        /// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        int[] TwoSumII(int[] numbers, int target);
+
+        /// <summary>
         /// https://leetcode.com/problems/palindrome-number/
         /// </summary>
         /// <param name="x"></param>

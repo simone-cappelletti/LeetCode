@@ -35,6 +35,31 @@
         }
 
         /// <inheritdoc/>
+        public int[] TwoSumII(int[] numbers, int target)
+        {
+            var left = 0;
+            var right = numbers.Length - 1;
+
+            while (left <= right)
+            {
+                if (numbers[left] + numbers[right] > target)
+                {
+                    --right;
+                }
+                else if (numbers[left] + numbers[right] < target)
+                {
+                    ++left;
+                }
+                else
+                {
+                    return new int[] { ++left, ++right };
+                }
+            }
+
+            throw new ArgumentException("No solution found");
+        }
+
+        /// <inheritdoc/>
         public bool PalindromeNumber(int x)
         {
             if (x < 0) return false;

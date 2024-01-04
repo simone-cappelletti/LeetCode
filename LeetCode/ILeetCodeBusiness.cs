@@ -104,5 +104,12 @@
         /// <param name="tokens"></param>
         /// <returns></returns>
         public int EvaluateReversePolishNotation(string[] tokens);
+
+        /// <summary>
+        /// https://leetcode.com/problems/3sum/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public IList<IList<int>> ThreeSum(int[] nums);
     }
 }

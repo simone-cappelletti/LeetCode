@@ -156,5 +156,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<IList<int>> ThreeSum(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ThreeSum), nums);
+
+            var result = _leetCodeBusiness.ThreeSum(nums);
+
+            return result;
+        }
     }
 }

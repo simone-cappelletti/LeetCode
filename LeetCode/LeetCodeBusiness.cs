@@ -410,5 +410,77 @@
 
             return stack.Pop();
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> ThreeSum(int[] nums)
+        {
+            // Two pointers approach
+            IList<IList<int>> result = new List<IList<int>>();
+
+            // x + y = -z
+            var x = 1;
+            var y = nums.Length - 1;
+            var z = 0;
+
+            Array.Sort(nums);
+
+            while (z < nums.Length - 2)
+            {
+                var zValue = -nums[z];
+
+                // Break when -zValue > 0 because remaining values cannot sum to zero.
+                if (-zValue > 0)
+                    break;
+
+                // Skip zValue is the same the one before because we'll have duplicates.
+                if (false ==
+                    (
+                        z > 0 &&
+                        zValue == -nums[z - 1]
+                    )
+                )
+                {
+                    while (x < y)
+                    {
+                        var xValue = nums[x];
+                        var yValue = nums[y];
+
+                        if (xValue + yValue > zValue)
+                        {
+                            --y;
+                        }
+                        else if (xValue + yValue < zValue)
+                        {
+                            ++x;
+                        }
+                        else
+                        {
+                            // Skip when xValue and yValue are the same of previous one
+                            if (false ==
+                                (
+                                    x > 0 &&
+                                    y < nums.Length - 1 &&
+                                    xValue == nums[x - 1] &&
+                                    yValue == nums[y + 1]
+
+                                )
+                            )
+                            {
+                                result.Add(new List<int>() { xValue, yValue, -zValue });
+                            }
+
+                            --y;
+                            ++x;
+                        }
+                    }
+                }
+
+                ++z;
+                x = z + 1;
+                y = nums.Length - 1;
+            }
+
+            return result;
+        }
     }
 }

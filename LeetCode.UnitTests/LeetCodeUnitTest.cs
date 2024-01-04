@@ -254,6 +254,25 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
+        [Fact]
+        public void ThreeSum()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var nums = new int[] { -1, 0, 1, 2, -1, -4 };
+            var solution = new List<IList<int>>()
+            {
+                new List<int> {-1, 2, -1 },
+                new List<int> {0, 1, -1 }
+            };
+
+            // Act
+            var result = business.ThreeSum(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
         private ILeetCodeBusiness CreateBusiness()
         {
             var logger = new Mock<ILogger<LeetCodeBusiness>>();

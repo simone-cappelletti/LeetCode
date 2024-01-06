@@ -118,5 +118,13 @@
         /// <param name="nums"></param>
         /// <param name="target"></param>
         int BinarySearch(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-window-substring/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        string MinimumWindowSubstring(string s, string t);
     }
 }

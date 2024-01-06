@@ -511,5 +511,60 @@
 
             return index;
         }
+
+        /// <inheritdoc/>
+        public string MinimumWindowSubstring(string s, string t)
+        {
+            if (s.Length < t.Length)
+                return string.Empty;
+
+            var sCount = new int[128];
+            var tCount = new int[128];
+
+            var left = 0;
+            var right = 0;
+            var minLength = Int32.MaxValue;
+            var start = 0;
+            var matchingChars = t.Length;
+
+            foreach (var @char in t)
+                tCount[@char]++;
+
+            while (right < s.Length)
+            {
+                var @char = s[right];
+                sCount[@char]++;
+
+                if (tCount[@char] > 0 &&
+                    sCount[@char] <= tCount[@char])
+                {
+                    matchingChars--;
+                }
+
+                while (matchingChars == 0)
+                {
+                    if (right - left + 1 < minLength)
+                    {
+                        minLength = right - left + 1;
+                        start = left;
+                    }
+
+                    var @leftChar = s[left];
+                    sCount[@leftChar]--;
+
+                    if (tCount[@leftChar] > 0 &&
+                        sCount[@leftChar] < tCount[@leftChar])
+                    {
+                        matchingChars++;
+                    }
+
+                    left++;
+                }
+
+                right++;
+            }
+
+            return minLength == Int32.MaxValue ? string.Empty : s.Substring(start, minLength);
+        }
     }
 }

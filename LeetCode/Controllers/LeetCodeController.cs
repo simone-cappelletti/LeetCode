@@ -176,5 +176,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string MinimumWindowSubstring(string s, string t)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BinarySearch), s, t);
+
+            var result = _leetCodeBusiness.MinimumWindowSubstring(s, t);
+
+            return result;
+        }
     }
 }

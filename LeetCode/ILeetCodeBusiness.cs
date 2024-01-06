@@ -45,21 +45,21 @@
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public int LengthOfLongestSubstringTwoDistinct(string s);
+        int LengthOfLongestSubstringTwoDistinct(string s);
 
         /// <summary>
         /// https://leetcode.com/problems/valid-parentheses/
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public bool ValidParentheses(string s);
+        bool ValidParentheses(string s);
 
         /// <summary>
         /// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
         /// </summary>
         /// <param name="prices"></param>
         /// <returns></returns>
-        public int BestTimeToBuyAndSellStock(int[] prices);
+        int BestTimeToBuyAndSellStock(int[] prices);
 
         /// <summary>
         /// https://leetcode.com/problems/merge-two-sorted-lists/
@@ -96,20 +96,27 @@
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public int LongestSubstringWithoutRepeatingCharacters(string s);
+        int LongestSubstringWithoutRepeatingCharacters(string s);
 
         /// <summary>
         /// https://leetcode.com/problems/evaluate-reverse-polish-notation/
         /// </summary>
         /// <param name="tokens"></param>
         /// <returns></returns>
-        public int EvaluateReversePolishNotation(string[] tokens);
+        int EvaluateReversePolishNotation(string[] tokens);
 
         /// <summary>
         /// https://leetcode.com/problems/3sum/
         /// </summary>
         /// <param name="nums"></param>
         /// <returns></returns>
-        public IList<IList<int>> ThreeSum(int[] nums);
+        IList<IList<int>> ThreeSum(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/binary-search/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        int BinarySearch(int[] nums, int target);
     }
 }

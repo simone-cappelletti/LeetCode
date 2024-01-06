@@ -482,5 +482,34 @@
 
             return result;
         }
+
+        /// <inheritdoc/>
+        public int BinarySearch(int[] nums, int target)
+        {
+            var index = -1;
+
+            var left = 0;
+            var right = nums.Length - 1;
+
+            while (left <= right)
+            {
+                var mid = left + (right - left) / 2;
+
+                if (target > nums[mid])
+                {
+                    left = ++mid;
+                }
+                else if (target < nums[mid])
+                {
+                    right = --mid;
+                }
+                else
+                {
+                    return mid;
+                }
+            }
+
+            return index;
+        }
     }
 }

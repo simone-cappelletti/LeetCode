@@ -20,7 +20,7 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int[] TwoSum(int[] nums, int target)
         {
-            _logger.LogInformation("{method} - {arg}", nameof(TwoSum), nums, target);
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(TwoSum), nums, target);
 
             var result = _leetCodeBusiness.TwoSum(nums, target);
 
@@ -130,7 +130,7 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int[][] InsertInterval(int[][] intervals, int[] newInterval)
         {
-            _logger.LogInformation("{method} - {arg1}, {args2}", nameof(InsertInterval), intervals, newInterval);
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(InsertInterval), intervals, newInterval);
 
             var result = _leetCodeBusiness.InsertInterval(intervals, newInterval);
 
@@ -163,6 +163,16 @@ namespace LeetCode.Controllers
             _logger.LogInformation("{method} - {arg}", nameof(ThreeSum), nums);
 
             var result = _leetCodeBusiness.ThreeSum(nums);
+
+            return result;
+        }
+
+        [HttpPost]
+        public int BinarySearch(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BinarySearch), nums, target);
+
+            var result = _leetCodeBusiness.BinarySearch(nums, target);
 
             return result;
         }

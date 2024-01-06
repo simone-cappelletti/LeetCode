@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Moq;
+using Newtonsoft.Json.Linq;
 
 namespace LeetCode.UnitTests
 {
@@ -268,6 +269,20 @@ namespace LeetCode.UnitTests
 
             // Act
             var result = business.ThreeSum(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Theory]
+        [InlineData(new int[] { -1, 0, 3, 5, 9, 12 }, 9, 4)]
+        void BinarySearch(int[] nums, int target, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.BinarySearch(nums, target);
 
             // Assert
             Assert.Equal(result, solution);

@@ -180,9 +180,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public string MinimumWindowSubstring(string s, string t)
         {
-            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BinarySearch), s, t);
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(MinimumWindowSubstring), s, t);
 
             var result = _leetCodeBusiness.MinimumWindowSubstring(s, t);
+
+            return result;
+        }
+
+        [HttpPost]
+        public int[] ProductOfArrayExceptSelf(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ProductOfArrayExceptSelf), nums);
+
+            var result = _leetCodeBusiness.ProductOfArrayExceptSelf(nums);
 
             return result;
         }

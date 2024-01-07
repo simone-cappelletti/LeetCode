@@ -126,5 +126,12 @@
         /// <param name="t"></param>
         /// <returns></returns>
         string MinimumWindowSubstring(string s, string t);
+
+        /// <summary>
+        /// https://leetcode.com/problems/product-of-array-except-self/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int[] ProductOfArrayExceptSelf(int[] nums);
     }
 }

@@ -1,11 +1,17 @@
 using Microsoft.Extensions.Logging;
 using Moq;
-using Newtonsoft.Json.Linq;
 
 namespace LeetCode.UnitTests
 {
     public class LeetCodeUnitTest
     {
+        private ILeetCodeBusiness CreateBusiness()
+        {
+            var logger = new Mock<ILogger<LeetCodeBusiness>>();
+
+            return new LeetCodeBusiness(logger.Object);
+        }
+
         [Theory]
         [InlineData(new int[4] { 2, 7, 11, 15 }, 9, new int[2] { 0, 1 })]
         [InlineData(new int[4] { 2, -6, -9, 3 }, -15, new int[2] { 1, 2 })]
@@ -302,11 +308,19 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
-        private ILeetCodeBusiness CreateBusiness()
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3, 4 }, new int[] { 24, 12, 8, 6 })]
+        [InlineData(new int[] { -1, 1, 0, -3, 3 }, new int[] { 0, 0, 9, 0, 0 })]
+        void ProductOfArrayExceptSelf(int[] nums, int[] solution)
         {
-            var logger = new Mock<ILogger<LeetCodeBusiness>>();
+            // Arrange
+            var business = CreateBusiness();
 
-            return new LeetCodeBusiness(logger.Object);
+            // Act
+            var result = business.ProductOfArrayExceptSelf(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
         }
     }
 }

@@ -566,5 +566,27 @@
 
             return minLength == Int32.MaxValue ? string.Empty : s.Substring(start, minLength);
         }
+
+        /// <inheritdoc/>
+        public int[] ProductOfArrayExceptSelf(int[] nums)
+        {
+            var answer = new int[nums.Length];
+            var totalProduct = 1;
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                answer[i] = totalProduct;
+                totalProduct *= nums[i];
+            }
+
+            totalProduct = 1;
+            for (var i = nums.Length - 1; i >= 0; i--)
+            {
+                answer[i] *= totalProduct;
+                totalProduct *= nums[i];
+            }
+
+            return answer;
+        }
     }
 }

@@ -133,5 +133,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int[] ProductOfArrayExceptSelf(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        ListNode RemoveNthNodeFromEndOfList(ListNode head, int n);
     }
 }

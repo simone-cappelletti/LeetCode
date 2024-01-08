@@ -196,5 +196,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode RemoveNthNodeFromEndOfList(ListNode head, int n)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveNthNodeFromEndOfList), head, n);
+
+            var result = _leetCodeBusiness.RemoveNthNodeFromEndOfList(head, n);
+
+            return result;
+        }
     }
 }

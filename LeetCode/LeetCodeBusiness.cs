@@ -588,5 +588,33 @@
 
             return answer;
         }
+
+        /// <inheritdoc/>
+        public ListNode RemoveNthNodeFromEndOfList(ListNode head, int n)
+        {
+            var count = 0;
+            var firstNode = head;
+            var secondNode = head;
+            var result = head;
+
+            while (count < n)
+            {
+                firstNode = firstNode.next;
+                count++;
+            }
+
+            if (firstNode == null)
+                return head.next;
+
+            while (firstNode.next != null)
+            {
+                firstNode = firstNode.next;
+                secondNode = secondNode.next;
+            }
+
+            secondNode.next = secondNode.next.next;
+
+            return result;
+        }
     }
 }

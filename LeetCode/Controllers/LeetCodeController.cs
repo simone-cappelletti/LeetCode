@@ -206,5 +206,25 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode InvertBinaryTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(InvertBinaryTree), root);
+
+            var result = _leetCodeBusiness.InvertBinaryTree(root);
+
+            return result;
+        }
+
+        [HttpPost]
+        public bool BalancedBinaryTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(BalancedBinaryTree), root);
+
+            var result = _leetCodeBusiness.BalancedBinaryTree(root);
+
+            return result;
+        }
     }
 }

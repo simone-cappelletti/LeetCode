@@ -141,5 +141,19 @@
         /// <param name="n"></param>
         /// <returns></returns>
         ListNode RemoveNthNodeFromEndOfList(ListNode head, int n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/invert-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        TreeNode InvertBinaryTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/balanced-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        bool BalancedBinaryTree(TreeNode root);
     }
 }

@@ -616,5 +616,40 @@
 
             return result;
         }
+
+        /// <inheritdoc/>
+        public TreeNode InvertBinaryTree(TreeNode root)
+        {
+            if (root is null)
+                return null;
+
+            var leftNode = InvertBinaryTree(root.left);
+            var rightNode = InvertBinaryTree(root.right);
+
+            root.left = rightNode;
+            root.right = leftNode;
+
+            return root;
+        }
+
+        /// <inheritdoc/>
+        public bool BalancedBinaryTree(TreeNode root)
+        {
+            if (root is null)
+                return true;
+
+            return
+                Math.Abs(Height(root.left) - Height(root.right)) < 2 &&
+                BalancedBinaryTree(root.left) &&
+                BalancedBinaryTree(root.right);
+
+            int Height(TreeNode node)
+            {
+                if (node is null)
+                    return -1;
+                else
+                    return 1 + Math.Max(Height(node.left), Height(node.right));
+            }
+        }
     }
 }

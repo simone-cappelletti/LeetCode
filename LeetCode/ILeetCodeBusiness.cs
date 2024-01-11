@@ -3,6 +3,11 @@
     public interface ILeetCodeBusiness
     {
         /// <summary>
+        /// https://leetcode.com/problems/min-stack/
+        /// </summary>
+        MinStack MinStack { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

@@ -4,6 +4,9 @@
     {
         private readonly ILogger<LeetCodeBusiness> _logger;
 
+        /// <inheritdoc/>
+        public MinStack MinStack { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

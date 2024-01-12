@@ -226,5 +226,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool ValidateBinarySearchTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ValidateBinarySearchTree), root);
+
+            var result = _leetCodeBusiness.ValidateBinarySearchTree(root);
+
+            return result;
+        }
     }
 }

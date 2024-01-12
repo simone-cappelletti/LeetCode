@@ -160,5 +160,12 @@
         /// <param name="root"></param>
         /// <returns></returns>
         bool BalancedBinaryTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/validate-binary-search-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public bool ValidateBinarySearchTree(TreeNode root);
     }
 }

@@ -654,5 +654,27 @@
                     return 1 + Math.Max(Height(node.left), Height(node.right));
             }
         }
+
+        /// <inheritdoc/>
+        public bool ValidateBinarySearchTree(TreeNode root)
+        {
+            return IsBST(root, null, null);
+
+            bool IsBST(TreeNode node, int? low, int? high)
+            {
+                if (node is null)
+                    return true;
+
+                if (
+                    (low.HasValue && node.val <= low.Value) ||
+                    (high.HasValue && node.val >= high.Value)
+                )
+                    return false;
+
+                return
+                    IsBST(node.left, low, node.val) &&
+                    IsBST(node.right, node.val, high);
+            }
+        }
     }
 }

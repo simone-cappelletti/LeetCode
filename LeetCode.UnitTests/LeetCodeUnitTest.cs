@@ -343,5 +343,26 @@ namespace LeetCode.UnitTests
                 result = result.next;
             }
         }
+
+        [Fact]
+        void ValidateBinarySearchTree()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new TreeNode(
+                val: 5,
+                left: new TreeNode(
+                    val: 1),
+                right: new TreeNode(
+                    val: 4,
+                    left: new TreeNode(3),
+                    right: new TreeNode(6)));
+
+            // Act
+            var result = business.ValidateBinarySearchTree(input);
+
+            // Assert
+            Assert.Equal(result, false);
+        }
     }
 }

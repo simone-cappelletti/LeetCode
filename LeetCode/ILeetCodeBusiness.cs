@@ -8,6 +8,11 @@
         MinStack MinStack { get; }
 
         /// <summary>
+        /// https://leetcode.com/problems/implement-queue-using-stacks/description/
+        /// </summary>
+        ImplementQueueUsingStacks ImplementQueueUsingStacks { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

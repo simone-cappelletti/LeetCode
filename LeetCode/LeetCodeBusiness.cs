@@ -7,6 +7,8 @@
         /// <inheritdoc/>
         public MinStack MinStack { get; }
 
+        public ImplementQueueUsingStacks ImplementQueueUsingStacks { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

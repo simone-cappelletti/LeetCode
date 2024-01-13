@@ -29,17 +29,13 @@
         public void Pop()
         {
             if (_size >= 0)
-            {
                 _array[--_size] = new Tuple<int, int>(0, 0);
-            }
         }
 
         public int Top()
         {
             if (_size >= 0)
-            {
                 return _array[_size - 1].Item1;
-            }
             else
                 return 0;
         }

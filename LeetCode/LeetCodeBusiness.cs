@@ -678,5 +678,34 @@
                     IsBST(node.right, node.val, high);
             }
         }
+
+        /// <inheritdoc/>
+        public int FirstBadVersion(int n)
+        {
+            // Simulate API
+            var IsBadVersion = (int x) => { return true; };
+
+            return BinarySearch(n);
+
+            // Time complexity: O(log(n))
+            // Space complexity: O(1)
+
+            int BinarySearch(int n)
+            {
+                var start = 1;
+                var end = n;
+                while (start <= end)
+                {
+                    var mid = start + (end - start) / 2;
+
+                    if (IsBadVersion(mid))
+                        end = mid - 1;
+                    else
+                        start = mid + 1;
+                }
+
+                return start;
+            }
+        }
     }
 }

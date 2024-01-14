@@ -171,6 +171,13 @@
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public bool ValidateBinarySearchTree(TreeNode root);
+        bool ValidateBinarySearchTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/first-bad-version/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        int FirstBadVersion(int n);
     }
 }

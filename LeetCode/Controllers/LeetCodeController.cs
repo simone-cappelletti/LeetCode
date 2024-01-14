@@ -236,5 +236,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FirstBadVersion(int n)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(FirstBadVersion), n);
+
+            var result = _leetCodeBusiness.FirstBadVersion(n);
+
+            return result;
+        }
     }
 }

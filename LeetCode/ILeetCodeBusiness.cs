@@ -179,5 +179,13 @@
         /// <param name="n"></param>
         /// <returns></returns>
         int FirstBadVersion(int n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/search-in-rotated-sorted-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        int SearchInRotatedSortedArray(int[] nums, int target);
     }
 }

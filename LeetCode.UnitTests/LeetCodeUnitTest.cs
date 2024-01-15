@@ -364,5 +364,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, false);
         }
+
+        [Theory]
+        [InlineData(new int[] { 4, 5, 6, 7, 0, 1, 2 }, 0, 4)]
+        [InlineData(new int[] { 2, 3, 4, 5, 6, 7, 8, 9, 1 }, 9, 7)]
+        void SearchInRotatedSortedArray(int[] nums, int target, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.SearchInRotatedSortedArray(nums, target);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

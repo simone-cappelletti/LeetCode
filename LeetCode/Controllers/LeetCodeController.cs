@@ -246,5 +246,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SearchInRotatedSortedArray(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SearchInRotatedSortedArray), nums, target);
+
+            var result = _leetCodeBusiness.SearchInRotatedSortedArray(nums, target);
+
+            return result;
+        }
     }
 }

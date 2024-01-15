@@ -707,5 +707,75 @@
                 return start;
             }
         }
+
+        /// <inheritdoc/>
+        public int SearchInRotatedSortedArray(int[] nums, int target)
+        {
+            var result = 0;
+
+            if (nums[0] > nums[nums.Length - 1])
+                result = RotatedBinarySearch(nums, target);
+            else
+                result = NormalBinarySearch(nums, target);
+
+            return result;
+
+            // Time Complexity: O(log n)
+            // Space Complexity: O(1)
+
+            int RotatedBinarySearch(int[] nums, int target)
+            {
+                var start = 0;
+                var end = nums.Length - 1;
+
+                while (start <= end)
+                {
+                    var mid = start + (end - start) / 2;
+
+                    if (nums[mid] == target)
+                        return mid;
+                    else if (nums[mid] >= nums[start])
+                    {
+                        // Left side ordered
+                        if (nums[start] <= target &&
+                            nums[mid] >= target)
+                            end = mid - 1;
+                        else
+                            start = mid + 1;
+                    }
+                    else
+                    {
+                        // Right side ordered
+                        if (nums[mid] <= target &&
+                            nums[end] >= target)
+                            start = mid + 1;
+                        else
+                            end = mid - 1;
+                    }
+                }
+
+                return -1;
+            }
+
+            int NormalBinarySearch(int[] nums, int target)
+            {
+                var start = 0;
+                var end = nums.Length - 1;
+
+                while (start <= end)
+                {
+                    var mid = start + (end - start) / 2;
+
+                    if (nums[mid] > target)
+                        end = mid - 1;
+                    else if (nums[mid] < target)
+                        start = mid + 1;
+                    else if (nums[mid] == target)
+                        return mid;
+                }
+
+                return -1;
+            }
+        }
     }
 }

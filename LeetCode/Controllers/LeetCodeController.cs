@@ -276,5 +276,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool RansomNote(string ransomNote, string magazine)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}}", nameof(RansomNote), ransomNote, magazine);
+
+            var result = _leetCodeBusiness.RansomNote(ransomNote, magazine);
+
+            return result;
+        }
     }
 }

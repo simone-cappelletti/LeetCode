@@ -405,5 +405,22 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+
+        [Theory]
+        [InlineData("a", "b", false)]
+        [InlineData("aa", "ab", false)]
+        [InlineData("aa", "aab", true)]
+        void RansomNote(string ransomNote, string magazine, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RansomNote(ransomNote, magazine);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

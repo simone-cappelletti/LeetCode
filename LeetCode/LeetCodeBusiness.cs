@@ -827,5 +827,32 @@
             // Time Complexity: O(n log(n))
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public bool RansomNote(string ransomNote, string magazine)
+        {
+            var ransomNoteDic = new Dictionary<char, int>(26);
+
+            foreach (var @char in ransomNote)
+            {
+                ransomNoteDic.TryGetValue(@char, out var value);
+                ransomNoteDic[@char] = ++value;
+            }
+
+            foreach (var @char in magazine)
+            {
+                if (ransomNoteDic.TryGetValue(@char, out var value))
+                {
+                    ransomNoteDic[@char] = --value;
+                    if (value == 0)
+                        ransomNoteDic.Remove(@char);
+                }
+            }
+
+            return ransomNoteDic.Count() == 0;
+
+            // Time Complexity: O(Max(ransomNote, magazine))
+            // Space Complexity: O(1)
+        }
     }
 }

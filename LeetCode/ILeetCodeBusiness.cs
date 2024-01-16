@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using System;
+
+namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -203,5 +205,13 @@
         /// <param name="intervals"></param>
         /// <returns></returns>
         int[][] MergeIntervals(int[][] intervals);
+
+        /// <summary>
+        /// https://leetcode.com/problems/ransom-note/
+        /// </summary>
+        /// <param name="ransomNote"></param>
+        /// <param name="magazine"></param>
+        /// <returns></returns>
+        bool RansomNote(string ransomNote, string magazine);
     }
 }

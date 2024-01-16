@@ -187,5 +187,14 @@
         /// <param name="target"></param>
         /// <returns></returns>
         int SearchInRotatedSortedArray(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        TreeNode LowestCommonAncestorOfABinarySearchTree(TreeNode root, TreeNode p, TreeNode q);
     }
 }

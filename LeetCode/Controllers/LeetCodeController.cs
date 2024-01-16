@@ -256,5 +256,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode LowestCommonAncestorOfABinarySearchTree(TreeNode root, TreeNode p, TreeNode q)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(LowestCommonAncestorOfABinarySearchTree), root, p, q);
+
+            var result = _leetCodeBusiness.LowestCommonAncestorOfABinarySearchTree(root, p, q);
+
+            return result;
+        }
     }
 }

@@ -777,5 +777,24 @@
                 return -1;
             }
         }
+
+        /// <inheritdoc/>
+        public TreeNode LowestCommonAncestorOfABinarySearchTree(TreeNode root, TreeNode p, TreeNode q)
+        {
+            if (root is null)
+                return null;
+
+            if (p.val > root.val &&
+                q.val > root.val)
+                return LowestCommonAncestorOfABinarySearchTree(root.right, p, q);
+            else if (p.val < root.val &&
+                    q.val < root.val)
+                return LowestCommonAncestorOfABinarySearchTree(root.left, p, q);
+            else
+                return root;
+
+            // Time Complexity: O(N)
+            // Space Complexity: O(N)
+        }
     }
 }

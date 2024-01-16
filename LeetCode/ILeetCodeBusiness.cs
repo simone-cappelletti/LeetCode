@@ -196,5 +196,12 @@
         /// <param name="q"></param>
         /// <returns></returns>
         TreeNode LowestCommonAncestorOfABinarySearchTree(TreeNode root, TreeNode p, TreeNode q);
+
+        /// <summary>
+        /// https://leetcode.com/problems/merge-intervals/
+        /// </summary>
+        /// <param name="intervals"></param>
+        /// <returns></returns>
+        int[][] MergeIntervals(int[][] intervals);
     }
 }

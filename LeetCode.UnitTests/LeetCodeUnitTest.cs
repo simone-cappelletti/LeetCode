@@ -379,5 +379,31 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Fact]
+        void MergeIntervals()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new List<int[]>()
+            {
+                new int[] { 1, 3},
+                new int[] { 2, 6},
+                new int[] { 8, 10},
+                new int[] { 15, 18}
+            };
+            var solution = new List<int[]>()
+            {
+                new int[] { 1, 6},
+                new int[] { 8, 10},
+                new int[] { 15, 18}
+            };
+
+            // Act
+            var result = business.MergeIntervals(input.ToArray());
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

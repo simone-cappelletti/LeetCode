@@ -796,5 +796,36 @@
             // Time Complexity: O(N)
             // Space Complexity: O(N)
         }
+
+        /// <inheritdoc/>
+        public int[][] MergeIntervals(int[][] intervals)
+        {
+            var result = new List<int[]>();
+            var sortedIntervals = intervals.OrderBy(x => x[0]);
+            var currentInterval = new int[2] { -1, -1 };
+
+            foreach (var interval in sortedIntervals)
+            {
+                if (currentInterval[0] == -1)
+                    currentInterval = interval;
+                else
+                {
+                    if (currentInterval[1] >= interval[0])
+                        currentInterval[1] = Math.Max(currentInterval[1], interval[1]);
+                    else
+                    {
+                        result.Add(new int[] { currentInterval[0], currentInterval[1] });
+                        currentInterval = interval;
+                    }
+                }
+            }
+
+            result.Add(new int[] { currentInterval[0], currentInterval[1] });
+
+            return result.ToArray();
+
+            // Time Complexity: O(n log(n))
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -266,5 +266,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[][] MergeIntervals(int[][] intervals)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(MergeIntervals), intervals);
+
+            var result = _leetCodeBusiness.MergeIntervals(intervals);
+
+            return result;
+        }
     }
 }

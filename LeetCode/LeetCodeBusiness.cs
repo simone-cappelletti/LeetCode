@@ -854,5 +854,44 @@
             // Time Complexity: O(Max(ransomNote, magazine))
             // Space Complexity: O(1)
         }
+
+        public int LongestPalindrome(string s)
+        {
+            var dic = new int[52];
+            var result = 0;
+            var oddChar = 0;
+
+            foreach (var @char in s)
+                dic[ASCIIToIndex(@char)]++;
+
+            foreach (var @char in dic)
+            {
+                if (@char % 2 == 0)
+                {
+                    result += @char;
+                }
+                else
+                {
+                    result += @char - 1;
+                    oddChar = Math.Max(oddChar, @char);
+                }
+            }
+
+            if (oddChar > 0)
+                result += oddChar - (oddChar - 1);
+
+            return result;
+
+            int ASCIIToIndex(char c)
+            {
+                if (c >= 97) // a-z
+                    return c - 71;
+
+                return c - 65; // A-Z
+            }
+
+            // Time Complexity: O(n)
+            // Space Complecity: 0(1) - 52 characters
+        }
     }
 }

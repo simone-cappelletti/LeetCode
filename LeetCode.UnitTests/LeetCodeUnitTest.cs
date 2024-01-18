@@ -422,5 +422,19 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("abccccdd", 7)]
+        void LongestPalindrome(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LongestPalindrome(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

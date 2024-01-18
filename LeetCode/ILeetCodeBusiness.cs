@@ -213,5 +213,12 @@ namespace LeetCode
         /// <param name="magazine"></param>
         /// <returns></returns>
         bool RansomNote(string ransomNote, string magazine);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-palindrome/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        int LongestPalindrome(string s);
     }
 }

@@ -286,5 +286,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LongestPalindrome(string s)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(LongestPalindrome), s);
+
+            var result = _leetCodeBusiness.LongestPalindrome(s);
+
+            return result;
+        }
     }
 }

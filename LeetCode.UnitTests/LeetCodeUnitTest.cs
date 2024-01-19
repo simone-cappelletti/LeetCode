@@ -436,5 +436,26 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Fact]
+        void ReverseLinkedList()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+            var resultList = new ListNode(5, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1)))));
+
+            // Act
+            var result = business.ReverseLinkedList(head);
+
+            // Assert
+            while (resultList.next is not null)
+            {
+                Assert.Equal(result.val, resultList.val);
+
+                resultList = resultList.next;
+                result = result.next;
+            }
+        }
     }
 }

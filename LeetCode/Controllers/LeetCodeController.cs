@@ -296,5 +296,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode ReverseLinkedList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(ReverseLinkedList), head);
+
+            var result = _leetCodeBusiness.ReverseLinkedList(head);
+
+            return result;
+        }
     }
 }

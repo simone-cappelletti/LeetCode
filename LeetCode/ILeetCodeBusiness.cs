@@ -220,5 +220,12 @@ namespace LeetCode
         /// <param name="s"></param>
         /// <returns></returns>
         int LongestPalindrome(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/reverse-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        ListNode ReverseLinkedList(ListNode head);
     }
 }

@@ -855,6 +855,7 @@
             // Space Complexity: O(1)
         }
 
+        /// <inheritdoc/>
         public int LongestPalindrome(string s)
         {
             var dic = new int[52];
@@ -892,6 +893,28 @@
 
             // Time Complexity: O(n)
             // Space Complecity: 0(1) - 52 characters
+        }
+
+        /// <inheritdoc/>
+        public ListNode ReverseLinkedList(ListNode head)
+        {
+            if (head is null)
+                return head;
+
+            ListNode prev = null;
+
+            while (head is not null)
+            {
+                var next = head.next;
+                head.next = prev;
+                prev = head;
+                head = next;
+            }
+
+            return prev;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

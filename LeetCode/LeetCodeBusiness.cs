@@ -916,5 +916,40 @@
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        public TreeNode LowestCommonAncestorOfABinaryTree(TreeNode root, TreeNode p, TreeNode q)
+        {
+            TreeNode lowestCommonAncestor = null;
+
+            DFS(root, p, q);
+
+            return lowestCommonAncestor;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            bool DFS(TreeNode root, TreeNode p, TreeNode q)
+            {
+                if (root is null)
+                    return false;
+
+                var nodeFound = root == p || root == q;
+                var leftSubTree = DFS(root.left, p, q);
+                var rightSubTree = DFS(root.right, p, q);
+
+                if (nodeFound)
+                {
+                    if (leftSubTree || rightSubTree)
+                        lowestCommonAncestor = root;
+                }
+                else
+                {
+                    if (leftSubTree && rightSubTree)
+                        lowestCommonAncestor = root;
+                }
+
+                return nodeFound || leftSubTree || rightSubTree;
+            }
+        }
     }
 }

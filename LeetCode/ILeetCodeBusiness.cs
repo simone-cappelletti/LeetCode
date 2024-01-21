@@ -227,5 +227,14 @@ namespace LeetCode
         /// <param name="head"></param>
         /// <returns></returns>
         ListNode ReverseLinkedList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        TreeNode LowestCommonAncestorOfABinaryTree(TreeNode root, TreeNode p, TreeNode q);
     }
 }

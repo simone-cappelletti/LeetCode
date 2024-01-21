@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -13,6 +11,11 @@ namespace LeetCode
         /// https://leetcode.com/problems/implement-queue-using-stacks/description/
         /// </summary>
         ImplementQueueUsingStacks ImplementQueueUsingStacks { get; }
+
+        /// <summary>
+        /// https://leetcode.com/problems/time-based-key-value-store/
+        /// </summary>
+        TimeBasedKeyValueStore TimeBasedKeyValueStore { get; }
 
         /// <summary>
         /// https://leetcode.com/problems/two-sum/

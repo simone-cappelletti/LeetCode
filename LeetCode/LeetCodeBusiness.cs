@@ -7,7 +7,11 @@
         /// <inheritdoc/>
         public MinStack MinStack { get; }
 
+        /// <inheritdoc/>
         public ImplementQueueUsingStacks ImplementQueueUsingStacks { get; }
+
+        /// <inheritdoc/>
+        public TimeBasedKeyValueStore TimeBasedKeyValueStore { get; }
 
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {

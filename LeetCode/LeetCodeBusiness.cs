@@ -921,6 +921,7 @@
             // Space Complexity: O(1)
         }
 
+        /// <inheritdoc/>
         public TreeNode LowestCommonAncestorOfABinaryTree(TreeNode root, TreeNode p, TreeNode q)
         {
             TreeNode lowestCommonAncestor = null;
@@ -954,6 +955,48 @@
 
                 return nodeFound || leftSubTree || rightSubTree;
             }
+        }
+
+        /// <inheritdoc/>
+        public void SortColors(int[] nums)
+        {
+            var redIndex = 0;
+            var blueIndex = nums.Length - 1;
+
+            for (var i = 0; i <= blueIndex; i++)
+            {
+                switch (nums[i])
+                {
+                    case 0:
+
+                        if (i > redIndex)
+                        {
+                            Swap(nums, redIndex, i);
+                            redIndex++;
+                            i--;
+                        }
+
+                        break;
+
+                    case 2:
+
+                        Swap(nums, blueIndex, i);
+                        blueIndex--;
+                        i--;
+
+                        break;
+                }
+            }
+
+            void Swap(int[] nums, int start, int end)
+            {
+                var temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+            }
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

@@ -457,5 +457,19 @@ namespace LeetCode.UnitTests
                 result = result.next;
             }
         }
+
+        [Theory]
+        [InlineData(new int[] { 2, 0, 2, 1, 1, 0 }, new int[] { 0, 0, 1, 1, 2, 2 })]
+        void SortColors(int[] nums, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            business.SortColors(nums);
+
+            // Assert
+            Assert.Equal(nums, solution);
+        }
     }
 }

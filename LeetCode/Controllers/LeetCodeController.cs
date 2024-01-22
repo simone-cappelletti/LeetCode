@@ -310,11 +310,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public TreeNode LowestCommonAncestorOfABinaryTree(TreeNode root, TreeNode p, TreeNode q)
         {
-            _logger.LogInformation("{method} - {arg}}", nameof(LowestCommonAncestorOfABinaryTree), root, p, q);
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}}", nameof(LowestCommonAncestorOfABinaryTree), root, p, q);
 
             var result = _leetCodeBusiness.LowestCommonAncestorOfABinaryTree(root, p, q);
 
             return result;
+        }
+
+        [HttpPost]
+        public void SortColors(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(SortColors), nums);
+
+            _leetCodeBusiness.SortColors(nums);
         }
     }
 }

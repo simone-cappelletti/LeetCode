@@ -239,5 +239,11 @@
         /// <param name="q"></param>
         /// <returns></returns>
         TreeNode LowestCommonAncestorOfABinaryTree(TreeNode root, TreeNode p, TreeNode q);
+
+        /// <summary>
+        /// https://leetcode.com/problems/sort-colors/
+        /// </summary>
+        /// <param name="nums"></param>
+        void SortColors(int[] nums);
     }
 }

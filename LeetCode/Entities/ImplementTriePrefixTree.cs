@@ -7,11 +7,10 @@
         public void Insert(string word)
         {
             var trieNode = _root;
-            var nodeFound = false;
 
             foreach (var @char in word)
             {
-                if (!nodeFound && trieNode.Contains(@char, out var node))
+                if (trieNode.Contains(@char, out var node))
                 {
                     trieNode = node;
                 }
@@ -26,7 +25,7 @@
             trieNode.AddChild(new TrieNode('{'));
         }
 
-        public bool Search(string word)
+        public bool Search(string word, bool prefix = false)
         {
             var node = _root;
 
@@ -38,23 +37,15 @@
                     return false;
             }
 
+            if (prefix)
+                return true;
+
             return node.Contains('{', out _);
         }
 
         public bool StartsWith(string prefix)
         {
-            var result = true;
-            var node = _root;
-
-            foreach (var @char in prefix)
-            {
-                if (node.Contains(@char, out var charNode))
-                    node = charNode;
-                else
-                    return false;
-            }
-
-            return result;
+            return Search(prefix, true);
         }
     }
 

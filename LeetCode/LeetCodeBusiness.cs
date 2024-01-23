@@ -13,6 +13,9 @@
         /// <inheritdoc/>
         public TimeBasedKeyValueStore TimeBasedKeyValueStore { get; }
 
+        /// <inheritdoc/>
+        public ImplementTriePrefixTree ImplementTriePrefixTree { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

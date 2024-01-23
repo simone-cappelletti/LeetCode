@@ -18,6 +18,11 @@
         TimeBasedKeyValueStore TimeBasedKeyValueStore { get; }
 
         /// <summary>
+        /// https://leetcode.com/problems/implement-trie-prefix-tree/description/
+        /// </summary>
+        ImplementTriePrefixTree ImplementTriePrefixTree { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

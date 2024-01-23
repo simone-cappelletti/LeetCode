@@ -471,5 +471,27 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(nums, solution);
         }
+
+        [Fact]
+        void ImplementTriePrefixTree()
+        {
+            // Arrange
+
+            // Act
+            ImplementTriePrefixTree trie = new ImplementTriePrefixTree();
+
+            trie.Insert("apple");
+            var appleInsert = trie.Search("apple");
+            var appFirstSearch = trie.Search("app");
+            var appPrefix = trie.StartsWith("app");
+            trie.Insert("app");
+            var appSecondSearch = trie.Search("app");
+
+            // Assert
+            Assert.True(appleInsert);
+            Assert.False(appFirstSearch);
+            Assert.True(appPrefix);
+            Assert.True(appSecondSearch);
+        }
     }
 }

@@ -324,5 +324,13 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.SortColors(nums);
         }
+
+        [HttpPost]
+        public void StringToIntegerAtoi(string s)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(StringToIntegerAtoi), s);
+
+            _leetCodeBusiness.StringToIntegerAtoi(s);
+        }
     }
 }

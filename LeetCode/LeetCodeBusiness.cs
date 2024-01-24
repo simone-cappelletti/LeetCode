@@ -1001,5 +1001,85 @@
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int StringToIntegerAtoi(string s)
+        {
+            var stack = new Stack<int>();
+            var result = 0;
+            var sign = ' ';
+            var exitLoop = false;
+
+            foreach (var @char in s)
+            {
+                switch (@char)
+                {
+                    case '+':
+                    case '-':
+
+                        if (stack.Count() == 0 && sign == ' ')
+                            sign = @char;
+                        else
+                            exitLoop = true;
+
+                        break;
+
+                    case ' ':
+
+                        if (stack.Count() > 0 || sign != ' ')
+                            exitLoop = true;
+
+                        break;
+
+                    case '.':
+
+                        if (stack.Count() >= 0)
+                            exitLoop = true;
+
+                        break;
+
+                    default:
+
+                        if (int.TryParse(@char.ToString(), out var value))
+                            stack.Push(value);
+                        else
+                            exitLoop = true;
+
+                        break;
+                }
+
+                if (exitLoop)
+                    break;
+            }
+
+            try
+            {
+                var power = 0;
+                while (stack.Count > 0)
+                {
+                    checked
+                    {
+                        var stackValue = stack.Pop();
+                        if (stackValue != 0)
+                        {
+                            var powerValue = (int)Math.Pow(10, power);
+                            var currentValue = stackValue * powerValue;
+                            result += currentValue;
+                        }
+
+                        power++;
+                    }
+                }
+            }
+            catch (OverflowException e)
+            {
+                result = sign == '-' ? int.MinValue : int.MaxValue;
+            }
+
+            return sign == '-' ? -result : result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

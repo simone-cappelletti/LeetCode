@@ -250,5 +250,12 @@
         /// </summary>
         /// <param name="nums"></param>
         void SortColors(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/string-to-integer-atoi/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        int StringToIntegerAtoi(string s);
     }
 }

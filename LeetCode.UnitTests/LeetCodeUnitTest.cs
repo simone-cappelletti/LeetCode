@@ -493,5 +493,26 @@ namespace LeetCode.UnitTests
             Assert.True(appPrefix);
             Assert.True(appSecondSearch);
         }
+
+        [Theory]
+        [InlineData("-91283472332", -2147483648)]
+        [InlineData("3.14159", 3)]
+        [InlineData(".1", 0)]
+        [InlineData("+-12", 0)]
+        [InlineData("  0000000000012345678", 12345678)]
+        [InlineData("10", 10)]
+        [InlineData("   +0 123", 0)]
+        [InlineData("  +  413", 0)]
+        void StringToIntegerAtoi(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.StringToIntegerAtoi(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

@@ -257,5 +257,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         int StringToIntegerAtoi(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/majority-element/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int MajorityElement(int[] nums);
     }
 }

@@ -1081,5 +1081,33 @@
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int MajorityElement(int[] nums)
+        {
+            var dic = new Dictionary<int, int>();
+            var maxFrequency = 0;
+            var maxNumber = 0;
+
+            foreach (var num in nums)
+            {
+                dic.TryGetValue(num, out var frequency);
+                dic[num] = ++frequency;
+
+                if (frequency > Math.Floor((double)nums.Length / 2))
+                    return num;
+
+                if (frequency > maxFrequency)
+                {
+                    maxFrequency = frequency;
+                    maxNumber = num;
+                }
+            }
+
+            return maxNumber;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

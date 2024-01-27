@@ -514,5 +514,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 3, 2, 3 }, 3)]
+        [InlineData(new int[] { 2, 2, 1, 1, 1, 2, 2 }, 2)]
+        void MajorityElement(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.MajorityElement(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

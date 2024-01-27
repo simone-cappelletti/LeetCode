@@ -332,5 +332,13 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.StringToIntegerAtoi(s);
         }
+
+        [HttpPost]
+        public void MajorityElement(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(MajorityElement), nums);
+
+            _leetCodeBusiness.MajorityElement(nums);
+        }
     }
 }

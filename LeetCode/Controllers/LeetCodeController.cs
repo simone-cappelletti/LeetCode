@@ -340,5 +340,13 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.MajorityElement(nums);
         }
+
+        [HttpPost]
+        public void LongestPalindromicSubstring(string s)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(LongestPalindromicSubstring), s);
+
+            _leetCodeBusiness.LongestPalindromicSubstring(s);
+        }
     }
 }

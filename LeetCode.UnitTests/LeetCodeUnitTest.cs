@@ -529,5 +529,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("babad", "bab")]
+        [InlineData("abbaccaba", "baccab")]
+        void LongestPalindromicSubstring(string s, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LongestPalindromicSubstring(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

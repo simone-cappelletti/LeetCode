@@ -1109,5 +1109,36 @@
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public string LongestPalindromicSubstring(string s)
+        {
+            // Brute force
+            for (int length = s.Length; length > 0; length--)
+                for (int start = 0; start <= s.Length - length; start++)
+                {
+                    if (IsPalindrome(start, start + length - 1, s))
+                        return s.Substring(start, length);
+                }
+
+            return string.Empty;
+
+            bool IsPalindrome(int i, int j, string s)
+            {
+                while (i < j)
+                {
+                    if (s[i] != s[j])
+                        return false;
+
+                    i++;
+                    j--;
+                }
+
+                return true;
+            }
+
+            // Time Complexity: O(n^3)
+            // Space Complexity: O(1)
+        }
     }
 }

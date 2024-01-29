@@ -264,5 +264,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int MajorityElement(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-palindromic-substring/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string LongestPalindromicSubstring(string s);
     }
 }

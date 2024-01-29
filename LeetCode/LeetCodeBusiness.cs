@@ -1085,29 +1085,29 @@
         /// <inheritdoc/>
         public int MajorityElement(int[] nums)
         {
-            var dic = new Dictionary<int, int>();
-            var maxFrequency = 0;
-            var maxNumber = 0;
+            // Boyer-Moore
 
-            foreach (var num in nums)
+            if (nums.Length == 1)
+                return nums[0];
+
+            var candidate = nums[0];
+            var freq = 1;
+
+            for (var i = 1; i < nums.Length; i++)
             {
-                dic.TryGetValue(num, out var frequency);
-                dic[num] = ++frequency;
+                if (freq == 0)
+                    candidate = nums[i];
 
-                if (frequency > Math.Floor((double)nums.Length / 2))
-                    return num;
+                freq += nums[i] == candidate ? 1 : -1;
 
-                if (frequency > maxFrequency)
-                {
-                    maxFrequency = frequency;
-                    maxNumber = num;
-                }
+                if (freq > Math.Floor((double)nums.Length / 2))
+                    return candidate;
             }
 
-            return maxNumber;
+            return candidate;
 
             // Time Complexity: O(n)
-            // Space Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

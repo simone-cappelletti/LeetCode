@@ -271,5 +271,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         string LongestPalindromicSubstring(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/container-with-most-water/
+        /// </summary>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        int ContainerWithMostWater(int[] height);
     }
 }

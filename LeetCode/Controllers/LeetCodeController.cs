@@ -326,27 +326,43 @@ namespace LeetCode.Controllers
         }
 
         [HttpPost]
-        public void StringToIntegerAtoi(string s)
+        public int StringToIntegerAtoi(string s)
         {
             _logger.LogInformation("{method} - {arg}}", nameof(StringToIntegerAtoi), s);
 
-            _leetCodeBusiness.StringToIntegerAtoi(s);
+            var result = _leetCodeBusiness.StringToIntegerAtoi(s);
+
+            return result;
         }
 
         [HttpPost]
-        public void MajorityElement(int[] nums)
+        public int MajorityElement(int[] nums)
         {
             _logger.LogInformation("{method} - {arg}}", nameof(MajorityElement), nums);
 
-            _leetCodeBusiness.MajorityElement(nums);
+            var result = _leetCodeBusiness.MajorityElement(nums);
+
+            return result;
         }
 
         [HttpPost]
-        public void LongestPalindromicSubstring(string s)
+        public string LongestPalindromicSubstring(string s)
         {
             _logger.LogInformation("{method} - {arg}}", nameof(LongestPalindromicSubstring), s);
 
-            _leetCodeBusiness.LongestPalindromicSubstring(s);
+            var result = _leetCodeBusiness.LongestPalindromicSubstring(s);
+
+            return result;
+        }
+
+        [HttpPost]
+        public int ContainerWithMostWater(int[] height)
+        {
+            _logger.LogInformation("{method} - {arg}}", nameof(ContainerWithMostWater), height);
+
+            var result = _leetCodeBusiness.ContainerWithMostWater(height);
+
+            return result;
         }
     }
 }

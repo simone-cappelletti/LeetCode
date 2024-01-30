@@ -1140,5 +1140,32 @@
             // Time Complexity: O(n^3)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int ContainerWithMostWater(int[] height)
+        {
+            var result = 0;
+            var left = 0;
+            var right = height.Length - 1;
+
+            while (left < right)
+            {
+                var leftValue = height[left];
+                var rightValue = height[right];
+
+                var minValue = Math.Min(leftValue, rightValue);
+                result = Math.Max(result, minValue * (right - left));
+
+                if (leftValue <= rightValue)
+                    left++;
+                else
+                    right--;
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

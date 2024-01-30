@@ -544,5 +544,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }, 49)]
+        [InlineData(new int[] { 1, 1 }, 1)]
+        void ContainerWithMostWater(int[] height, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ContainerWithMostWater(height);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

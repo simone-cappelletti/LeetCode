@@ -278,5 +278,13 @@
         /// <param name="height"></param>
         /// <returns></returns>
         int ContainerWithMostWater(int[] height);
+
+        /// <summary>
+        /// https://leetcode.com/problems/search-insert-position/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        int SearchInsertPosition(int[] nums, int target);
     }
 }

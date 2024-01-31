@@ -364,5 +364,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SearchInsertPosition(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}}", nameof(SearchInsertPosition), nums, target);
+
+            var result = _leetCodeBusiness.SearchInsertPosition(nums, target);
+
+            return result;
+        }
     }
 }

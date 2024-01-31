@@ -1167,5 +1167,19 @@
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int SearchInsertPosition(int[] nums, int target)
+        {
+            var index = Array.BinarySearch(nums, target);
+
+            if (index < 0)
+                index = Math.Abs(++index);
+
+            return index;
+
+            // Time complexity: O(log n)
+            // Space complexity: O(1)
+        }
     }
 }

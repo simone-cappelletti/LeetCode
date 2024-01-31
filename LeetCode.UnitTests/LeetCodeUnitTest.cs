@@ -559,5 +559,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 3, 5, 6 }, -2, 0)]
+        [InlineData(new int[] { 1, 3, 5, 6 }, 2, 1)]
+        [InlineData(new int[] { 1, 3, 5, 6 }, 7, 4)]
+        void SearchInsertPosition(int[] nums, int target, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.SearchInsertPosition(nums, target);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

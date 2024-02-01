@@ -286,5 +286,13 @@
         /// <param name="target"></param>
         /// <returns></returns>
         int SearchInsertPosition(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        IList<int> FindAllAnagramsInAString(string s, string p);
     }
 }

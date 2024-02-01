@@ -1181,5 +1181,37 @@
             // Time complexity: O(log n)
             // Space complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public IList<int> FindAllAnagramsInAString(string s, string p)
+        {
+            var result = new List<int>();
+            var pDic = new int[26];
+            var sDic = new int[26];
+            var a = 'a';
+
+            foreach (var @char in p)
+                pDic[@char - a]++;
+
+            var left = 0;
+            for (var right = 0; right < s.Length; right++)
+            {
+                sDic[s[right] - a]++;
+
+                if (right - left + 1 != p.Length)
+                    continue;
+
+                if (Enumerable.SequenceEqual(pDic, sDic))
+                    result.Add(left);
+
+                sDic[s[left] - a]--;
+                left++;
+            }
+
+            return result;
+
+            // Time Complexity: O(n) with n = MAX(s,p)
+            // Space complexity: O(1)
+        }
     }
 }

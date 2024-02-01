@@ -374,5 +374,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<int> FindAllAnagramsInAString(string s, string p)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}}", nameof(FindAllAnagramsInAString), s, p);
+
+            var result = _leetCodeBusiness.FindAllAnagramsInAString(s, p);
+
+            return result;
+        }
     }
 }

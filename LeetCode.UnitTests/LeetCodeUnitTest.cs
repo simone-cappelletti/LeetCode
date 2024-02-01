@@ -575,5 +575,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("cbaebabacd", "abc", new int[] { 0, 6 })]
+        [InlineData("abab", "ab", new int[] { 0, 1, 2 })]
+        [InlineData("abecbdecb", "bce", new int[] { 1, 2, 6 })]
+        void FindAllAnagramsInAString(string s, string p, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.FindAllAnagramsInAString(s, p);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

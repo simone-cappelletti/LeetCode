@@ -1213,5 +1213,49 @@
             // Time Complexity: O(n) with n = MAX(s,p)
             // Space complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> Permutations(int[] nums)
+        {
+            if (nums.Length == 1)
+                return new List<IList<int>>()
+            {
+                new List<int>() {nums[0]}
+            };
+
+            return GetPermutations(nums);
+
+            List<IList<int>> GetPermutations(int[] nums)
+            {
+                if (nums.Length == 2)
+                {
+                    return new List<IList<int>>()
+                    {
+                        new List<int>() {nums[0], nums[1]},
+                        new List<int>() {nums[1], nums[0]}
+                    };
+                }
+
+                var number = nums[0];
+                var permutations = GetPermutations(nums[1..]);
+                var result = new List<IList<int>>();
+
+                foreach (var permutation in permutations)
+                {
+                    var counter = permutation.Count();
+                    for (var i = counter; i >= 0; i--)
+                    {
+                        var newPermutation = permutation.ToList();
+                        newPermutation.Insert(i, number);
+                        result.Add(newPermutation);
+                    }
+                }
+
+                return result;
+            }
+
+            // Time Complexity: O(n!) with n = nums.Length
+            // Space Complexity: O(n) with n = nums.Length
+        }
     }
 }

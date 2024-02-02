@@ -294,5 +294,12 @@
         /// <param name="p"></param>
         /// <returns></returns>
         IList<int> FindAllAnagramsInAString(string s, string p);
+
+        /// <summary>
+        /// https://leetcode.com/problems/permutations/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        IList<IList<int>> Permutations(int[] nums);
     }
 }

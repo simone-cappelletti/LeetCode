@@ -591,5 +591,23 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Fact]
+        void Permutations()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var resultList = new List<IList<int>>()
+            {
+                new List<int>() { 0, 1 },
+                new List<int>() { 1, 0 }
+            };
+
+            // Act
+            var result = business.Permutations(new int[] { 0, 1 });
+
+            // Assert
+            Assert.Equal(result, resultList);
+        }
     }
 }

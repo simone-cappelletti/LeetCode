@@ -384,5 +384,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<IList<int>> Permutations(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}}}", nameof(Permutations), nums);
+
+            var result = _leetCodeBusiness.Permutations(nums);
+
+            return result;
+        }
     }
 }

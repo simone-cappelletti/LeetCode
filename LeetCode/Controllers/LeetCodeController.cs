@@ -394,5 +394,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string AddBinary(string a, string b)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}}}", nameof(AddBinary), a, b);
+
+            var result = _leetCodeBusiness.AddBinary(a, b);
+
+            return result;
+        }
     }
 }

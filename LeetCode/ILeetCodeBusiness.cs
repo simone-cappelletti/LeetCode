@@ -301,5 +301,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         IList<IList<int>> Permutations(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/add-binary/
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        string AddBinary(string a, string b);
     }
 }

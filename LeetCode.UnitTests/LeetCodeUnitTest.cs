@@ -609,5 +609,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, resultList);
         }
+
+        [Theory]
+        [InlineData("11", "1", "100")]
+        [InlineData("1010", "1011", "10101")]
+        [InlineData("1111", "1111", "11110")]
+        void AddBinary(string a, string b, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.AddBinary(a, b);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

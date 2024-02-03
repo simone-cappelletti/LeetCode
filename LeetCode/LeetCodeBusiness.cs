@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using System.Text;
+
+namespace LeetCode
 {
     public class LeetCodeBusiness : ILeetCodeBusiness
     {
@@ -1256,6 +1258,60 @@
 
             // Time Complexity: O(n!) with n = nums.Length
             // Space Complexity: O(n) with n = nums.Length
+        }
+
+        /// <inheritdoc/>
+        public string AddBinary(string a, string b)
+        {
+            var sb = new StringBuilder();
+
+            if (a.Length > b.Length)
+                b = b.PadLeft(a.Length, '0');
+            else
+                a = a.PadLeft(b.Length, '0');
+
+            var count = false;
+            for (var i = a.Length - 1; i >= 0; i--)
+            {
+                var x = a[i];
+                var y = b[i];
+
+                if (x.Equals('1') && y.Equals('1'))
+                {
+                    if (count)
+                        sb.Insert(0, '1');
+                    else
+                    {
+                        count = true;
+                        sb.Insert(0, '0');
+                    }
+                }
+                else if (x.Equals('0') && y.Equals('0'))
+                {
+                    if (count)
+                    {
+                        count = false;
+                        sb.Insert(0, '1');
+                    }
+                    else
+                        sb.Insert(0, '0');
+                }
+                else
+                {
+                    if (count)
+                        sb.Insert(0, '0');
+                    else
+                        sb.Insert(0, '1');
+                }
+            }
+
+            if (count)
+                sb.Insert(0, '1');
+
+            return sb.ToString();
+
+            // Time Complexity: O(n) with n = Max(a,b)
+            // Space Complexity: O(n) with n = Max(a,b)
         }
     }
 }

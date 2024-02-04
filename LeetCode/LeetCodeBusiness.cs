@@ -1313,5 +1313,26 @@ namespace LeetCode
             // Time Complexity: O(n) with n = Max(a,b)
             // Space Complexity: O(n) with n = Max(a,b)
         }
+
+        /// <inheritdoc/>
+        public ListNode MiddleOfTheLinkedList(ListNode head)
+        {
+            var slowNode = head;
+            var fastNode = head;
+
+            while (fastNode.next?.next is not null)
+            {
+                slowNode = slowNode.next;
+                fastNode = fastNode.next.next;
+            }
+
+            if (fastNode.next is not null)
+                return slowNode.next;
+
+            return slowNode;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

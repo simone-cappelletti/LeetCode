@@ -309,5 +309,12 @@
         /// <param name="b"></param>
         /// <returns></returns>
         string AddBinary(string a, string b);
+
+        /// <summary>
+        /// https://leetcode.com/problems/middle-of-the-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        ListNode MiddleOfTheLinkedList(ListNode head);
     }
 }

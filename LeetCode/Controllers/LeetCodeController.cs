@@ -404,5 +404,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode MiddleOfTheLinkedList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg}}}", nameof(MiddleOfTheLinkedList), head);
+
+            var result = _leetCodeBusiness.MiddleOfTheLinkedList(head);
+
+            return result;
+        }
     }
 }

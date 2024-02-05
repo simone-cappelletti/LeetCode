@@ -316,5 +316,12 @@
         /// <param name="head"></param>
         /// <returns></returns>
         ListNode MiddleOfTheLinkedList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-center-of-star-graph/
+        /// </summary>
+        /// <param name="edges"></param>
+        /// <returns></returns>
+        int FindCenterOfStarGraph(int[][] edges);
     }
 }

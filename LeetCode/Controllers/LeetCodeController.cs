@@ -414,5 +414,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FindCenterOfStarGraph(int[][] edges)
+        {
+            _logger.LogInformation("{method} - {arg}}}", nameof(FindCenterOfStarGraph), edges);
+
+            var result = _leetCodeBusiness.FindCenterOfStarGraph(edges);
+
+            return result;
+        }
     }
 }

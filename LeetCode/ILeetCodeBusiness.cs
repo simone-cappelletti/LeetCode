@@ -323,5 +323,15 @@
         /// <param name="edges"></param>
         /// <returns></returns>
         int FindCenterOfStarGraph(int[][] edges);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-center-of-star-graph/
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="sr"></param>
+        /// <param name="sc"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
+        int[][] FloodFill(int[][] image, int sr, int sc, int color);
     }
 }

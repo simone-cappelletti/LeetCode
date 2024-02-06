@@ -625,5 +625,31 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Fact]
+        void FloodFill()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new int[][]
+            {
+                new int[] { 1,1,1 },
+                new int[] { 1,1,0 },
+                new int[] { 1,0,1 }
+            };
+
+            var output = new int[][]
+            {
+                new int[] { 2,2,2 },
+                new int[] { 2,2,0 },
+                new int[] { 2, 0, 1 }
+            };
+
+            // Act
+            var result = business.FloodFill(input, 1, 1, 2);
+
+            // Assert
+            Assert.Equal(result, output);
+        }
     }
 }

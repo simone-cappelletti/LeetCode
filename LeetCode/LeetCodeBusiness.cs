@@ -1347,5 +1347,47 @@ namespace LeetCode
             // Time Complexity: O(1)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int[][] FloodFill(int[][] image, int sr, int sc, int color)
+        {
+            var queue = new Queue<(int, int)>();
+
+            queue.Enqueue((sr, sc));
+
+            while (queue.Count > 0)
+            {
+                var element = queue.Dequeue();
+                var elementColor = image[element.Item1][element.Item2];
+
+                if (elementColor == color)
+                    continue;
+
+                // UP
+                if (element.Item1 - 1 >= 0 && image[element.Item1 - 1][element.Item2] == elementColor)
+                    queue.Enqueue((element.Item1 - 1, element.Item2));
+
+                // DOWN
+                if (element.Item1 + 1 < image.Length && image[element.Item1 + 1][element.Item2] == elementColor)
+                    queue.Enqueue((element.Item1 + 1, element.Item2));
+
+                // LEFT
+                if (element.Item2 - 1 >= 0 && image[element.Item1][element.Item2 - 1] == elementColor)
+                    queue.Enqueue((element.Item1, element.Item2 - 1));
+
+                // RIGHT
+                if (element.Item2 + 1 < image[element.Item1].Length && image[element.Item1][element.Item2 + 1] == elementColor)
+                    queue.Enqueue((element.Item1, element.Item2 + 1));
+
+                image[element.Item1][element.Item2] = color;
+            }
+
+            return image;
+
+            // N = number of pixels
+            //
+            // Time Complexity: O(N)
+            // Space Complexity: O(N)
+        }
     }
 }

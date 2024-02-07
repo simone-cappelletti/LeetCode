@@ -333,5 +333,12 @@
         /// <param name="color"></param>
         /// <returns></returns>
         int[][] FloodFill(int[][] image, int sr, int sc, int color);
+
+        /// <summary>
+        /// https://leetcode.com/problems/01-matrix/
+        /// </summary>
+        /// <param name="mat"></param>
+        /// <returns></returns>
+        int[][] Matrix01(int[][] mat);
     }
 }

@@ -1389,5 +1389,69 @@ namespace LeetCode
             // Time Complexity: O(N)
             // Space Complexity: O(N)
         }
+
+        /// <inheritdoc/>
+        public int[][] Matrix01(int[][] mat)
+        {
+            var visited = new bool[mat.Length][];
+            var queue = new Queue<(int X, int Y)>();
+
+            for (var x = 0; x < mat.Length; x++)
+            {
+                visited[x] = new bool[mat[x].Length];
+
+                for (var y = 0; y < mat[x].Length; y++)
+                {
+                    if (mat[x][y] == 0)
+                    {
+                        queue.Enqueue((x, y));
+                        visited[x][y] = true;
+                    }
+                }
+            }
+
+            while (queue.Count > 0)
+            {
+                var XYCoord = queue.Dequeue();
+                var value = mat[XYCoord.X][XYCoord.Y];
+
+                // UP
+                if (XYCoord.X - 1 >= 0 && !visited[XYCoord.X - 1][XYCoord.Y])
+                {
+                    mat[XYCoord.X - 1][XYCoord.Y] = value + 1;
+                    queue.Enqueue((XYCoord.X - 1, XYCoord.Y));
+                    visited[XYCoord.X - 1][XYCoord.Y] = true;
+                }
+
+                // DOWN
+                if (XYCoord.X + 1 < mat.Length && !visited[XYCoord.X + 1][XYCoord.Y])
+                {
+                    mat[XYCoord.X + 1][XYCoord.Y] = value + 1;
+                    queue.Enqueue((XYCoord.X + 1, XYCoord.Y));
+                    visited[XYCoord.X + 1][XYCoord.Y] = true;
+                }
+
+                // LEFT
+                if (XYCoord.Y - 1 >= 0 && !visited[XYCoord.X][XYCoord.Y - 1])
+                {
+                    mat[XYCoord.X][XYCoord.Y - 1] = value + 1;
+                    queue.Enqueue((XYCoord.X, XYCoord.Y - 1));
+                    visited[XYCoord.X][XYCoord.Y - 1] = true;
+                }
+
+                // RIGHT
+                if (XYCoord.Y + 1 < mat[XYCoord.X].Length && !visited[XYCoord.X][XYCoord.Y + 1])
+                {
+                    mat[XYCoord.X][XYCoord.Y + 1] = value + 1;
+                    queue.Enqueue((XYCoord.X, XYCoord.Y + 1));
+                    visited[XYCoord.X][XYCoord.Y + 1] = true;
+                }
+            }
+
+            return mat;
+
+            // Time Complexity: 0(mn)
+            // Space Complexity: 0(mn)
+        }
     }
 }

@@ -428,9 +428,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int[][] FloodFill(int[][] image, int sr, int sc, int color)
         {
-            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}, {arg4}}}", nameof(FloodFill), image, sr, sc, color);
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}, {arg4}", nameof(FloodFill), image, sr, sc, color);
 
             var result = _leetCodeBusiness.FloodFill(image, sr, sc, color);
+
+            return result;
+        }
+
+        [HttpPost]
+        public int[][] Matrix01(int[][] mat)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(Matrix01), mat);
+
+            var result = _leetCodeBusiness.Matrix01(mat);
 
             return result;
         }

@@ -1453,5 +1453,55 @@ namespace LeetCode
             // Time Complexity: 0(mn)
             // Space Complexity: 0(mn)
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> BinaryTreeLevelOrderTraversal(TreeNode root)
+        {
+            var result = new List<IList<int>>();
+            var queue = new Queue<(int Level, TreeNode Node)>();
+
+            if (root is null)
+                return result;
+
+            var levelNodes = new List<(int Level, int Val)>()
+            {
+                (0, root.val)
+            };
+
+            queue.Enqueue((0, root));
+
+            while (queue.Count > 0)
+            {
+                var (Level, Node) = queue.Dequeue();
+
+                if (Node.left is null &&
+                   Node.right is null)
+                    continue;
+
+                if (Node.left is not null)
+                {
+                    levelNodes.Add((Level + 1, Node.left.val));
+                    queue.Enqueue((Level + 1, Node.left));
+                }
+
+                if (Node.right is not null)
+                {
+                    levelNodes.Add((Level + 1, Node.right.val));
+                    queue.Enqueue((Level + 1, Node.right));
+                }
+            }
+
+            result.AddRange(
+                levelNodes
+                    .GroupBy(x => x.Level)
+                    .Select(x => x.Select(y => y.Val).ToList())
+                    .ToList()
+                );
+
+            return result;
+
+            // Time Complexity: O(n) with n number of nodes
+            // Space Complexity: O(n) with n number of nodes
+        }
     }
 }

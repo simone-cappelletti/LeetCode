@@ -444,5 +444,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<IList<int>> BinaryTreeLevelOrderTraversal(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(BinaryTreeLevelOrderTraversal), root);
+
+            var result = _leetCodeBusiness.BinaryTreeLevelOrderTraversal(root);
+
+            return result;
+        }
     }
 }

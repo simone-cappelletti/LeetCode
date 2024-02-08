@@ -340,5 +340,12 @@
         /// <param name="mat"></param>
         /// <returns></returns>
         int[][] Matrix01(int[][] mat);
+
+        /// <summary>
+        /// https://leetcode.com/problems/binary-tree-level-order-traversal/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        IList<IList<int>> BinaryTreeLevelOrderTraversal(TreeNode root);
     }
 }

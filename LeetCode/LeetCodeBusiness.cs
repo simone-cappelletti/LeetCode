@@ -1463,11 +1463,7 @@ namespace LeetCode
             if (root is null)
                 return result;
 
-            var levelNodes = new List<(int Level, int Val)>()
-            {
-                (0, root.val)
-            };
-
+            result.Add(new List<int>() { root.val });
             queue.Enqueue((0, root));
 
             while (queue.Count > 0)
@@ -1478,25 +1474,21 @@ namespace LeetCode
                    Node.right is null)
                     continue;
 
+                while (result.Count <= Level + 1)
+                    result.Add(new List<int>());
+
                 if (Node.left is not null)
                 {
-                    levelNodes.Add((Level + 1, Node.left.val));
+                    result[Level + 1].Add(Node.left.val);
                     queue.Enqueue((Level + 1, Node.left));
                 }
 
                 if (Node.right is not null)
                 {
-                    levelNodes.Add((Level + 1, Node.right.val));
+                    result[Level + 1].Add(Node.right.val);
                     queue.Enqueue((Level + 1, Node.right));
                 }
             }
-
-            result.AddRange(
-                levelNodes
-                    .GroupBy(x => x.Level)
-                    .Select(x => x.Select(y => y.Val).ToList())
-                    .ToList()
-                );
 
             return result;
 

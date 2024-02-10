@@ -454,5 +454,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public Node CloneGraph(Node node)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(CloneGraph), node);
+
+            var result = _leetCodeBusiness.CloneGraph(node);
+
+            return result;
+        }
     }
 }

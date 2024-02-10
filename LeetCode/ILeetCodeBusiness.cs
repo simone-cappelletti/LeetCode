@@ -347,5 +347,12 @@
         /// <param name="root"></param>
         /// <returns></returns>
         IList<IList<int>> BinaryTreeLevelOrderTraversal(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/clone-graph/
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public Node CloneGraph(Node node);
     }
 }

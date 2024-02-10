@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Xml.Linq;
 
 namespace LeetCode
 {
@@ -1494,6 +1495,44 @@ namespace LeetCode
 
             // Time Complexity: O(n) with n number of nodes
             // Space Complexity: O(n) with n number of nodes
+        }
+
+        /// <inheritdoc/>
+        public Node CloneGraph(Node node)
+        {
+            if (node is null)
+                return null;
+
+            var newNode = new Node(node.val, new List<Node>());
+
+            var nodes = new Dictionary<int, Node>()
+            {
+                {newNode.val, newNode}
+            };
+
+            DFS(newNode, node);
+
+            return newNode;
+
+            // Time Complexity: O(n) with n number of nodes.
+            // Space Complexity: O(n) with n number of nodes.
+
+            void DFS(Node newNode, Node node)
+            {
+                foreach (var neighbor in node.neighbors)
+                {
+                    if (!nodes.TryGetValue(neighbor.val, out var newNeighbor))
+                    {
+                        newNeighbor = new Node(neighbor.val);
+
+                        nodes.Add(newNeighbor.val, newNeighbor);
+
+                        DFS(newNeighbor, neighbor);
+                    }
+
+                    newNode.neighbors.Add(newNeighbor);
+                }
+            }
         }
     }
 }

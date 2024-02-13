@@ -464,5 +464,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int NumberOfIslands(char[][] grid)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(NumberOfIslands), grid);
+
+            var result = _leetCodeBusiness.NumberOfIslands(grid);
+
+            return result;
+        }
     }
 }

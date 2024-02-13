@@ -651,5 +651,27 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, output);
         }
+
+        [Fact]
+        void NumberOfIslands()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new char[][]
+            {
+                new char[] { '1','1','1','1','0' },
+                new char[] { '1','1','0','1','0' },
+                new char[] { '1','1','0','0','0' },
+                new char[] { '0','0','0','0','0' },
+            };
+
+            var output = 1;
+
+            // Act
+            var result = business.NumberOfIslands(input);
+
+            // Assert
+            Assert.Equal(result, output);
+        }
     }
 }

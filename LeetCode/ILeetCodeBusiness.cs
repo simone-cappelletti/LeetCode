@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -353,6 +355,13 @@
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        public Node CloneGraph(Node node);
+        Node CloneGraph(Node node);
+
+        /// <summary>
+        /// https://leetcode.com/problems/number-of-islands/
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        int NumberOfIslands(char[][] grid);
     }
 }

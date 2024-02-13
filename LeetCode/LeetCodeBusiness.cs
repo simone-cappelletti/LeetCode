@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Xml.Linq;
 
 namespace LeetCode
 {
@@ -1533,6 +1532,54 @@ namespace LeetCode
                     newNode.neighbors.Add(newNeighbor);
                 }
             }
+        }
+
+        public int NumberOfIslands(char[][] grid)
+        {
+            var result = 0;
+            var directions = new List<(int Row, int Col)>()
+            {
+                (1, 0), (-1, 0), (0, 1), (0, -1)
+            };
+
+            for (var row = 0; row < grid.Length; row++)
+                for (var col = 0; col < grid[row].Length; col++)
+                {
+                    if (grid[row][col] == '0')
+                        continue;
+
+                    var queue = new Queue<(int Row, int Col)>();
+                    queue.Enqueue((row, col));
+                    grid[row][col] = '0';
+
+                    while (queue.Count > 0)
+                    {
+                        var (Row, Col) = queue.Dequeue();
+
+                        foreach (var (directionRow, directionCol) in directions)
+                        {
+                            var currentRow = Row + directionRow;
+                            var currentCcol = Col + directionCol;
+
+                            if (currentRow >= 0 &&
+                                currentRow < grid.Length &&
+                                currentCcol >= 0 &&
+                                currentCcol < grid[row].Length &&
+                                grid[currentRow][currentCcol] == '1')
+                            {
+                                queue.Enqueue((currentRow, currentCcol));
+                                grid[currentRow][currentCcol] = '0';
+                            }
+                        }
+                    }
+
+                    result++;
+                }
+
+            return result;
+
+            // Time Complexity: O(M x N) with M = grid rows and N = grid columns
+            // Space Complexity: O(min(M x N)) with M = grid rows and N = grid columns
         }
     }
 }

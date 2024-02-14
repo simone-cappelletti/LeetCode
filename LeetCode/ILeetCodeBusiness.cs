@@ -363,5 +363,12 @@ namespace LeetCode
         /// <param name="grid"></param>
         /// <returns></returns>
         int NumberOfIslands(char[][] grid);
+
+        /// <summary>
+        /// https://leetcode.com/problems/meeting-rooms/
+        /// </summary>
+        /// <param name="intervals"></param>
+        /// <returns></returns>
+        bool MeetingRooms(int[][] intervals);
     }
 }

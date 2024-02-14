@@ -1534,6 +1534,7 @@ namespace LeetCode
             }
         }
 
+        /// <inheritdoc/>
         public int NumberOfIslands(char[][] grid)
         {
             var result = 0;
@@ -1580,6 +1581,21 @@ namespace LeetCode
 
             // Time Complexity: O(M x N) with M = grid rows and N = grid columns
             // Space Complexity: O(min(M x N)) with M = grid rows and N = grid columns
+        }
+
+        /// <inheritdoc/>
+        public bool MeetingRooms(int[][] intervals)
+        {
+            var orderedMeetings = intervals.OrderBy(x => x[0]).ToArray();
+
+            for (var i = 1; i < orderedMeetings.Count(); i++)
+                if (orderedMeetings[i][0] < orderedMeetings[i - 1][1])
+                    return false;
+
+            return true;
+
+            // Time Complexity: O(n)
+            // Space Complecity: O(n)
         }
     }
 }

@@ -474,5 +474,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool MeetingRooms(int[][] intervals)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(MeetingRooms), intervals);
+
+            var result = _leetCodeBusiness.MeetingRooms(intervals);
+
+            return result;
+        }
     }
 }

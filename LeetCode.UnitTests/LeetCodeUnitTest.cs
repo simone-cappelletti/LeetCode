@@ -673,5 +673,26 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, output);
         }
+
+        [Fact]
+        void MeetingRooms()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new int[][]
+            {
+                new int[] { 0, 30 },
+                new int[] { 5, 10 },
+                new int[] { 15, 20 }
+            };
+
+            var output = false;
+
+            // Act
+            var result = business.MeetingRooms(input);
+
+            // Assert
+            Assert.Equal(result, output);
+        }
     }
 }

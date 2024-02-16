@@ -694,5 +694,43 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, output);
         }
+
+        [Fact]
+        void SerializeAndDeserializeBinaryTree()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var input = new TreeNode(
+                val: 1,
+                left: new TreeNode(val: 2),
+                right: new TreeNode(
+                    val: 3,
+                    left: new TreeNode(4),
+                    right: new TreeNode(5)));
+
+            // Act
+            var result = business.SerializeAndDeserializeBinaryTree.Serialize(input);
+
+            var v2 = business.SerializeAndDeserializeBinaryTree.Deserialize(result);
+
+            // Assert
+            Assert.Equal(result, "");
+        }
+
+        [Theory]
+        [InlineData("ab#c", "ad#c", true)]
+        [InlineData("ab##", "c#d#", true)]
+        [InlineData("a#c", "b", false)]
+        void BackspaceStringCompare(string s, string t, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.BackspaceStringCompare(s, t);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

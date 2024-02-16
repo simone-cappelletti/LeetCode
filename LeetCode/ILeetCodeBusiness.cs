@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -23,6 +21,11 @@ namespace LeetCode
         /// https://leetcode.com/problems/implement-trie-prefix-tree/description/
         /// </summary>
         ImplementTriePrefixTree ImplementTriePrefixTree { get; }
+
+        /// <summary>
+        /// https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+        /// </summary>
+        SerializeAndDeserializeBinaryTree SerializeAndDeserializeBinaryTree { get; }
 
         /// <summary>
         /// https://leetcode.com/problems/two-sum/
@@ -370,5 +373,7 @@ namespace LeetCode
         /// <param name="intervals"></param>
         /// <returns></returns>
         bool MeetingRooms(int[][] intervals);
+
+        bool BackspaceStringCompare(string s, string t);
     }
 }

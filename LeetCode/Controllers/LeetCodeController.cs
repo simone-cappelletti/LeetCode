@@ -484,5 +484,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool BackspaceStringCompare(string s, string t)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BackspaceStringCompare), s, t);
+
+            var result = _leetCodeBusiness.BackspaceStringCompare(s, t);
+
+            return result;
+        }
     }
 }

@@ -7,16 +7,19 @@ namespace LeetCode
         private readonly ILogger<LeetCodeBusiness> _logger;
 
         /// <inheritdoc/>
-        public MinStack MinStack { get; }
+        public MinStack MinStack { get; } = new();
 
         /// <inheritdoc/>
-        public ImplementQueueUsingStacks ImplementQueueUsingStacks { get; }
+        public ImplementQueueUsingStacks ImplementQueueUsingStacks { get; } = new();
 
         /// <inheritdoc/>
-        public TimeBasedKeyValueStore TimeBasedKeyValueStore { get; }
+        public TimeBasedKeyValueStore TimeBasedKeyValueStore { get; } = new();
 
         /// <inheritdoc/>
-        public ImplementTriePrefixTree ImplementTriePrefixTree { get; }
+        public ImplementTriePrefixTree ImplementTriePrefixTree { get; } = new();
+
+        /// <inheritdoc/>
+        public SerializeAndDeserializeBinaryTree SerializeAndDeserializeBinaryTree { get; } = new();
 
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
@@ -1596,6 +1599,69 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complecity: O(n)
+        }
+
+        public bool BackspaceStringCompare(string s, string t)
+        {
+            const char BACKSPACE = '#';
+            int sPos = s.Length - 1, tPos = t.Length - 1;
+            int sBackspaceCount = 0, tBackspaceCount = 0;
+
+            while (sPos >= 0 || tPos >= 0)
+            {
+                while (sPos >= 0)
+                {
+                    if (s[sPos].Equals(BACKSPACE))
+                    {
+                        sBackspaceCount++;
+                        sPos--;
+                    }
+                    else if (sBackspaceCount > 0)
+                    {
+                        sBackspaceCount--;
+                        sPos--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                while (tPos >= 0)
+                {
+                    if (t[tPos].Equals(BACKSPACE))
+                    {
+                        tBackspaceCount++;
+                        tPos--;
+                    }
+                    else if (tBackspaceCount > 0)
+                    {
+                        tBackspaceCount--;
+                        tPos--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (sPos >= 0 && tPos >= 0)
+                {
+                    if (!s[sPos].Equals(t[tPos]))
+                        return false;
+                }
+
+                if ((sPos >= 0) != (tPos >= 0))
+                    return false;
+
+                sPos--;
+                tPos--;
+            }
+
+            return true;
+
+            // Time Complexity: O(max(s, t))
+            // Space Complexity: O(1)
         }
     }
 }

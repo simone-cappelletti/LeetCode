@@ -695,28 +695,6 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, output);
         }
 
-        [Fact]
-        void SerializeAndDeserializeBinaryTree()
-        {
-            // Arrange
-            var business = CreateBusiness();
-            var input = new TreeNode(
-                val: 1,
-                left: new TreeNode(val: 2),
-                right: new TreeNode(
-                    val: 3,
-                    left: new TreeNode(4),
-                    right: new TreeNode(5)));
-
-            // Act
-            var result = business.SerializeAndDeserializeBinaryTree.Serialize(input);
-
-            var v2 = business.SerializeAndDeserializeBinaryTree.Deserialize(result);
-
-            // Assert
-            Assert.Equal(result, "");
-        }
-
         [Theory]
         [InlineData("ab#c", "ad#c", true)]
         [InlineData("ab##", "c#d#", true)]

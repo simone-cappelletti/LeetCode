@@ -1601,6 +1601,7 @@ namespace LeetCode
             // Space Complecity: O(n)
         }
 
+        /// <inheritdoc/>
         public bool BackspaceStringCompare(string s, string t)
         {
             const char BACKSPACE = '#';
@@ -1662,6 +1663,67 @@ namespace LeetCode
 
             // Time Complexity: O(max(s, t))
             // Space Complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public int RottingOranges(int[][] grid)
+        {
+            var result = 0;
+            var queue = new Queue<(int Level, int Row, int Col)>();
+            var directions = new List<(int Row, int Col)>()
+            {
+                (1, 0),  // Down
+                (-1, 0), // Up
+                (0, 1),  // Right
+                (0, -1), // Left
+            };
+
+            for (var row = 0; row < grid.Length; row++)
+                for (var col = 0; col < grid[row].Length; col++)
+                {
+                    if (grid[row][col] == 2)
+                    {
+                        var partialResult = 0;
+                        queue.Enqueue((0, row, col));
+
+                        while (queue.Count > 0)
+                        {
+                            var (currLevel, currRow, currCol) = queue.Dequeue();
+                            var nextLevel = currLevel + 1;
+                            grid[currRow][currCol] = 0;
+                            var freshOrangeFound = false;
+
+                            foreach (var (dirRow, dirCol) in directions)
+                            {
+                                if (
+                                    currRow + dirRow < grid.Length &&
+                                    currRow + dirRow >= 0 &&
+                                    currCol + dirCol < grid[currRow].Length &&
+                                    currCol + dirCol >= 0 &&
+                                    grid[currRow + dirRow][currCol + dirCol] == 1
+                                )
+                                {
+                                    queue.Enqueue((nextLevel, currRow + dirRow, currCol + dirCol));
+                                    freshOrangeFound = true;
+                                }
+                            }
+
+                            if (freshOrangeFound)
+                                partialResult = nextLevel;
+                        }
+
+                        result = Math.Max(result, partialResult);
+                    }
+                }
+
+            for (var row = 0; row < grid.Length; row++)
+                for (var col = 0; col < grid[row].Length; col++)
+                {
+                    if (grid[row][col] == 1)
+                        return -1;
+                }
+
+            return result;
         }
     }
 }

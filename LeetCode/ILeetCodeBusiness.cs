@@ -374,6 +374,19 @@
         /// <returns></returns>
         bool MeetingRooms(int[][] intervals);
 
+        /// <summary>
+        /// https://leetcode.com/problems/backspace-string-compare/description/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
         bool BackspaceStringCompare(string s, string t);
+
+        /// <summary>
+        /// https://leetcode.com/problems/rotting-oranges/
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        int RottingOranges(int[][] grid);
     }
 }

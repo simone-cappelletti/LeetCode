@@ -494,5 +494,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int RottingOranges(int[][] grid)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(RottingOranges), grid);
+
+            var result = _leetCodeBusiness.RottingOranges(grid);
+
+            return result;
+        }
     }
 }

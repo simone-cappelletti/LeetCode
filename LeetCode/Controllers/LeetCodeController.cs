@@ -504,5 +504,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] CountingBits(int n)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(CountingBits), n);
+
+            var result = _leetCodeBusiness.CountingBits(n);
+
+            return result;
+        }
     }
 }

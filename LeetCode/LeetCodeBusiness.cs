@@ -1725,5 +1725,34 @@ namespace LeetCode
 
             return result;
         }
+
+        /// <inheritdoc/>
+        public int[] CountingBits(int n)
+        {
+            var result = new int[n + 1];
+
+            for (var i = 0; i < result.Length; i++)
+            {
+                result[i] = Get1s(i);
+            }
+
+            return result;
+
+            int Get1s(int n)
+            {
+                var result = 0;
+
+                while (n > 0)
+                {
+                    result += n % 2;
+                    n /= 2;
+                }
+
+                return result;
+            }
+
+            // Time complexity: O(n log n)
+            // Space complexity: 0(n)
+        }
     }
 }

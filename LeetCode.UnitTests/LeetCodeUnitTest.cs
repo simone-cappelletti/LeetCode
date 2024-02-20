@@ -710,5 +710,19 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(5, new int[] { 0, 1, 1, 2, 1, 2 })]
+        void CountingBits(int n, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CountingBits(n);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

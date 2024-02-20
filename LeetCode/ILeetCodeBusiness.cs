@@ -388,5 +388,12 @@
         /// <param name="grid"></param>
         /// <returns></returns>
         int RottingOranges(int[][] grid);
+
+        /// <summary>
+        /// https://leetcode.com/problems/counting-bits/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        int[] CountingBits(int n);
     }
 }

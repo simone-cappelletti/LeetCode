@@ -514,5 +514,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool SameTree(TreeNode p, TreeNode q)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SameTree), p, q);
+
+            var result = _leetCodeBusiness.SameTree(p, q);
+
+            return result;
+        }
     }
 }

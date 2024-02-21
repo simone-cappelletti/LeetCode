@@ -395,5 +395,13 @@
         /// <param name="n"></param>
         /// <returns></returns>
         int[] CountingBits(int n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/same-tree/
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        bool SameTree(TreeNode p, TreeNode q);
     }
 }

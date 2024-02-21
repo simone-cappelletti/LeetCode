@@ -1754,5 +1754,24 @@ namespace LeetCode
             // Time complexity: O(n log n)
             // Space complexity: 0(n)
         }
+
+        public bool SameTree(TreeNode p, TreeNode q)
+        {
+            return DFS(p, q);
+
+            bool DFS(TreeNode a, TreeNode b)
+            {
+                if (a is null && b is null)
+                    return true;
+
+                if (a?.val != b?.val)
+                    return false;
+
+                return DFS(a.left, b.left) && DFS(a.right, b.right);
+            }
+
+            // Time Complexity: O(max(p, q))
+            // Space Complexity: O(max(p, q))
+        }
     }
 }

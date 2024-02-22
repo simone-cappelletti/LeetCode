@@ -524,5 +524,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int HammingWeight(uint n)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(SameTree), n);
+
+            var result = _leetCodeBusiness.HammingWeight(n);
+
+            return result;
+        }
     }
 }

@@ -403,5 +403,12 @@
         /// <param name="q"></param>
         /// <returns></returns>
         bool SameTree(TreeNode p, TreeNode q);
+
+        /// <summary>
+        /// https://leetcode.com/problems/number-of-1-bits/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        int HammingWeight(uint n);
     }
 }

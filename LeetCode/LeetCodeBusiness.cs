@@ -1755,6 +1755,7 @@ namespace LeetCode
             // Space complexity: 0(n)
         }
 
+        /// <inheritdoc/>
         public bool SameTree(TreeNode p, TreeNode q)
         {
             return DFS(p, q);
@@ -1772,6 +1773,23 @@ namespace LeetCode
 
             // Time Complexity: O(max(p, q))
             // Space Complexity: O(max(p, q))
+        }
+
+        /// <inheritdoc/>
+        public int HammingWeight(uint n)
+        {
+            uint result = 0;
+
+            while (n > 0)
+            {
+                result += n % 2;
+                n >>= 1;
+            }
+
+            return (int)result;
+
+            // Time complexity: O(log n) = O(1)
+            // Space complexity: O(1)
         }
     }
 }

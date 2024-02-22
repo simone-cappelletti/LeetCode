@@ -725,6 +725,19 @@ namespace LeetCode.UnitTests
             Assert.Equal(result, solution);
         }
 
-        
+        [Theory]
+        [InlineData(128, 1)]
+        [InlineData(11, 3)]
+        void HammingWeight(uint n, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.HammingWeight(n);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

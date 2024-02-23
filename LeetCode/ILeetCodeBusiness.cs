@@ -410,5 +410,13 @@
         /// <param name="n"></param>
         /// <returns></returns>
         int HammingWeight(uint n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/3sum-smaller/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        int ThreeSumSmaller(int[] nums, int target);
     }
 }

@@ -534,5 +534,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int ThreeSumSmaller(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SameTree), nums, target);
+
+            var result = _leetCodeBusiness.ThreeSumSmaller(nums, target);
+
+            return result;
+        }
     }
 }

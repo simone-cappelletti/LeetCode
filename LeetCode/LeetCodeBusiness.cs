@@ -1791,5 +1791,49 @@ namespace LeetCode
             // Time complexity: O(log n) = O(1)
             // Space complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int ThreeSumSmaller(int[] nums, int target)
+        {
+            if (nums.Length < 3)
+                return 0;
+
+            var result = 0;
+            Array.Sort(nums);
+
+            var i = 0;
+            var j = 1;
+            var k = nums.Length - 1;
+
+            while (i < nums.Length - 2)
+            {
+                var iValue = nums[i];
+
+                while (j < k)
+                {
+                    var jValue = nums[j];
+                    var kValue = nums[k];
+
+                    if (iValue + jValue + kValue < target)
+                    {
+                        result += (k - j);
+                        j++;
+                    }
+                    else
+                    {
+                        k--;
+                    }
+                }
+
+                i++;
+                j = i + 1;
+                k = nums.Length - 1;
+            }
+
+            return result;
+
+            // Time Complexity: O(n^2)
+            // Space Complecity: O(1)
+        }
     }
 }

@@ -739,5 +739,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { -1, 0, 1, 2, 3, 7, 9 }, 5, 8)]
+        [InlineData(new int[] { -2, 0, 1, 3 }, 2, 2)]
+        void ThreeSumSmaller(int[] nums, int target, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ThreeSumSmaller(nums, target);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

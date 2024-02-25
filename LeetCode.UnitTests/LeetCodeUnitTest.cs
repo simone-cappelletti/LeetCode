@@ -754,5 +754,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { -1, 2, 1, -4 }, 1, 2)]
+        [InlineData(new int[] { -1, -2, -3, 4, 5, 6, 8, 9 }, 14, 14)]
+        [InlineData(new int[] { -1, -2, -3, -4, -5, -6, -8, -9 }, 14, -6)]
+        void ThreeSumClosest(int[] nums, int target, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ThreeSumClosest(nums, target);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

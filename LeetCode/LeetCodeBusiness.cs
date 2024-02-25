@@ -1835,5 +1835,44 @@ namespace LeetCode
             // Time Complexity: O(n^2)
             // Space Complecity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int ThreeSumClosest(int[] nums, int target)
+        {
+            var closestDifference = int.MaxValue;
+            var closestSum = 0;
+
+            Array.Sort(nums);
+
+            for (var i = 0; i < nums.Length - 2; i++)
+            {
+                var left = i + 1;
+                var right = nums.Length - 1;
+
+                while (left < right)
+                {
+                    var sum = nums[i] + nums[left] + nums[right];
+                    var difference = Math.Abs(sum - target);
+
+                    if (difference == 0)
+                        return sum;
+                    if (difference < closestDifference)
+                    {
+                        closestDifference = difference;
+                        closestSum = sum;
+                    }
+
+                    if (sum < target)
+                        left++;
+                    else
+                        right--;
+                }
+            }
+
+            return closestSum;
+
+            // Time Complexity: O(n^2)
+            // Space Complexity: O(1)
+        }
     }
 }

@@ -418,5 +418,13 @@
         /// <param name="target"></param>
         /// <returns></returns>
         int ThreeSumSmaller(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/3sum-closest/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        int ThreeSumClosest(int[] nums, int target);
     }
 }

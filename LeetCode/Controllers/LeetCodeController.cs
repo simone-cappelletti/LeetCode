@@ -544,5 +544,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int ThreeSumClosest(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SameTree), nums, target);
+
+            var result = _leetCodeBusiness.ThreeSumClosest(nums, target);
+
+            return result;
+        }
     }
 }

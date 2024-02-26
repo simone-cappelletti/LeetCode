@@ -426,5 +426,12 @@
         /// <param name="target"></param>
         /// <returns></returns>
         int ThreeSumClosest(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+        /// </summary>
+        /// <param name="digits"></param>
+        /// <returns></returns>
+        IList<string> LetterCombinationsOfAPhoneNumber(string digits);
     }
 }

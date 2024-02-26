@@ -1874,5 +1874,62 @@ namespace LeetCode
             // Time Complexity: O(n^2)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public IList<string> LetterCombinationsOfAPhoneNumber(string digits)
+        {
+            var dic = new Dictionary<char, char[]>()
+            {
+                {'2', new char[]{ 'a', 'b', 'c'} },
+                {'3', new char[]{ 'd', 'e', 'f'} },
+                {'4', new char[]{ 'g', 'h', 'i'} },
+                {'5', new char[]{ 'j', 'k', 'l'} },
+                {'6', new char[]{ 'm', 'n', 'o'} },
+                {'7', new char[]{ 'p', 'q', 'r', 's'} },
+                {'8', new char[]{ 't', 'u', 'v'} },
+                {'9', new char[]{ 'w', 'x', 'y', 'z'} },
+            };
+            var result = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(digits))
+                return result;
+
+            foreach (var digit in digits)
+            {
+                result = Combination(result, digit);
+            }
+
+            result = result
+                .Where(x => x.Length == digits.Length)
+                .ToList();
+
+            return result;
+
+            List<string> Combination(List<string> combinations, char digit)
+            {
+                var newCombinations = new List<string>();
+
+                if (combinations.Count == 0)
+                {
+                    foreach (var @char in dic[digit])
+                        newCombinations.Add(@char.ToString());
+                }
+                else
+                {
+                    foreach (var combination in combinations)
+                    {
+                        foreach (var @char in dic[digit])
+                            newCombinations.Add(combination + @char.ToString());
+                    }
+                }
+
+                combinations.AddRange(newCombinations);
+
+                return combinations;
+            }
+
+            // Time Complexity: O(4^n * n)
+            // Space Complexity: O(n), the recursion.
+        }
     }
 }

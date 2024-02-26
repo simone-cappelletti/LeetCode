@@ -554,5 +554,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<string> LetterCombinationsOfAPhoneNumber(string digits)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(LetterCombinationsOfAPhoneNumber), digits);
+
+            var result = _leetCodeBusiness.LetterCombinationsOfAPhoneNumber(digits);
+
+            return result;
+        }
     }
 }

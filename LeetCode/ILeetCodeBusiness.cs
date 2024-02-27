@@ -433,5 +433,12 @@
         /// <param name="digits"></param>
         /// <returns></returns>
         IList<string> LetterCombinationsOfAPhoneNumber(string digits);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-common-prefix/
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
+        string LongestCommonPrefix(string[] strs);
     }
 }

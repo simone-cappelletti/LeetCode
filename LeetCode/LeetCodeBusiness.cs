@@ -1931,5 +1931,32 @@ namespace LeetCode
             // Time Complexity: O(4^n * n)
             // Space Complexity: O(n), the recursion.
         }
+
+        /// <inheritdoc/>
+        public string LongestCommonPrefix(string[] strs)
+        {
+            if (strs.Length == 0)
+                return string.Empty;
+
+            var result = string.Empty;
+
+            for (var i = 0; i < strs[0].Length; i++)
+            {
+                for (var ii = 1; ii < strs.Length; ii++)
+                {
+                    if (strs[ii].Length <= i ||
+                        strs[ii][i] != strs[0][i])
+                        return result;
+                }
+
+                result += strs[0][i];
+            }
+
+            return result;
+
+            // With n = number of words and m = max words length
+            // Time Complexity: O(n * m)
+            // Space Complexity: O(n)
+        }
     }
 }

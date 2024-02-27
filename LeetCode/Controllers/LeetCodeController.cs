@@ -564,5 +564,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string LongestCommonPrefix(string[] strs)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(LongestCommonPrefix), strs);
+
+            var result = _leetCodeBusiness.LongestCommonPrefix(strs);
+
+            return result;
+        }
     }
 }

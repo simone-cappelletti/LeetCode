@@ -440,5 +440,12 @@
         /// <param name="strs"></param>
         /// <returns></returns>
         string LongestCommonPrefix(string[] strs);
+
+        /// <summary>
+        /// https://leetcode.com/problems/binary-tree-right-side-view/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        IList<int> BinaryTreeRightSideView(TreeNode root);
     }
 }

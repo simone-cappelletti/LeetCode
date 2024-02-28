@@ -574,5 +574,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<int> BinaryTreeRightSideView(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(BinaryTreeRightSideView), root);
+
+            var result = _leetCodeBusiness.BinaryTreeRightSideView(root);
+
+            return result;
+        }
     }
 }

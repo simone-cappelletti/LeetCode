@@ -1958,5 +1958,30 @@ namespace LeetCode
             // Time Complexity: O(n * m)
             // Space Complexity: O(n)
         }
+
+        public IList<int> BinaryTreeRightSideView(TreeNode root)
+        {
+            List<int> _dic = new();
+
+            DFS(root, 0);
+
+            return _dic;
+
+            // n = number of nodes
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            void DFS(TreeNode node, int level)
+            {
+                if (node is null)
+                    return;
+
+                if (_dic.Count() == level)
+                    _dic.Add(node.val);
+
+                DFS(node.right, level + 1);
+                DFS(node.left, level + 1);
+            }
+        }
     }
 }

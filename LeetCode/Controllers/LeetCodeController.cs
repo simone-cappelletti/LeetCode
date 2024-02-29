@@ -584,5 +584,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[][] KClosestPointsToOrigin(int[][] points, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(KClosestPointsToOrigin), points, k);
+
+            var result = _leetCodeBusiness.KClosestPointsToOrigin(points, k);
+
+            return result;
+        }
     }
 }

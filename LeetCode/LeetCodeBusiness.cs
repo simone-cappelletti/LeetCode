@@ -1959,6 +1959,7 @@ namespace LeetCode
             // Space Complexity: O(n)
         }
 
+        /// <inheritdoc/>
         public IList<int> BinaryTreeRightSideView(TreeNode root)
         {
             List<int> _dic = new();
@@ -1982,6 +1983,33 @@ namespace LeetCode
                 DFS(node.right, level + 1);
                 DFS(node.left, level + 1);
             }
+        }
+
+        /// <inheritdoc/>
+        public int[][] KClosestPointsToOrigin(int[][] points, int k)
+        {
+            if (points.Length == 0)
+                return null;
+
+            var priorityQueue = new PriorityQueue<int[], int>();
+
+            foreach (var point in points)
+            {
+                priorityQueue.Enqueue(point, (point[0] * point[0] + point[1] * point[1]) * -1);
+
+                if (priorityQueue.Count > k)
+                    priorityQueue.Dequeue();
+            }
+
+            var result = new int[k][];
+
+            for (var i = 0; i < k; i++)
+                result[i] = priorityQueue.Dequeue();
+
+            return result;
+
+            // Time Complexity: O(N log K)
+            // Space Complexity: O(K)
         }
     }
 }

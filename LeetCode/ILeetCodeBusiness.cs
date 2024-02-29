@@ -447,5 +447,13 @@
         /// <param name="root"></param>
         /// <returns></returns>
         IList<int> BinaryTreeRightSideView(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/k-closest-points-to-origin/
+        /// </summary>
+        /// <param name="points"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int[][] KClosestPointsToOrigin(int[][] points, int k);
     }
 }

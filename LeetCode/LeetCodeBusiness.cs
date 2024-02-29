@@ -2011,5 +2011,33 @@ namespace LeetCode
             // Time Complexity: O(N log K)
             // Space Complexity: O(K)
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> Subsets(int[] nums)
+        {
+            var allSubsets = new List<IList<int>>()
+            {
+                new List<int>()
+            };
+
+            foreach (var num in nums)
+            {
+                var newSubsets = new List<List<int>>();
+
+                foreach (var currentSubset in allSubsets)
+                {
+                    var newSubset = new List<int>(currentSubset);
+                    newSubset.Add(num);
+                    newSubsets.Add(newSubset);
+                }
+
+                allSubsets.AddRange(newSubsets);
+            }
+
+            return allSubsets;
+
+            // Time Complexity: O(N x 2^N)
+            // Space Complexity: O(2^N)
+        }
     }
 }

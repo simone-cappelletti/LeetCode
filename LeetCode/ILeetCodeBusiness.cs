@@ -455,5 +455,12 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int[][] KClosestPointsToOrigin(int[][] points, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/subsets/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        IList<IList<int>> Subsets(int[] nums);
     }
 }

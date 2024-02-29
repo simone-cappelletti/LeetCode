@@ -594,5 +594,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<IList<int>> Subsets(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(Subsets), nums);
+
+            var result = _leetCodeBusiness.Subsets(nums);
+
+            return result;
+        }
     }
 }

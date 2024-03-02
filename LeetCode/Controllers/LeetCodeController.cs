@@ -604,5 +604,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool PalindromeLinkedList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(PalindromeLinkedList), head);
+
+            var result = _leetCodeBusiness.PalindromeLinkedList(head);
+
+            return result;
+        }
     }
 }

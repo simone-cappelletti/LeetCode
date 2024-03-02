@@ -2039,5 +2039,56 @@ namespace LeetCode
             // Time Complexity: O(N x 2^N)
             // Space Complexity: O(2^N)
         }
+
+        /// <inheritdoc/>
+        public bool PalindromeLinkedList(ListNode head)
+        {
+            if (head is null)
+                return true;
+
+            var fast = head;
+            var slow = head;
+
+            while (fast.next?.next is not null)
+            {
+                fast = fast.next?.next;
+                slow = slow.next;
+            }
+
+            if (fast.next is not null)
+                slow = slow.next;
+
+            var reversedHead = ReverseList(slow);
+
+            while (reversedHead is not null)
+            {
+                if (reversedHead.val != head.val)
+                    return false;
+
+                reversedHead = reversedHead.next;
+                head = head.next;
+            }
+
+            return true;
+
+            // Time Complexity: O(N)
+            // Space Complexity: O(1)
+
+            ListNode ReverseList(ListNode node)
+            {
+                ListNode prev = null;
+                var curr = node;
+
+                while (curr is not null)
+                {
+                    var temp = curr.next;
+                    curr.next = prev;
+                    prev = curr;
+                    curr = temp;
+                }
+
+                return prev;
+            }
+        }
     }
 }

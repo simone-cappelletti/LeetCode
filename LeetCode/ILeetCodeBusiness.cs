@@ -462,5 +462,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         IList<IList<int>> Subsets(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/palindrome-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        bool PalindromeLinkedList(ListNode head);
     }
 }

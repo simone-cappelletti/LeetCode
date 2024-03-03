@@ -2090,5 +2090,48 @@ namespace LeetCode
                 return prev;
             }
         }
+
+        /// <inheritdoc/>
+        public bool WordSearch(char[][] board, string word)
+        {
+            for (var i = 0; i < board.Length; i++)
+                for (var ii = 0; ii < board[i].Length; ii++)
+                {
+                    if (DFS(board, word, i, ii, 0))
+                        return true;
+                }
+
+            return false;
+
+            // M = rows number, N = columns number, K = word length
+            // Time Complexity: O(3^K x (M x N))
+            // Space Complexity: O(3^K)
+
+            bool DFS(char[][] board, string word, int row, int col, int index)
+            {
+                if (index >= word.Length)
+                    return true;
+
+                if (row < 0 ||
+                    row >= board.Length ||
+                    col < 0 ||
+                    col >= board[row].Length ||
+                    !board[row][col].Equals(word[index]))
+                    return false;
+
+                var temp = board[row][col];
+                board[row][col] = '-';
+                index++;
+
+                var found = DFS(board, word, row + 1, col, index) ||
+                            DFS(board, word, row - 1, col, index) ||
+                            DFS(board, word, row, col + 1, index) ||
+                            DFS(board, word, row, col - 1, index);
+
+                board[row][col] = temp;
+
+                return found;
+            }
+        }
     }
 }

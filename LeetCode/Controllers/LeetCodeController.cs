@@ -614,5 +614,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool WordSearch(char[][] board, string word)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(WordSearch), board, word);
+
+            var result = _leetCodeBusiness.WordSearch(board, word);
+
+            return result;
+        }
     }
 }

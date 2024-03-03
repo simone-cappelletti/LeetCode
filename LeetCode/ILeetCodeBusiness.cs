@@ -469,5 +469,13 @@
         /// <param name="head"></param>
         /// <returns></returns>
         bool PalindromeLinkedList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/word-search/
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        bool WordSearch(char[][] board, string word);
     }
 }

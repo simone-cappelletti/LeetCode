@@ -624,5 +624,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode ConstructBinaryTreeFromPreorderAndInorderTraversal(int[] preorder, int[] inorder)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(ConstructBinaryTreeFromPreorderAndInorderTraversal), preorder, inorder);
+
+            var result = _leetCodeBusiness.ConstructBinaryTreeFromPreorderAndInorderTraversal(preorder, inorder);
+
+            return result;
+        }
     }
 }

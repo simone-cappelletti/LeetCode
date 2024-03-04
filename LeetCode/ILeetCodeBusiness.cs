@@ -477,5 +477,13 @@
         /// <param name="word"></param>
         /// <returns></returns>
         bool WordSearch(char[][] board, string word);
+
+        /// <summary>
+        /// https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+        /// </summary>
+        /// <param name="preorder"></param>
+        /// <param name="inorder"></param>
+        /// <returns></returns>
+        TreeNode ConstructBinaryTreeFromPreorderAndInorderTraversal(int[] preorder, int[] inorder);
     }
 }

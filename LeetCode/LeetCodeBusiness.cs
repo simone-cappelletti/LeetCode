@@ -2133,5 +2133,34 @@ namespace LeetCode
                 return found;
             }
         }
+
+        /// <inheritdoc/>
+        public TreeNode ConstructBinaryTreeFromPreorderAndInorderTraversal(int[] preorder, int[] inorder)
+        {
+            var _preorderIndex = 0;
+            var _dic = new Dictionary<int, int>();
+
+            for (var i = 0; i < inorder.Length; i++)
+                _dic.Add(inorder[i], i);
+
+            return ArrayToTree(preorder, 0, preorder.Length - 1);
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            TreeNode ArrayToTree(int[] preorder, int left, int right)
+            {
+                if (left > right)
+                    return null;
+
+                var rootValue = preorder[_preorderIndex++];
+                var root = new TreeNode(rootValue);
+
+                root.left = ArrayToTree(preorder, left, _dic[rootValue] - 1);
+                root.right = ArrayToTree(preorder, _dic[rootValue] + 1, right);
+
+                return root;
+            }
+        }
     }
 }

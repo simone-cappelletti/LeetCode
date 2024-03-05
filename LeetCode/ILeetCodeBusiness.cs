@@ -485,5 +485,13 @@
         /// <param name="inorder"></param>
         /// <returns></returns>
         TreeNode ConstructBinaryTreeFromPreorderAndInorderTraversal(int[] preorder, int[] inorder);
+
+        /// <summary>
+        /// https://leetcode.com/problems/word-break/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="wordDict"></param>
+        /// <returns></returns>
+        public bool WordBreak(string s, IList<string> wordDict);
     }
 }

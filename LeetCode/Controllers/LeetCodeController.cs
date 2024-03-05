@@ -634,5 +634,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool WordBreak(string s, IList<string> wordDict)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(WordBreak), s, wordDict);
+
+            var result = _leetCodeBusiness.WordBreak(s, wordDict);
+
+            return result;
+        }
     }
 }

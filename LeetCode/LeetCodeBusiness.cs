@@ -2162,5 +2162,43 @@ namespace LeetCode
                 return root;
             }
         }
+
+        /// <inheritdoc/>
+        public bool WordBreak(string s, IList<string> wordDict)
+        {
+            var dic = new HashSet<string>();
+            var queue = new Queue<int>();
+            var seen = new bool[s.Length + 1];
+
+            foreach (var word in wordDict)
+                dic.Add(word);
+
+            queue.Enqueue(0);
+
+            while (queue.Count > 0)
+            {
+                var start = queue.Dequeue();
+
+                if (start == s.Length)
+                    return true;
+
+                for (var end = start + 1; end <= s.Length; end++)
+                {
+                    if (seen[end])
+                        continue;
+
+                    if (dic.Contains(s[start..end]))
+                    {
+                        queue.Enqueue(end);
+                        seen[end] = true;
+                    }
+                }
+            }
+
+            return false;
+
+            // Time Complexity: O(n^3)
+            // Space Complexity: O(n + m * k), m * k to populate the dic
+        }
     }
 }

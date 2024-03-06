@@ -770,5 +770,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("aabccabba", 3)]
+        [InlineData("cabaabac", 0)]
+        [InlineData("aaabbcbcbba", 1)]
+        public void MinimumLengthOfStringAfterDeletingSimilarEnds(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.MinimumLengthOfStringAfterDeletingSimilarEnds(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

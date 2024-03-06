@@ -2197,8 +2197,48 @@ namespace LeetCode
 
             return false;
 
+            // n = s,Length, m = wordDict.Length and k = average length of wordDict's words
             // Time Complexity: O(n^3)
             // Space Complexity: O(n + m * k), m * k to populate the dic
+        }
+
+        public int MinimumLengthOfStringAfterDeletingSimilarEnds(string s)
+        {
+            if (s.Length == 1)
+                return 1;
+
+            var result = 0;
+            var left = 0;
+            var right = s.Length - 1;
+
+            while (left < right && s[left] == s[right])
+            {
+                if (s[left + 1] == s[right])
+                {
+                    left++;
+                    continue;
+                }
+
+                if (s[right - 1] == s[left])
+                {
+                    right--;
+                    continue;
+                }
+
+                if (right - left == 2)
+                    return 1;
+
+                left++;
+                right--;
+            }
+
+            result = right - left;
+
+            return result > 0 ? result + 1 : result;
+
+            // n = s.Length
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

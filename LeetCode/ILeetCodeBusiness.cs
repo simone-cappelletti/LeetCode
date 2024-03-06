@@ -493,5 +493,12 @@
         /// <param name="wordDict"></param>
         /// <returns></returns>
         public bool WordBreak(string s, IList<string> wordDict);
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/?envType=daily-question&envId=2024-03-05
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        int MinimumLengthOfStringAfterDeletingSimilarEnds(string s);
     }
 }

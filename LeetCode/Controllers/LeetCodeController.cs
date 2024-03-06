@@ -644,5 +644,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int MinimumLengthOfStringAfterDeletingSimilarEnds(string s)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(MinimumLengthOfStringAfterDeletingSimilarEnds), s);
+
+            var result = _leetCodeBusiness.MinimumLengthOfStringAfterDeletingSimilarEnds(s);
+
+            return result;
+        }
     }
 }

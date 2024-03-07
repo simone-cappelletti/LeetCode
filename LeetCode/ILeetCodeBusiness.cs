@@ -500,5 +500,13 @@
         /// <param name="s"></param>
         /// <returns></returns>
         int MinimumLengthOfStringAfterDeletingSimilarEnds(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/bag-of-tokens/?envType=daily-question&envId=2024-03-04
+        /// </summary>
+        /// <param name="tokens"></param>
+        /// <param name="power"></param>
+        /// <returns></returns>
+        int BagOfTokensScore(int[] tokens, int power);
     }
 }

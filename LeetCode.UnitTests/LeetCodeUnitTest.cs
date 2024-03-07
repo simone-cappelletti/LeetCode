@@ -786,5 +786,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 100 }, 50, 0)]
+        [InlineData(new int[] { 200, 100 }, 150, 1)]
+        [InlineData(new int[] { 100, 200, 300, 400 }, 200, 2)]
+        void BagOfTokensScore(int[] tokens, int power, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.BagOfTokensScore(tokens, power);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

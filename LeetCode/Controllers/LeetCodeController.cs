@@ -654,5 +654,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int BagOfTokensScore(int[] tokens, int power)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BagOfTokensScore), tokens, power);
+
+            var result = _leetCodeBusiness.BagOfTokensScore(tokens, power);
+
+            return result;
+        }
     }
 }

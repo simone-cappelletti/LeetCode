@@ -2202,6 +2202,7 @@ namespace LeetCode
             // Space Complexity: O(n + m * k), m * k to populate the dic
         }
 
+        /// <inheritdoc/>
         public int MinimumLengthOfStringAfterDeletingSimilarEnds(string s)
         {
             if (s.Length == 1)
@@ -2238,6 +2239,57 @@ namespace LeetCode
 
             // n = s.Length
             // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public int BagOfTokensScore(int[] tokens, int power)
+        {
+            var score = 0;
+            var maxScore = 0;
+            var left = 0;
+            var right = tokens.Length - 1;
+
+            Array.Sort(tokens);
+
+            while (left <= right)
+            {
+                if (score == 0)
+                {
+                    if (power >= tokens[left])
+                    {
+                        power -= tokens[left];
+                        score++;
+                        left++;
+                        maxScore = Math.Max(maxScore, score);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    if (power >= tokens[left])
+                    {
+                        power -= tokens[left];
+                        score++;
+                        left++;
+                        maxScore = Math.Max(maxScore, score);
+                    }
+                    else
+                    {
+                        power += tokens[right];
+                        right--;
+                        score--;
+                    }
+                }
+            }
+
+            return maxScore;
+
+            // n = tokens.Length
+            // Time Complexity: O(n log n)
             // Space Complexity: O(1)
         }
     }

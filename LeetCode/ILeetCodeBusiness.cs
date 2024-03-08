@@ -508,5 +508,12 @@
         /// <param name="power"></param>
         /// <returns></returns>
         int BagOfTokensScore(int[] tokens, int power);
+
+        /// <summary>
+        /// https://leetcode.com/problems/count-elements-with-maximum-frequency/?envType=daily-question&envId=2024-03-08
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int CountElementsWithMaximumFrequency(int[] nums);
     }
 }

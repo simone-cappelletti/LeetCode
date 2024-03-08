@@ -664,5 +664,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int CountElementsWithMaximumFrequency(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(CountElementsWithMaximumFrequency), nums);
+
+            var result = _leetCodeBusiness.CountElementsWithMaximumFrequency(nums);
+
+            return result;
+        }
     }
 }

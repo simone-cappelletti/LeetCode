@@ -2292,5 +2292,34 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int CountElementsWithMaximumFrequency(int[] nums)
+        {
+            var dic = new Dictionary<int, int>();
+            var maximumFreq = 0;
+            var result = 0;
+
+            foreach (var num in nums)
+            {
+                dic.TryGetValue(num, out var freq);
+                dic[num] = ++freq;
+
+                if (freq == maximumFreq)
+                {
+                    result += freq;
+                }
+                else if (freq > maximumFreq)
+                {
+                    maximumFreq = freq;
+                    result = freq;
+                }
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

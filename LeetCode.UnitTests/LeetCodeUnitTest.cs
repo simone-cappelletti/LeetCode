@@ -802,5 +802,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 2, 3, 1, 4 }, 4)]
+        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 5)]
+        void CountElementsWithMaximumFrequency(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CountElementsWithMaximumFrequency(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

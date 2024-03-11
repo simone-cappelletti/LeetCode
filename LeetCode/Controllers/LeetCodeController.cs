@@ -674,5 +674,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string CustomSortString(string order, string s)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(CustomSortString), order, s);
+
+            var result = _leetCodeBusiness.CustomSortString(order, s);
+
+            return result;
+        }
     }
 }

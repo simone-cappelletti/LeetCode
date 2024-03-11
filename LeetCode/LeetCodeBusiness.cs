@@ -2321,5 +2321,38 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public string CustomSortString(string order, string s)
+        {
+            var result = new StringBuilder();
+            var dic = new Dictionary<char, int>();
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                dic.TryGetValue(s[i], out var iValue);
+                dic[s[i]] = iValue + 1;
+            }
+
+            foreach (var @char in order)
+            {
+                if (dic.TryGetValue(@char, out var charValue))
+                {
+                    result.Append(@char, charValue);
+                    dic.Remove(@char);
+                }
+            }
+
+            foreach (var (@char, charValue) in dic)
+            {
+                result.Append(@char, charValue);
+            }
+
+            return result.ToString();
+
+            // n = Math.Max(order,Length, s.Length);
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

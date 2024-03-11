@@ -817,5 +817,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("kqep", "pekeq", "kqeep")]
+        [InlineData("cba", "abcd", "cbad")]
+        public void CustomSortString(string order, string s, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CustomSortString(order, s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

@@ -515,5 +515,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int CountElementsWithMaximumFrequency(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/custom-sort-string/?envType=daily-question&envId=2024-03-11
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string CustomSortString(string order, string s);
     }
 }

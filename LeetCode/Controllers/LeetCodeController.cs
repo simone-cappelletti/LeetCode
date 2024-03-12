@@ -684,5 +684,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode RemoveZeroSumConsecutiveNodesFromLinkedList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(RemoveZeroSumConsecutiveNodesFromLinkedList), head);
+
+            var result = _leetCodeBusiness.RemoveZeroSumConsecutiveNodesFromLinkedList(head);
+
+            return result;
+        }
     }
 }

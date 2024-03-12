@@ -2354,5 +2354,44 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        public ListNode RemoveZeroSumConsecutiveNodesFromLinkedList(ListNode head)
+        {
+            var result = new ListNode(0, head);
+            var currentNode = result;
+            var prefixSum = new Dictionary<int, ListNode>();
+            var partialSum = 0;
+
+            while (currentNode is not null)
+            {
+                partialSum += currentNode.val;
+
+                if (prefixSum.TryGetValue(partialSum, out var partialSumNode))
+                {
+                    var current = partialSumNode.next;
+                    var sum = partialSum + current.val;
+
+                    while (sum != partialSum)
+                    {
+                        prefixSum.Remove(sum);
+                        current = current.next;
+                        sum += current.val;
+                    }
+
+                    partialSumNode.next = current.next;
+                }
+                else
+                {
+                    prefixSum.Add(partialSum, currentNode);
+                }
+
+                currentNode = currentNode.next;
+            }
+
+            return result.next;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -523,5 +523,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         string CustomSortString(string order, string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/?envType=daily-question&envId=2024-03-12
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        ListNode RemoveZeroSumConsecutiveNodesFromLinkedList(ListNode head);
     }
 }

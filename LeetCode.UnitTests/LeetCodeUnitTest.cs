@@ -832,5 +832,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(8, 6)]
+        [InlineData(4, -1)]
+        void FindThePivotInteger(int n, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.FindThePivotInteger(n);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

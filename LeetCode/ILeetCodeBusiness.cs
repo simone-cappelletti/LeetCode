@@ -530,5 +530,12 @@
         /// <param name="head"></param>
         /// <returns></returns>
         ListNode RemoveZeroSumConsecutiveNodesFromLinkedList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-the-pivot-integer/?envType=daily-question&envId=2024-03-13
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        int FindThePivotInteger(int n);
     }
 }

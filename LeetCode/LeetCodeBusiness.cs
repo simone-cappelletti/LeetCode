@@ -2355,6 +2355,7 @@ namespace LeetCode
             // Space Complexity: O(n)
         }
 
+        /// <inheritdoc/>
         public ListNode RemoveZeroSumConsecutiveNodesFromLinkedList(ListNode head)
         {
             var result = new ListNode(0, head);
@@ -2389,6 +2390,32 @@ namespace LeetCode
             }
 
             return result.next;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
+
+        /// <inheritdoc/>
+        public int FindThePivotInteger(int n)
+        {
+            var counters = new int[n];
+            var sum = 0;
+
+            for (var i = 1; i <= n; i++)
+            {
+                var previousIndex = i > 2 ? i - 2 : 0;
+                counters[i - 1] = counters[previousIndex] + i;
+            }
+
+            for (var i = n - 1; i >= 0; i--)
+            {
+                sum += i + 1;
+
+                if (sum == counters[i])
+                    return i + 1;
+            }
+
+            return -1;
 
             // Time Complexity: O(n)
             // Space Complexity: O(n)

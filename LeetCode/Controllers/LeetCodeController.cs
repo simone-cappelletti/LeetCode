@@ -694,5 +694,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FindThePivotInteger(int n)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(FindThePivotInteger), n);
+
+            var result = _leetCodeBusiness.FindThePivotInteger(n);
+
+            return result;
+        }
     }
 }

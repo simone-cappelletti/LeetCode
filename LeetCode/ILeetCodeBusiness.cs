@@ -28,6 +28,11 @@
         SerializeAndDeserializeBinaryTree SerializeAndDeserializeBinaryTree { get; }
 
         /// <summary>
+        /// https://leetcode.com/problems/lru-cache/description/
+        /// </summary>
+        LRUCache LRUCache { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

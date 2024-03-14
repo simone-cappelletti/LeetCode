@@ -21,6 +21,9 @@ namespace LeetCode
         /// <inheritdoc/>
         public SerializeAndDeserializeBinaryTree SerializeAndDeserializeBinaryTree { get; } = new();
 
+        /// <inheritdoc/>
+        public LRUCache LRUCache { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

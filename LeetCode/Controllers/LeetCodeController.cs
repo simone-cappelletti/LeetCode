@@ -704,5 +704,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int ContiguousArray(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ContiguousArray), nums);
+
+            var result = _leetCodeBusiness.ContiguousArray(nums);
+
+            return result;
+        }
     }
 }

@@ -847,5 +847,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 0, 1, 0, 0, 1 }, 4)]
+        [InlineData(new int[] { 0, 1, 0 }, 2)]
+        void ContiguousArray(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ContiguousArray(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

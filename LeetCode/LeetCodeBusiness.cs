@@ -2423,5 +2423,30 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int ContiguousArray(int[] nums)
+        {
+            var result = 0;
+            var sum = 0;
+            var dic = new Dictionary<int, int>();
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i] == 0 ? -1 : 1;
+
+                if (sum == 0)
+                    result = Math.Max(result, i + 1);
+                else if (dic.TryGetValue(sum, out var sumIndex))
+                    result = Math.Max(result, i - sumIndex);
+                else
+                    dic.Add(sum, i);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Compelxity: O(n)
+        }
     }
 }

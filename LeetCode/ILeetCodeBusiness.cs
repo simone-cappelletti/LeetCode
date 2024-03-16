@@ -542,5 +542,12 @@
         /// <param name="n"></param>
         /// <returns></returns>
         int FindThePivotInteger(int n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/contiguous-array/?envType=daily-question&envId=2024-03-16
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int ContiguousArray(int[] nums);
     }
 }

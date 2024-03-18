@@ -549,5 +549,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int ContiguousArray(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/single-number/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int SingleNumber(int[] nums);
     }
 }

@@ -862,5 +862,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 2, 2, 1 }, 1)]
+        [InlineData(new int[] { 4, 1, 2, 1, 2 }, 4)]
+        void SingleNumber(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.SingleNumber(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

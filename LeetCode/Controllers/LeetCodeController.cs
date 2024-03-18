@@ -714,5 +714,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SingleNumber(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(SingleNumber), nums);
+
+            var result = _leetCodeBusiness.SingleNumber(nums);
+
+            return result;
+        }
     }
 }

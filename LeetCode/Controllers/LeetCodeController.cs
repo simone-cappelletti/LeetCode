@@ -724,5 +724,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int KthSmallestElementInABST(TreeNode root, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(KthSmallestElementInABST), root, k);
+
+            var result = _leetCodeBusiness.KthSmallestElementInABST(root, k);
+
+            return result;
+        }
     }
 }

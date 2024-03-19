@@ -2459,5 +2459,33 @@ namespace LeetCode
 
             return result;
         }
+
+        public int KthSmallestElementInABST(TreeNode root, int k)
+        {
+            var counter = 0;
+            var result = DFS(root, new List<int>()).ToArray();
+
+            if (!result.Any())
+                return 0;
+
+            return result[k - 1];
+
+            List<int> DFS(TreeNode node, List<int> list)
+            {
+                if (node is null)
+                    return list;
+
+                DFS(node.left, list);
+
+                list.Add(node.val);
+
+                DFS(node.right, list);
+
+                return list;
+            }
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

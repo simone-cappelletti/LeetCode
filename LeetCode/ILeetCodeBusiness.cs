@@ -556,5 +556,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int SingleNumber(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int KthSmallestElementInABST(TreeNode root, int k);
     }
 }

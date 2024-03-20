@@ -2460,6 +2460,7 @@ namespace LeetCode
             return result;
         }
 
+        /// <inheritdoc/>
         public int KthSmallestElementInABST(TreeNode root, int k)
         {
             var counter = 0;
@@ -2486,6 +2487,37 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complexity: O(n)
+        }
+
+        /// <inheritdoc/>
+        public ListNode MergeInBetweenLinkedLists(ListNode list1, int a, int b, ListNode list2)
+        {
+            var result = list1;
+
+            var aNode = result;
+            while (a > 1 && aNode.next is not null)
+            {
+                aNode = aNode.next;
+                a--;
+                b--;
+            }
+
+            var bNode = aNode;
+            while (b >= 1 && bNode.next is not null)
+            {
+                bNode = bNode.next;
+                b--;
+            }
+
+            aNode.next = list2;
+            while (list2.next is not null)
+                list2 = list2.next;
+            list2.next = bNode.next;
+
+            return result;
+
+            // Time Complexity: O(a + b)
+            // Space Complexity: O(1)
         }
     }
 }

@@ -734,5 +734,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode MergeInBetweenLinkedLists(ListNode list1, int a, int b, ListNode list2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}, {arg4}", nameof(MergeInBetweenLinkedLists), list1, a, b, list2);
+
+            var result = _leetCodeBusiness.MergeInBetweenLinkedLists(list1, a, b, list2);
+
+            return result;
+        }
     }
 }

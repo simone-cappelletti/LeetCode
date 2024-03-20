@@ -564,5 +564,15 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int KthSmallestElementInABST(TreeNode root, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/merge-in-between-linked-lists/?envType=daily-question&envId=2024-03-20
+        /// </summary>
+        /// <param name="list1"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="list2"></param>
+        /// <returns></returns>
+        ListNode MergeInBetweenLinkedLists(ListNode list1, int a, int b, ListNode list2);
     }
 }

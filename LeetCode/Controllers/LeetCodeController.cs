@@ -744,5 +744,13 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public void ReorderList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(ReorderList), head);
+
+            _leetCodeBusiness.ReorderList(head);
+        }
     }
 }

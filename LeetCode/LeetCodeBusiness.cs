@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.OpenApi.Validations;
+using System.Text;
 
 namespace LeetCode
 {
@@ -2517,6 +2518,51 @@ namespace LeetCode
             return result;
 
             // Time Complexity: O(a + b)
+            // Space Complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public void ReorderList(ListNode head)
+        {
+            if (head is null)
+                return;
+
+            var slow = head;
+            var fast = head;
+
+            // Midpoint
+            while (fast is not null && fast.next is not null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            // Reverse
+            var current = slow;
+            ListNode prev = null;
+            while (current is not null)
+            {
+                var temp = current.next;
+                current.next = prev;
+                prev = current;
+                current = temp;
+            }
+
+            // Merge
+            var leftSide = head;
+            var rightSide = prev;
+            while (rightSide.next is not null)
+            {
+                var temp = leftSide.next;
+                leftSide.next = rightSide;
+                leftSide = temp;
+
+                temp = rightSide.next;
+                rightSide.next = leftSide;
+                rightSide = temp;
+            }
+
+            // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
     }

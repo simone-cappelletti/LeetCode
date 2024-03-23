@@ -877,5 +877,26 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Fact]
+        void ReorderList()
+        {
+            // Arrange
+            var business = CreateBusiness();
+            var head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+            var resultList = new ListNode(1, new ListNode(5, new ListNode(2, new ListNode(4, new ListNode(3)))));
+
+            // Act
+            business.ReorderList(head);
+
+            // Assert
+            while (resultList.next is not null)
+            {
+                Assert.Equal(head.val, resultList.val);
+
+                resultList = resultList.next;
+                head = head.next;
+            }
+        }
     }
 }

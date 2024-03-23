@@ -574,5 +574,11 @@
         /// <param name="list2"></param>
         /// <returns></returns>
         ListNode MergeInBetweenLinkedLists(ListNode list1, int a, int b, ListNode list2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/reorder-list/?envType=daily-question&envId=2024-03-23
+        /// </summary>
+        /// <param name="head"></param>
+        void ReorderList(ListNode head);
     }
 }

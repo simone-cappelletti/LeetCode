@@ -898,5 +898,20 @@ namespace LeetCode.UnitTests
                 head = head.next;
             }
         }
+
+        [Theory]
+        [InlineData(new int[] { 4, 3, 2, 7, 8, 2, 3, 1 }, new int[] { 2, 3 })]
+        [InlineData(new int[] { 1, 1, 2 }, new int[] { 1 })]
+        void FindAllDuplicatesInAnArray(int[] nums, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.FindAllDuplicatesInAnArray(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

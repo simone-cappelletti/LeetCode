@@ -580,5 +580,12 @@
         /// </summary>
         /// <param name="head"></param>
         void ReorderList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-all-duplicates-in-an-array/?envType=daily-question&envId=2024-03-25
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        IList<int> FindAllDuplicatesInAnArray(int[] nums);
     }
 }

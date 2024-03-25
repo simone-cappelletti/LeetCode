@@ -752,5 +752,15 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.ReorderList(head);
         }
+
+        [HttpPost]
+        public IList<int> FindAllDuplicatesInAnArray(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(FindAllDuplicatesInAnArray), nums);
+
+            var result = _leetCodeBusiness.FindAllDuplicatesInAnArray(nums);
+
+            return result;
+        }
     }
 }

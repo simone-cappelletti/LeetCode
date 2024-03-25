@@ -2565,5 +2565,24 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public IList<int> FindAllDuplicatesInAnArray(int[] nums)
+        {
+            var result = new List<int>();
+
+            foreach (var num in nums)
+            {
+                if (nums[Math.Abs(num) - 1] < 0)
+                    result.Add(Math.Abs(num));
+                else
+                    nums[Math.Abs(num) - 1] *= -1;
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

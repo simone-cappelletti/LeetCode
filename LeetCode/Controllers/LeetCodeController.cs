@@ -762,5 +762,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FirstMissingPositive(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg}", nameof(FirstMissingPositive), nums);
+
+            var result = _leetCodeBusiness.FirstMissingPositive(nums);
+
+            return result;
+        }
     }
 }

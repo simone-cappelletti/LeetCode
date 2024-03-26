@@ -913,5 +913,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 3, 4, -1, 1 }, 2)]
+        [InlineData(new int[] { 7, 8, 9, 11, 12 }, 1)]
+        void FirstMissingPositive(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.FirstMissingPositive(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

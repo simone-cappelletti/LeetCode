@@ -2584,5 +2584,33 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int FirstMissingPositive(int[] nums)
+        {
+            for (var i = 0; i < nums.Length; i++)
+            {
+                var num = nums[i];
+                var idx = nums[i] - 1;
+
+                if (num > 0 && num <= nums.Length && num != nums[idx])
+                {
+                    nums[i] = nums[idx];
+                    nums[idx] = num;
+                    i--;
+                }
+            }
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != i + 1)
+                    return i + 1;
+            }
+
+            return nums.Length + 1;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

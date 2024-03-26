@@ -587,5 +587,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         IList<int> FindAllDuplicatesInAnArray(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/first-missing-positive/?envType=daily-question&envId=2024-03-26
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int FirstMissingPositive(int[] nums);
     }
 }

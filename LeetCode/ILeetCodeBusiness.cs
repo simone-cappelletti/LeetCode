@@ -594,5 +594,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int FirstMissingPositive(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/subarray-product-less-than-k/?envType=daily-question&envId=2024-03-27
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int SubarrayProductLessThanK(int[] nums, int k);
     }
 }

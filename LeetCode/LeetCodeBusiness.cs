@@ -2612,5 +2612,33 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int SubarrayProductLessThanK(int[] nums, int k)
+        {
+            if (k <= 1)
+                return 0;
+
+            var result = 0;
+            var left = 0;
+            var right = 0;
+            var currentProduct = 1;
+
+            while (right < nums.Length)
+            {
+                currentProduct *= nums[right];
+
+                while (currentProduct >= k)
+                    currentProduct /= nums[left++];
+
+                result += right - left + 1;
+                right++;
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

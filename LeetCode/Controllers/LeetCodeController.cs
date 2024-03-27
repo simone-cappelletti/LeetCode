@@ -772,5 +772,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SubarrayProductLessThanK(int[] nums, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SubarrayProductLessThanK), nums, k);
+
+            var result = _leetCodeBusiness.SubarrayProductLessThanK(nums, k);
+
+            return result;
+        }
     }
 }

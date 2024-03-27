@@ -928,5 +928,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 10, 5, 2, 6 }, 100, 8)]
+        [InlineData(new int[] { 2, 5, 5, 2, 6 }, 90, 12)]
+        void SubarrayProductLessThanK(int[] nums, int k, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.SubarrayProductLessThanK(nums, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

@@ -2668,5 +2668,23 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public string RemoveVowelsFromAString(string s)
+        {
+            var sb = new StringBuilder();
+            var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+
+            foreach (var @char in s)
+            {
+                if (!vowels.Contains(@char))
+                    sb.Append(@char);
+            }
+
+            return sb.ToString();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

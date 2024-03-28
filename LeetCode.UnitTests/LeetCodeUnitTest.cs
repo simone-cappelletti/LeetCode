@@ -959,5 +959,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("leetcodeisacommunityforcoders", "ltcdscmmntyfrcdrs")]
+        [InlineData("aeiou", "")]
+        void RemoveVowelsFromAString(string s, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RemoveVowelsFromAString(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

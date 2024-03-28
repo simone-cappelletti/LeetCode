@@ -610,5 +610,12 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int LengthOfLongestSubarrayWithAtMostKFrequency(int[] nums, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-vowels-from-a-string/?envType=weekly-question&envId=2024-03-22
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string RemoveVowelsFromAString(string s);
     }
 }

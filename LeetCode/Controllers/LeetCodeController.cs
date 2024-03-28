@@ -792,5 +792,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string RemoveVowelsFromAString(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveVowelsFromAString), s);
+
+            var result = _leetCodeBusiness.RemoveVowelsFromAString(s);
+
+            return result;
+        }
     }
 }

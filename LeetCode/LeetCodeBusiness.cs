@@ -2640,5 +2640,33 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int LengthOfLongestSubarrayWithAtMostKFrequency(int[] nums, int k)
+        {
+            var result = 0;
+            var left = 0;
+            var freq = new Dictionary<int, int>();
+
+            for (var right = 0; right < nums.Length; right++)
+            {
+                freq.TryGetValue(nums[right], out var rightFreq);
+                freq[nums[right]] = ++rightFreq;
+
+                while (freq[nums[right]] > k)
+                {
+                    freq.TryGetValue(nums[left], out var leftFreq);
+                    freq[nums[left]] = --leftFreq;
+                    left++;
+                }
+
+                result = Math.Max(result, right - left + 1);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

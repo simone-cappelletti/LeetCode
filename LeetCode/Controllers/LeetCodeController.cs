@@ -782,5 +782,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LengthOfLongestSubarrayWithAtMostKFrequency(int[] nums, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(LengthOfLongestSubarrayWithAtMostKFrequency), nums, k);
+
+            var result = _leetCodeBusiness.LengthOfLongestSubarrayWithAtMostKFrequency(nums, k);
+
+            return result;
+        }
     }
 }

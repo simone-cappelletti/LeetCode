@@ -602,5 +602,13 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int SubarrayProductLessThanK(int[] nums, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/?envType=daily-question&envId=2024-03-28
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int LengthOfLongestSubarrayWithAtMostKFrequency(int[] nums, int k);
     }
 }

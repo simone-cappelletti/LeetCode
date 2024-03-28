@@ -943,5 +943,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3, 1, 2, 3, 1, 2 }, 2, 6)]
+        [InlineData(new int[] { 1, 2, 1, 2, 1, 2, 1, 2 }, 1, 2)]
+        [InlineData(new int[] { 5, 5, 5, 5, 5, 5, 5 }, 4, 4)]
+        void LengthOfLongestSubarrayWithAtMostKFrequency(int[] nums, int k, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LengthOfLongestSubarrayWithAtMostKFrequency(nums, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

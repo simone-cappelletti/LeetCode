@@ -1,5 +1,4 @@
-﻿using Microsoft.OpenApi.Validations;
-using System.Text;
+﻿using System.Text;
 
 namespace LeetCode
 {
@@ -2685,6 +2684,36 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public long CountSubarraysWhereMaxElementAppearsAtLeastKTimes(int[] nums, int k)
+        {
+            long result = 0;
+            var max = nums.Max();
+            var counter = 0;
+            var start = 0;
+
+            for (var end = 0; end < nums.Length; end++)
+            {
+                if (nums[end] == max)
+                    counter++;
+
+                while (counter == k)
+                {
+                    if (nums[start] == max)
+                        counter--;
+
+                    start++;
+                }
+
+                result += start;
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complecity: O(1)
         }
     }
 }

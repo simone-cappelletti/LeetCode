@@ -974,5 +974,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 3, 2, 3, 3 }, 2, 6)]
+        [InlineData(new int[] { 1, 4, 2, 1 }, 3, 0)]
+        [InlineData(new int[] { 1, 2, 2, 2, 3, 4, 4 }, 2, 6)]
+        void CountSubarraysWhereMaxElementAppearsAtLeastKTimes(int[] nums, int k, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CountSubarraysWhereMaxElementAppearsAtLeastKTimes(nums, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

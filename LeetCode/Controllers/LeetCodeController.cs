@@ -796,9 +796,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public string RemoveVowelsFromAString(string s)
         {
-            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveVowelsFromAString), s);
+            _logger.LogInformation("{method} - {arg1}", nameof(RemoveVowelsFromAString), s);
 
             var result = _leetCodeBusiness.RemoveVowelsFromAString(s);
+
+            return result;
+        }
+
+        [HttpPost]
+        public long CountSubarraysWhereMaxElementAppearsAtLeastKTimes(int[] nums, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveVowelsFromAString), nums, k);
+
+            var result = _leetCodeBusiness.CountSubarraysWhereMaxElementAppearsAtLeastKTimes(nums, k);
 
             return result;
         }

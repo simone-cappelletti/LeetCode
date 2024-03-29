@@ -617,5 +617,13 @@
         /// <param name="s"></param>
         /// <returns></returns>
         string RemoveVowelsFromAString(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times/?envType=daily-question&envId=2024-03-29
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public long CountSubarraysWhereMaxElementAppearsAtLeastKTimes(int[] nums, int k);
     }
 }

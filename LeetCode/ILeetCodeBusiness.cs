@@ -625,5 +625,13 @@
         /// <param name="k"></param>
         /// <returns></returns>
         public long CountSubarraysWhereMaxElementAppearsAtLeastKTimes(int[] nums, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/subarrays-with-k-different-integers/?envType=daily-question&envId=2024-03-30
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int SubarraysWithKDifferentIntegers(int[] nums, int k);
     }
 }

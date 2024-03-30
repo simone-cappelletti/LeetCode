@@ -812,5 +812,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SubarraysWithKDifferentIntegers(int[] nums, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SubarraysWithKDifferentIntegers), nums, k);
+
+            var result = _leetCodeBusiness.SubarraysWithKDifferentIntegers(nums, k);
+
+            return result;
+        }
     }
 }

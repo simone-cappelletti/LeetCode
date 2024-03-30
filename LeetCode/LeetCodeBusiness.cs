@@ -2715,5 +2715,50 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complecity: O(1)
         }
+
+        public int SubarraysWithKDifferentIntegers(int[] nums, int k)
+        {
+            return
+                SlidingWindow(nums, k) -
+                SlidingWindow(nums, k - 1);
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            int SlidingWindow(int[] nums, int k)
+            {
+                var freq = new Dictionary<int, int>();
+                var left = 0;
+                var right = 0;
+                var result = 0;
+
+                while (right < nums.Length)
+                {
+                    var rightNum = nums[right];
+
+                    freq.TryGetValue(rightNum, out var rightCount);
+                    freq[rightNum] = ++rightCount;
+
+                    while (freq.Count > k)
+                    {
+                        // Shrink
+                        var leftNum = nums[left];
+
+                        freq.TryGetValue(leftNum, out var leftCount);
+                        freq[leftNum] = --leftCount;
+
+                        if (leftCount == 0)
+                            freq.Remove(leftNum);
+
+                        left++;
+                    }
+
+                    result += right - left + 1;
+                    right++;
+                }
+
+                return result;
+            }
+        }
     }
 }

@@ -2760,5 +2760,34 @@ namespace LeetCode
                 return result;
             }
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/daily-temperatures/
+        /// </summary>
+        /// <param name="temperatures"></param>
+        /// <returns></returns>
+        public int[] DailyTemperatures(int[] temperatures)
+        {
+            var result = new int[temperatures.Length];
+            var stack = new Stack<int>();
+
+            stack.Push(0);
+
+            for (var i = 1; i < temperatures.Length; i++)
+            {
+                while (stack.Count > 0 && temperatures[stack.Peek()] < temperatures[i])
+                {
+                    var id = stack.Pop();
+                    result[id] = i - id;
+                }
+
+                stack.Push(i);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complecity: O(n)
+        }
     }
 }

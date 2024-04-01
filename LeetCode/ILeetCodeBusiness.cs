@@ -633,5 +633,12 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int SubarraysWithKDifferentIntegers(int[] nums, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/daily-temperatures/
+        /// </summary>
+        /// <param name="temperatures"></param>
+        /// <returns></returns>
+        int[] DailyTemperatures(int[] temperatures);
     }
 }

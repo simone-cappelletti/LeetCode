@@ -822,5 +822,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] DailyTemperatures(int[] temperatures)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(DailyTemperatures), temperatures);
+
+            var result = _leetCodeBusiness.DailyTemperatures(temperatures);
+
+            return result;
+        }
     }
 }

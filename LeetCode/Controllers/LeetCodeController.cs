@@ -832,5 +832,23 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LengthOfLastWord(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(LengthOfLastWord), s);
+
+            var result = _leetCodeBusiness.LengthOfLastWord(s);
+
+            return result;
+        }
+
+        [HttpPost]
+        public void MoveZeroes(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MoveZeroes), nums);
+
+            _leetCodeBusiness.MoveZeroes(nums);
+        }
     }
 }

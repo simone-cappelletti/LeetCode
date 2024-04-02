@@ -1020,5 +1020,35 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("Hello World", 5)]
+        [InlineData("   fly me   to   the moon  ", 4)]
+        void LengthOfLastWord(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LengthOfLastWord(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 0, 1, 0, 3, 12 }, new int[] { 1, 3, 12, 0, 0 })]
+        [InlineData(new int[] { 0 }, new int[] { 0 })]
+        void MoveZeroes(int[] nums, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            business.MoveZeroes(nums);
+
+            // Assert
+            Assert.Equal(nums, solution);
+        }
     }
 }

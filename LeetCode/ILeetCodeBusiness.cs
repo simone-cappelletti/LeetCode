@@ -640,5 +640,18 @@
         /// <param name="temperatures"></param>
         /// <returns></returns>
         int[] DailyTemperatures(int[] temperatures);
+
+        /// <summary>
+        /// https://leetcode.com/problems/length-of-last-word/?envType=daily-question&envId=2024-04-01
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        int LengthOfLastWord(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/move-zeroes/
+        /// </summary>
+        /// <param name="nums"></param>
+        void MoveZeroes(int[] nums);
     }
 }

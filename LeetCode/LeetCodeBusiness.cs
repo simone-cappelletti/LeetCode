@@ -2716,6 +2716,7 @@ namespace LeetCode
             // Space Complecity: O(1)
         }
 
+        /// <inheritdoc/>
         public int SubarraysWithKDifferentIntegers(int[] nums, int k)
         {
             return
@@ -2761,11 +2762,7 @@ namespace LeetCode
             }
         }
 
-        /// <summary>
-        /// https://leetcode.com/problems/daily-temperatures/
-        /// </summary>
-        /// <param name="temperatures"></param>
-        /// <returns></returns>
+        /// <inheritdoc/>
         public int[] DailyTemperatures(int[] temperatures)
         {
             var result = new int[temperatures.Length];
@@ -2787,7 +2784,56 @@ namespace LeetCode
             return result;
 
             // Time Complexity: O(n)
-            // Space Complecity: O(n)
+            // Space Complexity: O(n)
+        }
+
+        /// <inheritdoc/>
+        public int LengthOfLastWord(string s)
+        {
+            var result = 0;
+
+            for (var i = s.Length - 1; i >= 0; i--)
+            {
+                if (s[i] == ' ')
+                {
+                    if (result == 0)
+                        continue;
+                    else
+                        return result;
+                }
+                else
+                {
+                    result++;
+                }
+            }
+
+            return result;
+
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public void MoveZeroes(int[] nums)
+        {
+            var lastSwap = 0;
+            for (var i = 0; i < nums.Length; i++)
+            {
+                var num = nums[i];
+
+                if (num != 0)
+                {
+                    // Swap
+                    var temp = nums[lastSwap];
+                    nums[lastSwap] = num;
+                    nums[i] = temp;
+
+                    lastSwap++;
+                }
+            }
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

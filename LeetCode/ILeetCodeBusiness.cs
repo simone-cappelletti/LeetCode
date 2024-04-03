@@ -653,5 +653,12 @@
         /// </summary>
         /// <param name="nums"></param>
         void MoveZeroes(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/group-anagrams/
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
+        IList<IList<string>> GroupAnagrams(string[] strs);
     }
 }

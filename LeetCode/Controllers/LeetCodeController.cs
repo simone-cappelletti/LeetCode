@@ -850,5 +850,15 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.MoveZeroes(nums);
         }
+
+        [HttpPost]
+        public IList<IList<string>> GroupAnagrams(string[] strs)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(GroupAnagrams), strs);
+
+            var result = _leetCodeBusiness.GroupAnagrams(strs);
+
+            return result;
+        }
     }
 }

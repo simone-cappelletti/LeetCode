@@ -2835,5 +2835,41 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public IList<IList<string>> GroupAnagrams(string[] strs)
+        {
+            var result = new List<IList<string>>();
+            var dic = new Dictionary<string, List<string>>();
+
+            foreach (var str in strs)
+            {
+                var counters = new int[26];
+                foreach (var @char in str)
+                    counters[@char - 'a']++;
+
+                var sb = new StringBuilder();
+                for (var i = 0; i < 26; i++)
+                    if (counters[i] > 0)
+                        sb.Append((char)('a' + i), counters[i]);
+
+                var key = sb.ToString();
+
+                dic.TryGetValue(key, out var value);
+
+                value ??= new List<string>();
+                value.Add(str);
+
+                dic[key] = value;
+            }
+
+            foreach ((var key, var value) in dic)
+                result.Add(value);
+
+            return result;
+
+            // Time Complexity: O(nk)
+            // Space Complexity: O(nk)
+        }
     }
 }

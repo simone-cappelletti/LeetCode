@@ -1050,5 +1050,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(nums, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 3, 4, 2, 2 }, 2)]
+        [InlineData(new int[] { 3, 1, 3, 4, 2 }, 3)]
+        void FindTheDuplicateNumber(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.FindTheDuplicateNumber(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

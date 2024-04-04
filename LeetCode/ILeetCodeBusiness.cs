@@ -660,5 +660,12 @@
         /// <param name="strs"></param>
         /// <returns></returns>
         IList<IList<string>> GroupAnagrams(string[] strs);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-the-duplicate-number/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int FindTheDuplicateNumber(int[] nums);
     }
 }

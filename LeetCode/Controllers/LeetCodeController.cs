@@ -860,5 +860,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FindTheDuplicateNumber(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(FindTheDuplicateNumber), nums);
+
+            var result = _leetCodeBusiness.FindTheDuplicateNumber(nums);
+
+            return result;
+        }
     }
 }

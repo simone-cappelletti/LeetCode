@@ -667,5 +667,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int FindTheDuplicateNumber(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/make-the-string-great/?envType=daily-question&envId=2024-04-05
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string MakeTheStringGreat(string s);
     }
 }

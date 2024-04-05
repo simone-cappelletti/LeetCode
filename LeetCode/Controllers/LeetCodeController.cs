@@ -870,5 +870,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string MakeTheStringGreat(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MakeTheStringGreat), s);
+
+            var result = _leetCodeBusiness.MakeTheStringGreat(s);
+
+            return result;
+        }
     }
 }

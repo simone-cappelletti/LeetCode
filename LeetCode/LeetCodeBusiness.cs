@@ -2898,5 +2898,41 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public string MakeTheStringGreat(string s)
+        {
+            if (s.Length < 2)
+                return s;
+
+            var stack = new Stack<int>();
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                var currentChar = (int)s[i];
+
+                if (stack.Count > 0)
+                {
+                    var topStackChar = stack.Peek();
+                    if (Math.Abs(currentChar - topStackChar) == 32)
+                        stack.Pop();
+                    else
+                        stack.Push(currentChar);
+                }
+                else
+                {
+                    stack.Push(currentChar);
+                }
+            }
+
+            var sb = new StringBuilder();
+            while (stack.Count > 0)
+                sb.Insert(0, (char)stack.Pop());
+
+            return sb.ToString();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

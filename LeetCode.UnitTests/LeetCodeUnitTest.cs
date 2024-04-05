@@ -1065,5 +1065,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("leEeetcode", "leetcode")]
+        [InlineData("abBAcC", "")]
+        void MakeTheStringGreat(string s, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.MakeTheStringGreat(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

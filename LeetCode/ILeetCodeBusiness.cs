@@ -674,5 +674,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         string MakeTheStringGreat(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/?envType=daily-question&envId=2024-04-06
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string MinimumRemoveToMakeValidParentheses(string s);
     }
 }

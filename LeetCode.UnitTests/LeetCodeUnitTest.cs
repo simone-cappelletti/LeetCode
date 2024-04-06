@@ -1080,5 +1080,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("lee(t(c)o)de)", "lee(t(c)o)de")]
+        [InlineData("a)b(c)d", "ab(c)d")]
+        [InlineData("))((", "")]
+        void MinimumRemoveToMakeValidParentheses(string s, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.MinimumRemoveToMakeValidParentheses(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

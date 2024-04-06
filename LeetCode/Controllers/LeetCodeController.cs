@@ -880,5 +880,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string MinimumRemoveToMakeValidParentheses(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MinimumRemoveToMakeValidParentheses), s);
+
+            var result = _leetCodeBusiness.MinimumRemoveToMakeValidParentheses(s);
+
+            return result;
+        }
     }
 }

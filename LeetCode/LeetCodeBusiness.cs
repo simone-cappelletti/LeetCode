@@ -2934,5 +2934,42 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public string MinimumRemoveToMakeValidParentheses(string s)
+        {
+            var sb = new StringBuilder();
+            var indexes = new HashSet<int>();
+            var stack = new Stack<(int index, char @char)>();
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                var @char = s[i];
+
+                if (@char == '(')
+                {
+                    stack.Push((i, @char));
+                }
+                else if (@char == ')')
+                {
+                    if (stack.Count > 0 && stack.Peek().@char == '(')
+                        stack.Pop();
+                    else
+                        stack.Push((i, @char));
+                }
+            }
+
+            while (stack.Count > 0)
+                indexes.Add(stack.Pop().index);
+
+            for (var i = 0; i < s.Length; i++)
+                if (!indexes.Contains(i))
+                    sb.Append(s[i]);
+
+            return sb.ToString();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -1096,5 +1096,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("()", true)]
+        [InlineData("(*)", true)]
+        [InlineData("(*))", true)]
+        void ValidParenthesisString(string s, bool solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.ValidParenthesisString(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

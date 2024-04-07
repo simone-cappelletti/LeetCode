@@ -890,5 +890,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool ValidParenthesisString(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(ValidParenthesisString), s);
+
+            var result = _leetCodeBusiness.ValidParenthesisString(s);
+
+            return result;
+        }
     }
 }

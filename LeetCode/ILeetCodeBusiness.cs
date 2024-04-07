@@ -681,5 +681,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         string MinimumRemoveToMakeValidParentheses(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/valid-parenthesis-string/?envType=daily-question&envId=2024-04-07
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        bool ValidParenthesisString(string s);
     }
 }

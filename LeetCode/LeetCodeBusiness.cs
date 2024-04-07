@@ -2971,5 +2971,86 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public bool ValidParenthesisString(string s)
+        {
+            var stack = new Stack<(int index, char @char)>();
+            for (var i = 0; i < s.Length; i++)
+            {
+                var @char = s[i];
+
+                if (@char == '(')
+                {
+                    stack.Push((i, @char));
+                }
+                else if (@char == ')')
+                {
+                    if (stack.Count > 0 && stack.Peek().@char == '(')
+                        stack.Pop();
+                    else
+                        stack.Push((i, @char));
+                }
+            }
+
+            var indexes = new HashSet<int>();
+            while (stack.Count > 0)
+                indexes.Add(stack.Pop().index);
+
+            var sb = new StringBuilder();
+            for (var i = 0; i < s.Length; i++)
+                if (indexes.Contains(i) || s[i] == '*')
+                    sb.Append(s[i]);
+
+            indexes.Clear();
+            s = sb.ToString();
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                var @char = s[i];
+                var jollyFound = false;
+
+                if (@char == '(')
+                {
+                    var j = i + 1;
+                    while (j < s.Length)
+                    {
+                        if (s[j] == '*' && !indexes.Contains(j))
+                        {
+                            jollyFound = true;
+                            indexes.Add(j);
+                            break;
+                        }
+                        j++;
+                    }
+                }
+                else if (@char == ')')
+                {
+                    var j = i - 1;
+                    while (j >= 0)
+                    {
+                        if (s[j] == '*' && !indexes.Contains(j))
+                        {
+                            jollyFound = true;
+                            indexes.Add(j);
+                            break;
+                        }
+                        j--;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+
+                if (!jollyFound)
+                    return false;
+            }
+
+            return true;
+
+            // Time Complexity: O(n^2)
+            // Space Complexity: O(n)
+        }
     }
 }

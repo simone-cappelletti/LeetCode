@@ -1112,5 +1112,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 1, 0, 0 }, new int[] { 0, 1, 0, 1 }, 0)]
+        [InlineData(new int[] { 1, 1, 1, 0, 0, 1 }, new int[] { 1, 0, 0, 0, 1, 1 }, 3)]
+        void NumberOfStudentsUnableToEatLunch(int[] students, int[] sandwiches, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.NumberOfStudentsUnableToEatLunch(students, sandwiches);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

@@ -900,5 +900,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int NumberOfStudentsUnableToEatLunch(int[] students, int[] sandwiches)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(NumberOfStudentsUnableToEatLunch), students, sandwiches);
+
+            var result = _leetCodeBusiness.NumberOfStudentsUnableToEatLunch(students, sandwiches);
+
+            return result;
+        }
     }
 }

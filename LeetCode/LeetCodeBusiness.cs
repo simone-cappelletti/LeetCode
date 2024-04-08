@@ -3052,5 +3052,40 @@ namespace LeetCode
             // Time Complexity: O(n^2)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int NumberOfStudentsUnableToEatLunch(int[] students, int[] sandwiches)
+        {
+            var studentsQ = new Queue<int>();
+            var sandwichesS = new Stack<int>();
+            var length = students.Length;
+            var served = 0;
+
+            for (var i = 0; i < length; i++)
+            {
+                studentsQ.Enqueue(students[i]);
+                sandwichesS.Push(sandwiches[length - 1 - i]);
+            }
+
+            while (studentsQ.Count > 0 && studentsQ.Count > served)
+            {
+                if (studentsQ.Peek() == sandwichesS.Peek())
+                {
+                    studentsQ.Dequeue();
+                    sandwichesS.Pop();
+                    served = 0;
+                }
+                else
+                {
+                    studentsQ.Enqueue(studentsQ.Dequeue());
+                    served++;
+                }
+            }
+
+            return studentsQ.Count;
+
+            // Time Complexity: O(n^2)
+            // Space Complexity: O(n)
+        }
     }
 }

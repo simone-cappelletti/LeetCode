@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -688,5 +690,13 @@
         /// <param name="s"></param>
         /// <returns></returns>
         bool ValidParenthesisString(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/?envType=daily-question&envId=2024-04-08
+        /// </summary>
+        /// <param name="students"></param>
+        /// <param name="sandwiches"></param>
+        /// <returns></returns>
+        int NumberOfStudentsUnableToEatLunch(int[] students, int[] sandwiches);
     }
 }

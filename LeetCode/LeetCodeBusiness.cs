@@ -3087,5 +3087,34 @@ namespace LeetCode
             // Time Complexity: O(n^2)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public ListNode SwapNodesInPairs(ListNode head)
+        {
+            if (head is null || head.next is null)
+                return head;
+
+            var dummy = new ListNode(next: head);
+
+            ListNode prevNode = dummy;
+            while (head is not null && head.next is not null)
+            {
+                var firstNode = head;
+                var secondNode = head.next;
+
+                // Swap
+                prevNode.next = secondNode;
+                firstNode.next = secondNode.next;
+                secondNode.next = firstNode;
+
+                prevNode = firstNode;
+                head = firstNode.next;
+            }
+
+            return dummy.next;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

@@ -910,5 +910,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode SwapNodesInPairs(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(SwapNodesInPairs), head);
+
+            var result = _leetCodeBusiness.SwapNodesInPairs(head);
+
+            return result;
+        }
     }
 }

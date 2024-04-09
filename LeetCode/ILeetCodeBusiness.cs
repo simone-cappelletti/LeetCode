@@ -698,5 +698,12 @@ namespace LeetCode
         /// <param name="sandwiches"></param>
         /// <returns></returns>
         int NumberOfStudentsUnableToEatLunch(int[] students, int[] sandwiches);
+
+        /// <summary>
+        /// https://leetcode.com/problems/swap-nodes-in-pairs/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        ListNode SwapNodesInPairs(ListNode head);
     }
 }

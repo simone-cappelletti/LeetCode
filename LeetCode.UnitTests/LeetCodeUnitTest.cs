@@ -1127,5 +1127,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 17, 13, 11, 2, 3, 5, 7 }, new int[] { 2, 13, 3, 11, 5, 17, 7 })]
+        [InlineData(new int[] { 1, 1000 }, new int[] { 1, 1000 })]
+        void RevealCardsInIncreasingOrder(int[] deck, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RevealCardsInIncreasingOrder(deck);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

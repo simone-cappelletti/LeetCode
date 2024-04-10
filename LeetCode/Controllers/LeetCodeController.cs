@@ -920,5 +920,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] RevealCardsInIncreasingOrder(int[] deck)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(RevealCardsInIncreasingOrder), deck);
+
+            var result = _leetCodeBusiness.RevealCardsInIncreasingOrder(deck);
+
+            return result;
+        }
     }
 }

@@ -705,5 +705,12 @@ namespace LeetCode
         /// <param name="head"></param>
         /// <returns></returns>
         ListNode SwapNodesInPairs(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/reveal-cards-in-increasing-order/?envType=daily-question&envId=2024-04-10
+        /// </summary>
+        /// <param name="deck"></param>
+        /// <returns></returns>
+        int[] RevealCardsInIncreasingOrder(int[] deck);
     }
 }

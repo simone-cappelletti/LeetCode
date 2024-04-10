@@ -3116,5 +3116,40 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int[] RevealCardsInIncreasingOrder(int[] deck)
+        {
+            if (deck.Length < 2)
+                return deck;
+
+            var result = new int[deck.Length];
+            var deckIndex = 0;
+            var resultIndex = 0;
+            var skip = false;
+
+            Array.Sort(deck);
+
+            while (deckIndex < deck.Length)
+            {
+                if (result[resultIndex] == 0)
+                {
+                    if (!skip)
+                    {
+                        result[resultIndex] = deck[deckIndex];
+                        deckIndex++;
+                    }
+
+                    skip = !skip;
+                }
+
+                resultIndex = (resultIndex + 1) % deck.Length;
+            }
+
+            return result;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

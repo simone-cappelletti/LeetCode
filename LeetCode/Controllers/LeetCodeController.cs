@@ -930,5 +930,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string RemoveKDigits(string num, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveKDigits), num, k);
+
+            var result = _leetCodeBusiness.RemoveKDigits(num, k);
+
+            return result;
+        }
     }
 }

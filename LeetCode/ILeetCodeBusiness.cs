@@ -712,5 +712,13 @@ namespace LeetCode
         /// <param name="deck"></param>
         /// <returns></returns>
         int[] RevealCardsInIncreasingOrder(int[] deck);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-k-digits/?envType=daily-question&envId=2024-04-11
+        /// </summary>
+        /// <param name="num"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        string RemoveKDigits(string num, int k);
     }
 }

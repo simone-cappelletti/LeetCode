@@ -1142,5 +1142,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("1432219", 3, "1219")]
+        [InlineData("10200", 1, "200")]
+        [InlineData("10", 2, "0")]
+        void RemoveKDigits(string num, int k, string solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RemoveKDigits(num, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

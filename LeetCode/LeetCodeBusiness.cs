@@ -3151,5 +3151,44 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public string RemoveKDigits(string num, int k)
+        {
+            if (num.Length == k)
+                return "0";
+
+            var result = new StringBuilder();
+
+            foreach (var digit in num)
+            {
+                while (k > 0 &&
+                        result.Length > 0 &&
+                        result[result.Length - 1] > digit)
+                {
+                    result.Remove(result.Length - 1, 1);
+                    k--;
+                }
+
+                result.Append(digit);
+            }
+
+            while (k > 0)
+            {
+                result.Remove(result.Length - 1, 1);
+                k--;
+            }
+
+            while (result.Length > 1 &&
+                    result[0] == '0')
+            {
+                result.Remove(0, 1);
+            }
+
+            return result.ToString();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -940,5 +940,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int TimeNeededToBuyTickets(int[] tickets, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(TimeNeededToBuyTickets), tickets, k);
+
+            var result = _leetCodeBusiness.TimeNeededToBuyTickets(tickets, k);
+
+            return result;
+        }
     }
 }

@@ -3190,5 +3190,19 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int TimeNeededToBuyTickets(int[] tickets, int k)
+        {
+            var result = 0;
+
+            for (var i = 0; i < tickets.Length; i++)
+                result += Math.Min(tickets[i], i <= k ? tickets[k] : tickets[k] - 1);
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

@@ -1158,5 +1158,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 2, 3, 2 }, 2, 6)]
+        [InlineData(new int[] { 5, 1, 1, 1 }, 0, 8)]
+        [InlineData(new int[] { 3, 4, 6, 2, 5, 1 }, 1, 16)]
+        void TimeNeededToBuyTickets(int[] tickets, int k, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.TimeNeededToBuyTickets(tickets, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

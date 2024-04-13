@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace LeetCode
+﻿namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -720,5 +718,13 @@ namespace LeetCode
         /// <param name="k"></param>
         /// <returns></returns>
         string RemoveKDigits(string num, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/time-needed-to-buy-tickets/?envType=daily-question&envId=2024-04-09
+        /// </summary>
+        /// <param name="tickets"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int TimeNeededToBuyTickets(int[] tickets, int k);
     }
 }

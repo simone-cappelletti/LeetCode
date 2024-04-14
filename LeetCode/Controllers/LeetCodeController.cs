@@ -950,5 +950,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SumOfLeftLeaves(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(SumOfLeftLeaves), root);
+
+            var result = _leetCodeBusiness.SumOfLeftLeaves(root);
+
+            return result;
+        }
     }
 }

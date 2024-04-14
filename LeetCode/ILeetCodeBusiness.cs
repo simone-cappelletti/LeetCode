@@ -726,5 +726,12 @@
         /// <param name="k"></param>
         /// <returns></returns>
         int TimeNeededToBuyTickets(int[] tickets, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/sum-of-left-leaves/?envType=daily-question&envId=2024-04-14
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        int SumOfLeftLeaves(TreeNode root);
     }
 }

@@ -3204,5 +3204,32 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int SumOfLeftLeaves(TreeNode root)
+        {
+            if (root is null)
+                return 0;
+
+            return DFS(root, false);
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            int DFS(TreeNode node, bool left)
+            {
+                if (node.left is null && node.right is null)
+                    return left ? node.val : 0;
+
+                var result = 0;
+                if (node.right is not null)
+                    result += DFS(node.right, false);
+
+                if (node.left is not null)
+                    result += DFS(node.left, true);
+
+                return result;
+            }
+        }
     }
 }

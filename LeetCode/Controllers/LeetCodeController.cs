@@ -960,5 +960,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SumRootToLeafNumbers(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(SumRootToLeafNumbers), root);
+
+            var result = _leetCodeBusiness.SumRootToLeafNumbers(root);
+
+            return result;
+        }
     }
 }

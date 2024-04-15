@@ -3231,5 +3231,39 @@ namespace LeetCode
                 return result;
             }
         }
+
+        public int SumRootToLeafNumbers(TreeNode root)
+        {
+            if (root is null)
+                return 0;
+
+            var result = 0;
+            var queue = new Queue<(TreeNode node, int num)>();
+            queue.Enqueue((root, 0));
+
+            while (queue.Count > 0)
+            {
+                (var node, var num) = queue.Dequeue();
+                num *= 10;
+
+                if (node.left is null &&
+                    node.right is null)
+                {
+                    result += (num + node.val);
+                    continue;
+                }
+
+                if (node.left is not null)
+                    queue.Enqueue((node.left, num + node.val));
+
+                if (node.right is not null)
+                    queue.Enqueue((node.right, num + node.val));
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(h), with h = tree's height
+        }
     }
 }

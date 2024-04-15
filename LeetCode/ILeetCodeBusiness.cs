@@ -733,5 +733,12 @@
         /// <param name="root"></param>
         /// <returns></returns>
         int SumOfLeftLeaves(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/sum-root-to-leaf-numbers/?envType=daily-question&envId=2024-04-15
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        int SumRootToLeafNumbers(TreeNode root);
     }
 }

@@ -33,6 +33,11 @@
         LRUCache LRUCache { get; }
 
         /// <summary>
+        /// https://leetcode.com/problems/encode-and-decode-strings/
+        /// </summary>
+        EncodeAndDecodeStrings EncodeAndDecodeStrings { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

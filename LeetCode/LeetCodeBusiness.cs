@@ -24,6 +24,9 @@ namespace LeetCode
         /// <inheritdoc/>
         public LRUCache LRUCache { get; }
 
+        /// <inheritdoc/>
+        public EncodeAndDecodeStrings EncodeAndDecodeStrings { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

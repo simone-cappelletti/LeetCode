@@ -745,5 +745,12 @@
         /// <param name="root"></param>
         /// <returns></returns>
         int SumRootToLeafNumbers(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/valid-sudoku/
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
+        bool ValidSudoku(char[][] board);
     }
 }

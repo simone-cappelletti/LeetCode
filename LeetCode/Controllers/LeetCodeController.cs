@@ -970,5 +970,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool ValidSudoku(char[][] board)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(ValidSudoku), board);
+
+            var result = _leetCodeBusiness.ValidSudoku(board);
+
+            return result;
+        }
     }
 }

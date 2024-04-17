@@ -3235,6 +3235,7 @@ namespace LeetCode
             }
         }
 
+        /// <inheritdoc/>
         public int SumRootToLeafNumbers(TreeNode root)
         {
             if (root is null)
@@ -3267,6 +3268,89 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complexity: O(h), with h = tree's height
+        }
+
+        /// <inheritdoc/>
+        public bool ValidSudoku(char[][] board)
+        {
+            var n = 9;
+
+            // Validating rows
+            for (var i = 0; i < n; i++)
+            {
+                var map = new HashSet<int>(n);
+
+                for (var ii = 0; ii < n; ii++)
+                {
+                    if (board[i][ii] == '.')
+                        continue;
+
+                    if (map.Contains(board[i][ii]))
+                        return false;
+                    else
+                        map.Add(board[i][ii]);
+                }
+
+                map.Clear();
+            }
+
+            // Validating columns
+            for (var i = 0; i < n; i++)
+            {
+                var map = new HashSet<int>(n);
+
+                for (var ii = 0; ii < n; ii++)
+                {
+                    if (board[ii][i] == '.')
+                        continue;
+
+                    if (map.Contains(board[ii][i]))
+                        return false;
+                    else
+                        map.Add(board[ii][i]);
+                }
+
+                map.Clear();
+            }
+
+            // Validate boxes
+            var row = 0;
+            var col = 0;
+
+            while (row < n && col < n)
+            {
+                var map = new HashSet<int>(n);
+
+                for (var currentRow = row; currentRow < row + 3; currentRow++)
+                {
+                    for (var currentCol = col; currentCol < col + 3; currentCol++)
+                    {
+                        if (board[currentRow][currentCol] == '.')
+                            continue;
+
+                        if (map.Contains(board[currentRow][currentCol]))
+                            return false;
+                        else
+                            map.Add(board[currentRow][currentCol]);
+                    }
+                }
+
+                if (row < 6)
+                {
+                    row += 3;
+                }
+                else
+                {
+                    row = 0;
+                    col += 3;
+                }
+            }
+
+            return true;
+
+            // Not considering n = 9!
+            // Time Complexity: O(n^2)
+            // Space Complexity: O(n^2)
         }
     }
 }

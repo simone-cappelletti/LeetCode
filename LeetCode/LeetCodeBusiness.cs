@@ -3352,5 +3352,30 @@ namespace LeetCode
             // Time Complexity: O(n^2)
             // Space Complexity: O(n^2)
         }
+
+        /// <inheritdoc/>
+        public int LongestConsecutiveSequence(int[] nums)
+        {
+            var result = 0;
+            var dic = new HashSet<int>(nums);
+
+            foreach (var num in nums)
+            {
+                if (dic.Contains(num - 1))
+                    continue;
+
+                var streak = 1;
+
+                while (dic.Contains(num + streak))
+                    streak++;
+
+                result = Math.Max(streak, result);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

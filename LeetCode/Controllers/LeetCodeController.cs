@@ -980,5 +980,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LongestConsecutiveSequence(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(LongestConsecutiveSequence), nums);
+
+            var result = _leetCodeBusiness.LongestConsecutiveSequence(nums);
+
+            return result;
+        }
     }
 }

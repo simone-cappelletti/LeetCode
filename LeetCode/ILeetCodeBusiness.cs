@@ -752,5 +752,12 @@
         /// <param name="board"></param>
         /// <returns></returns>
         bool ValidSudoku(char[][] board);
+
+        /// <summary>
+        /// https://leetcode.com/problems/longest-consecutive-sequence/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int LongestConsecutiveSequence(int[] nums);
     }
 }

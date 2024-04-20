@@ -759,5 +759,12 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int LongestConsecutiveSequence(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-all-groups-of-farmland/?envType=daily-question&envId=2024-04-20
+        /// </summary>
+        /// <param name="land"></param>
+        /// <returns></returns>
+        int[][] FindAllGroupsOfFarmland(int[][] land);
     }
 }

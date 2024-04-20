@@ -990,5 +990,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[][] FindAllGroupsOfFarmland(int[][] land)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(FindAllGroupsOfFarmland), land);
+
+            var result = _leetCodeBusiness.FindAllGroupsOfFarmland(land);
+
+            return result;
+        }
     }
 }

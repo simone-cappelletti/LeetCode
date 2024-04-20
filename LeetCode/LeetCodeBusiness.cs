@@ -3377,5 +3377,48 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int[][] FindAllGroupsOfFarmland(int[][] land)
+        {
+            var result = new List<int[]>();
+
+            for (var row = 0; row < land.Length; row++)
+                for (var col = 0; col < land[row].Length; col++)
+                {
+                    if (land[row][col] == 0)
+                        continue;
+
+                    result.Add(FindGroupBoundaries(land, row, col));
+                }
+
+            return result.ToArray();
+
+            // Time Complexity: O(mn)
+            // Space Complexity: O(mn)
+
+            int[] FindGroupBoundaries(int[][] land, int row, int col)
+            {
+                int r2 = row;
+                int c2 = col;
+
+                // Bottom-right corner
+                while (r2 < land.Length && land[r2][col] == 1)
+                    r2++;
+
+                while (c2 < land[0].Length && land[row][c2] == 1)
+                    c2++;
+
+                for (var i = row; i < r2; i++)
+                {
+                    for (var j = col; j < c2; j++)
+                    {
+                        land[i][j] = 0;
+                    }
+                }
+
+                return new int[] { row, col, r2 - 1, c2 - 1 };
+            }
+        }
     }
 }

@@ -766,5 +766,12 @@
         /// <param name="land"></param>
         /// <returns></returns>
         int[][] FindAllGroupsOfFarmland(int[][] land);
+
+        /// <summary>
+        /// https://leetcode.com/problems/trapping-rain-water/
+        /// </summary>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        int TrappingRainWater(int[] height);
     }
 }

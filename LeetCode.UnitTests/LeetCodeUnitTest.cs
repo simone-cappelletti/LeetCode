@@ -1189,5 +1189,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }, 6)]
+        [InlineData(new int[] { 4, 2, 0, 3, 2, 5 }, 9)]
+        void TrappingRainWater(int[] height, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.TrappingRainWater(height);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

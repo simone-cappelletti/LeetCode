@@ -1000,5 +1000,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int TrappingRainWater(int[] height)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(TrappingRainWater), height);
+
+            var result = _leetCodeBusiness.TrappingRainWater(height);
+
+            return result;
+        }
     }
 }

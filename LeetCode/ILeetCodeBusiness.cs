@@ -773,5 +773,12 @@
         /// <param name="height"></param>
         /// <returns></returns>
         int TrappingRainWater(int[] height);
+
+        /// <summary>
+        /// https://leetcode.com/problems/roman-to-integer/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        int RomanToInteger(string s);
     }
 }

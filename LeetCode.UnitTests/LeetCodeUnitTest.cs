@@ -1204,5 +1204,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData("MCMXCIV", 1994)]
+        [InlineData("LVIII", 58)]
+        [InlineData("III", 3)]
+        public void RomanToInteger(string s, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.RomanToInteger(s);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

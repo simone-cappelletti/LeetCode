@@ -3498,5 +3498,27 @@ namespace LeetCode
             // Time Complexity: O(n), considering n = s.Length;
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public string IntegerToRoman(int num)
+        {
+            var result = new StringBuilder();
+            var values = new int[13] { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+            var symbols = new string[13] { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+
+            for (var i = 0; i < values.Length && num > 0; i++)
+            {
+                while (values[i] <= num)
+                {
+                    num -= values[i];
+                    result.Append(symbols[i]);
+                }
+            }
+
+            return result.ToString();
+
+            // Time Complexity: O(1)
+            // Space Complexity: O(1)
+        }
     }
 }

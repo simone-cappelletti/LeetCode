@@ -1020,5 +1020,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string IntegerToRoman(int num)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(IntegerToRoman), num);
+
+            var result = _leetCodeBusiness.IntegerToRoman(num);
+
+            return result;
+        }
     }
 }

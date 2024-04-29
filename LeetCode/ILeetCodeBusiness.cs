@@ -780,5 +780,12 @@
         /// <param name="s"></param>
         /// <returns></returns>
         int RomanToInteger(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/integer-to-roman/
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        string IntegerToRoman(int num);
     }
 }

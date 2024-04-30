@@ -1030,5 +1030,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool SearchA2DMatrix(int[][] matrix, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SearchA2DMatrix), matrix, target);
+
+            var result = _leetCodeBusiness.SearchA2DMatrix(matrix, target);
+
+            return result;
+        }
     }
 }

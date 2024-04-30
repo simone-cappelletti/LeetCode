@@ -787,5 +787,13 @@
         /// <param name="num"></param>
         /// <returns></returns>
         string IntegerToRoman(int num);
+
+        /// <summary>
+        /// https://leetcode.com/problems/search-a-2d-matrix/
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        bool SearchA2DMatrix(int[][] matrix, int target);
     }
 }

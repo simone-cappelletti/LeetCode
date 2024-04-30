@@ -3520,5 +3520,39 @@ namespace LeetCode
             // Time Complexity: O(1)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public bool SearchA2DMatrix(int[][] matrix, int target)
+        {
+            var row = matrix.Length;
+            if (row == 0)
+                return false;
+
+            var col = matrix[0].Length;
+
+            var left = 0;
+            var right = row * col - 1;
+
+            while (left <= right)
+            {
+                var midIndex = (left + right) / 2;
+                var midValue = matrix[midIndex / col][midIndex % col];
+
+                if (target == midValue)
+                    return true;
+                else
+                {
+                    if (target < midValue)
+                        right = midIndex - 1;
+                    else
+                        left = midIndex + 1;
+                }
+            }
+
+            return false;
+
+            // Time Complexity: 0(log(mn))
+            // Space Complexity: O(1)
+        }
     }
 }

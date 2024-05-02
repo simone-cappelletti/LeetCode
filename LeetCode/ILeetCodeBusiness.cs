@@ -795,5 +795,12 @@
         /// <param name="target"></param>
         /// <returns></returns>
         bool SearchA2DMatrix(int[][] matrix, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/largest-positive-integer-that-exists-with-its-negative/?envType=daily-question&envId=2024-05-02
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int LargestPositiveIntegerThatExistsWithItsNegative(int[] nums);
     }
 }

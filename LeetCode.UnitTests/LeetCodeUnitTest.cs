@@ -1236,5 +1236,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { -1, 2, -3, 3 }, 3)]
+        [InlineData(new int[] { -1, 10, 6, 7, -7, 1 }, 7)]
+        [InlineData(new int[] { -10, 8, 6, 7, -2, -3 }, -1)]
+        public void LargestPositiveIntegerThatExistsWithItsNegative(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.LargestPositiveIntegerThatExistsWithItsNegative(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

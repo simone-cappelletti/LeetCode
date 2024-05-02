@@ -3554,5 +3554,37 @@ namespace LeetCode
             // Time Complexity: 0(log(mn))
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int LargestPositiveIntegerThatExistsWithItsNegative(int[] nums)
+        {
+            Array.Sort(nums);
+
+            var left = 0;
+            var right = nums.Length - 1;
+
+            while (left < right)
+            {
+                var leftValue = nums[left];
+                var rightValue = nums[right];
+
+                if (leftValue > 0 || rightValue < 0)
+                    break;
+
+                leftValue = Math.Abs(leftValue);
+
+                if (leftValue > rightValue)
+                    left++;
+                else if (leftValue < rightValue)
+                    right--;
+                else
+                    return leftValue;
+            }
+
+            return -1;
+
+            // Time Complexity: O(n log n), depending on sort implementation.
+            // Space Complexity: O(log n), depending on sort implementation.
+        }
     }
 }

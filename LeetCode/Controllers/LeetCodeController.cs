@@ -1040,5 +1040,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LargestPositiveIntegerThatExistsWithItsNegative(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1},", nameof(LargestPositiveIntegerThatExistsWithItsNegative), nums);
+
+            var result = _leetCodeBusiness.LargestPositiveIntegerThatExistsWithItsNegative(nums);
+
+            return result;
+        }
     }
 }

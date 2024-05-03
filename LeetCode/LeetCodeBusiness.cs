@@ -3586,5 +3586,47 @@ namespace LeetCode
             // Time Complexity: O(n log n), depending on sort implementation.
             // Space Complexity: O(log n), depending on sort implementation.
         }
+
+        /// <inheritdoc/>
+        public long CountPairsInTwoArrays(int[] nums1, int[] nums2)
+        {
+            long result = 0;
+            var differences = new long[nums1.Length];
+
+            for (var i = 0; i < nums1.Length; i++)
+                differences[i] = nums1[i] - nums2[i];
+
+            Array.Sort(differences);
+
+            for (var i = 0; i < nums1.Length; i++)
+            {
+                if (differences[i] > 0)
+                {
+                    result += nums1.Length - i - 1;
+                }
+                else
+                {
+                    var left = i + 1;
+                    var right = nums1.Length - 1;
+
+                    while (left <= right)
+                    {
+                        var mid = left + (right - left) / 2;
+
+                        if (differences[i] + differences[mid] > 0)
+                            right = mid - 1;
+                        else
+                            left = mid + 1;
+                    }
+
+                    result += nums1.Length - left;
+                }
+            }
+
+            return result;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

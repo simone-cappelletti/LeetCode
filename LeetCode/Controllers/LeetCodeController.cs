@@ -1044,9 +1044,19 @@ namespace LeetCode.Controllers
         [HttpPost]
         public int LargestPositiveIntegerThatExistsWithItsNegative(int[] nums)
         {
-            _logger.LogInformation("{method} - {arg1},", nameof(LargestPositiveIntegerThatExistsWithItsNegative), nums);
+            _logger.LogInformation("{method} - {arg1}", nameof(LargestPositiveIntegerThatExistsWithItsNegative), nums);
 
             var result = _leetCodeBusiness.LargestPositiveIntegerThatExistsWithItsNegative(nums);
+
+            return result;
+        }
+
+        [HttpPost]
+        public long CountPairsInTwoArrays(int[] nums1, int[] nums2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(CountPairsInTwoArrays), nums1, nums2);
+
+            var result = _leetCodeBusiness.CountPairsInTwoArrays(nums1, nums2);
 
             return result;
         }

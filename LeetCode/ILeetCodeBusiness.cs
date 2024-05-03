@@ -802,5 +802,13 @@
         /// <param name="nums"></param>
         /// <returns></returns>
         int LargestPositiveIntegerThatExistsWithItsNegative(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/count-pairs-in-two-arrays/?envType=weekly-question&envId=2024-05-01
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        long CountPairsInTwoArrays(int[] nums1, int[] nums2);
     }
 }

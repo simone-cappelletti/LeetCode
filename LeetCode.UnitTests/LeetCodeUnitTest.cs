@@ -1252,5 +1252,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 2, 1, 2, 1 }, new int[] { 1, 2, 1, 2 }, 1)]
+        [InlineData(new int[] { 1, 10, 6, 2 }, new int[] { 1, 4, 1, 5 }, 5)]
+        public void CountPairsInTwoArrays(int[] nums1, int[] nums2, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CountPairsInTwoArrays(nums1, nums2);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

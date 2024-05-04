@@ -3628,5 +3628,29 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int BoatsToSavePeople(int[] people, int limit)
+        {
+            Array.Sort(people);
+
+            var result = 0;
+            var left = 0;
+            var right = people.Length - 1;
+
+            while (left <= right)
+            {
+                if (people[right] + people[left] <= limit)
+                    left++;
+
+                result++;
+                right--;
+            }
+
+            return result;
+
+            // Time Complexity: O(n log n), depending on sort method
+            // Space Complexity: O(n), depending on sort method
+        }
     }
 }

@@ -810,5 +810,13 @@
         /// <param name="nums2"></param>
         /// <returns></returns>
         long CountPairsInTwoArrays(int[] nums1, int[] nums2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/boats-to-save-people/?envType=daily-question&envId=2024-05-04
+        /// </summary>
+        /// <param name="people"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        int BoatsToSavePeople(int[] people, int limit);
     }
 }

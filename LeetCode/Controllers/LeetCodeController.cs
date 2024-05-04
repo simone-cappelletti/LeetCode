@@ -1060,5 +1060,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public long BoatsToSavePeople(int[] people, int limit)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(BoatsToSavePeople), people, limit);
+
+            var result = _leetCodeBusiness.BoatsToSavePeople(people, limit);
+
+            return result;
+        }
     }
 }

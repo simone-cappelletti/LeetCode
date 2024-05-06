@@ -818,5 +818,13 @@
         /// <param name="limit"></param>
         /// <returns></returns>
         int BoatsToSavePeople(int[] people, int limit);
+
+        /// <summary>
+        /// https://leetcode.com/problems/4sum/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        IList<IList<int>> FourSum(int[] nums, int target);
     }
 }

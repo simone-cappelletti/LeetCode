@@ -3652,5 +3652,79 @@ namespace LeetCode
             // Time Complexity: O(n log n), depending on sort method
             // Space Complexity: O(n), depending on sort method
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> FourSum(int[] nums, int target)
+        {
+            Array.Sort(nums);
+
+            return KSum(nums, target, 0, 4);
+
+            IList<IList<int>> KSum(int[] nums, long target, int start, int k)
+            {
+                var result = new List<IList<int>>();
+
+                if (start == nums.Length)
+                    return result;
+
+                long average_value = target / k;
+                if (nums[start] > average_value ||
+                    average_value > nums[nums.Length - 1])
+                    return result;
+
+                if (k == 2)
+                    return TwoSum(nums, target, start);
+
+                for (int i = start; i < nums.Length; i++)
+                {
+                    if (i > start && nums[i - 1] == nums[i])
+                        continue;
+
+                    foreach (var subset in KSum(nums, target - nums[i], i + 1, k - 1))
+                    {
+                        var list = new List<int>() { nums[i] };
+                        list.AddRange(subset);
+                        result.Add(list);
+                    }
+                }
+
+                return result;
+            }
+        }
+
+        IList<IList<int>> TwoSum(int[] nums, long target, int start)
+        {
+            var result = new List<IList<int>>();
+
+            int currentStart = start;
+            var currentEnd = nums.Length - 1;
+
+            while (currentStart < currentEnd)
+            {
+                if (currentStart > start &&
+                    nums[currentStart - 1] == nums[currentStart])
+                {
+                    currentStart++;
+                    continue;
+                }
+
+                if (currentEnd < nums.Length - 1 &&
+                    nums[currentEnd + 1] == nums[currentEnd])
+                {
+                    currentEnd--;
+                    continue;
+                }
+
+                int complement = nums[currentStart] + nums[currentEnd];
+                if (complement < target)
+                    ++currentStart;
+                else if (complement > target)
+                    --currentEnd;
+                else
+                    result.Add(new List<int> { nums[currentStart++], nums[currentEnd--] });
+            }
+
+            return result;
+        }
     }
 }

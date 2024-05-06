@@ -1070,5 +1070,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<IList<int>> FourSum(int[] nums, int target)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(FourSum), nums, target);
+
+            var result = _leetCodeBusiness.FourSum(nums, target);
+
+            return result;
+        }
     }
 }

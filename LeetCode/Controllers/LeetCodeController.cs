@@ -1080,5 +1080,13 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public void RotateArray(int[] nums, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RotateArray), nums, k);
+
+            _leetCodeBusiness.RotateArray(nums, k);
+        }
     }
 }

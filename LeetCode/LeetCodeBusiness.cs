@@ -3690,41 +3690,56 @@ namespace LeetCode
 
                 return result;
             }
+
+            IList<IList<int>> TwoSum(int[] nums, long target, int start)
+            {
+                var result = new List<IList<int>>();
+
+                int currentStart = start;
+                var currentEnd = nums.Length - 1;
+
+                while (currentStart < currentEnd)
+                {
+                    if (currentStart > start &&
+                        nums[currentStart - 1] == nums[currentStart])
+                    {
+                        currentStart++;
+                        continue;
+                    }
+
+                    if (currentEnd < nums.Length - 1 &&
+                        nums[currentEnd + 1] == nums[currentEnd])
+                    {
+                        currentEnd--;
+                        continue;
+                    }
+
+                    int complement = nums[currentStart] + nums[currentEnd];
+                    if (complement < target)
+                        ++currentStart;
+                    else if (complement > target)
+                        --currentEnd;
+                    else
+                        result.Add(new List<int> { nums[currentStart++], nums[currentEnd--] });
+                }
+
+                return result;
+            }
         }
 
-        IList<IList<int>> TwoSum(int[] nums, long target, int start)
+        /// <inheritdoc/>
+        public void RotateArray(int[] nums, int k)
         {
-            var result = new List<IList<int>>();
+            var temp = new int[nums.Length];
 
-            int currentStart = start;
-            var currentEnd = nums.Length - 1;
+            for (var i = 0; i < nums.Length; i++)
+                temp[(i + k) % nums.Length] = nums[i];
 
-            while (currentStart < currentEnd)
-            {
-                if (currentStart > start &&
-                    nums[currentStart - 1] == nums[currentStart])
-                {
-                    currentStart++;
-                    continue;
-                }
+            for (var i = 0; i < nums.Length; i++)
+                nums[i] = temp[i];
 
-                if (currentEnd < nums.Length - 1 &&
-                    nums[currentEnd + 1] == nums[currentEnd])
-                {
-                    currentEnd--;
-                    continue;
-                }
-
-                int complement = nums[currentStart] + nums[currentEnd];
-                if (complement < target)
-                    ++currentStart;
-                else if (complement > target)
-                    --currentEnd;
-                else
-                    result.Add(new List<int> { nums[currentStart++], nums[currentEnd--] });
-            }
-
-            return result;
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
         }
     }
 }

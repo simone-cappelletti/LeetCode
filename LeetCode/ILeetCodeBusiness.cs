@@ -826,5 +826,12 @@
         /// <param name="target"></param>
         /// <returns></returns>
         IList<IList<int>> FourSum(int[] nums, int target);
+
+        /// <summary>
+        /// https://leetcode.com/problems/rotate-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="k"></param>
+        void RotateArray(int[] nums, int k);
     }
 }

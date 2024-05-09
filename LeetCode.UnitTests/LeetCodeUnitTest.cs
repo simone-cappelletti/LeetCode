@@ -1283,5 +1283,21 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 2, 3 }, 2, 4)]
+        [InlineData(new int[] { 1, 1, 1, 1 }, 2, 1)]
+        [InlineData(new int[] { 2, 3, 4, 5 }, 1, 5)]
+        public void MaximizeHappinessOfSelectedChildren(int[] happiness, int k, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.MaximizeHappinessOfSelectedChildren(happiness, k);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

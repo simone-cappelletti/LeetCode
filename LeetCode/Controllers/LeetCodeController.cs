@@ -1088,5 +1088,13 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.RotateArray(nums, k);
         }
+
+        [HttpPost]
+        public void MaximizeHappinessOfSelectedChildren(int[] happiness, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(MaximizeHappinessOfSelectedChildren), happiness, k);
+
+            _leetCodeBusiness.MaximizeHappinessOfSelectedChildren(happiness, k);
+        }
     }
 }

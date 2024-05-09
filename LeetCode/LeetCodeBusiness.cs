@@ -3741,5 +3741,25 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        public long MaximizeHappinessOfSelectedChildren(int[] happiness, int k)
+        {
+            long result = 0;
+
+            Array.Sort(happiness);
+
+            for (var i = 1; i <= k; i++)
+            {
+                var value = happiness[happiness.Length - i] - i + 1;
+
+                if (value > 0)
+                    result += value;
+            }
+
+            return result;
+
+            // Time Complexity: O(n log n), depending on sort implementation
+            // Space Complexity: O(n), depending on sort implementation
+        }
     }
 }

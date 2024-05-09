@@ -833,5 +833,13 @@
         /// <param name="nums"></param>
         /// <param name="k"></param>
         void RotateArray(int[] nums, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/maximize-happiness-of-selected-children/
+        /// </summary>
+        /// <param name="happiness"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        long MaximizeHappinessOfSelectedChildren(int[] happiness, int k);
     }
 }

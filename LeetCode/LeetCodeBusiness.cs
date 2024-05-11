@@ -3742,6 +3742,7 @@ namespace LeetCode
             // Space Complexity: O(n)
         }
 
+        /// <inheritdoc/>
         public long MaximizeHappinessOfSelectedChildren(int[] happiness, int k)
         {
             long result = 0;
@@ -3760,6 +3761,31 @@ namespace LeetCode
 
             // Time Complexity: O(n log n), depending on sort implementation
             // Space Complexity: O(n), depending on sort implementation
+        }
+
+        /// <inheritdoc/>
+        public IList<string> GenerateParenthesis(int n)
+        {
+            var result = new List<string>();
+
+            Backtracking(result, "(", 1, 0, n);
+
+            return result;
+
+            void Backtracking(List<string> result, string currentCombination, int open, int closed, int n)
+            {
+                if (open == closed && open == n)
+                {
+                    result.Add(currentCombination);
+                    return;
+                }
+
+                if (open < n)
+                    Backtracking(result, currentCombination + "(", open + 1, closed, n);
+
+                if (open > closed)
+                    Backtracking(result, currentCombination + ")", open, closed + 1, n);
+            }
         }
     }
 }

@@ -1096,5 +1096,15 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.MaximizeHappinessOfSelectedChildren(happiness, k);
         }
+
+        [HttpPost]
+        public IList<string> GenerateParenthesis(int n)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(GenerateParenthesis), n);
+
+            var result = _leetCodeBusiness.GenerateParenthesis(n);
+
+            return result;
+        }
     }
 }

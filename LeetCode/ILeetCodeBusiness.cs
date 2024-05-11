@@ -841,5 +841,12 @@
         /// <param name="k"></param>
         /// <returns></returns>
         long MaximizeHappinessOfSelectedChildren(int[] happiness, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/generate-parentheses/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        IList<string> GenerateParenthesis(int n);
     }
 }

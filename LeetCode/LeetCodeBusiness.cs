@@ -3787,5 +3787,41 @@ namespace LeetCode
                     Backtracking(result, currentCombination + ")", open, closed + 1, n);
             }
         }
+
+        /// <inheritdoc/>
+        public int SingleElementInASortedArray(int[] nums)
+        {
+            var left = 0;
+            var right = nums.Length - 1;
+
+            while (left <= right)
+            {
+                var mid = left + (right - left) / 2;
+
+                if (mid + 1 < nums.Length && nums[mid] == nums[mid + 1])
+                {
+                    if ((nums.Length - mid) % 2 == 1)
+                        left = mid + 2;
+                    else
+                        right = mid - 1;
+                }
+                else if (mid - 1 >= 0 && nums[mid] == nums[mid - 1])
+                {
+                    if ((mid - 1) % 2 == 1)
+                        right = mid - 2;
+                    else
+                        left = mid + 1;
+                }
+                else
+                {
+                    return nums[mid];
+                }
+            }
+
+            return 0;
+
+            // Time Complexity: O(log n)
+            // Space Complexity: O(1)
+        }
     }
 }

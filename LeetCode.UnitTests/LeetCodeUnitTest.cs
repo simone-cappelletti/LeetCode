@@ -1299,5 +1299,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 1, 1, 2, 3, 3, 4, 4, 8, 8 }, 2)]
+        [InlineData(new int[] { 3, 3, 7, 7, 10, 11, 11 }, 10)]
+        public void SingleElementInASortedArray(int[] nums, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.SingleElementInASortedArray(nums);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

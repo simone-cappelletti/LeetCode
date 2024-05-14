@@ -1106,5 +1106,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int SingleElementInASortedArray(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(SingleElementInASortedArray), nums);
+
+            var result = _leetCodeBusiness.SingleElementInASortedArray(nums);
+
+            return result;
+        }
     }
 }

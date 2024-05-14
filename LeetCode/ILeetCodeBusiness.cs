@@ -848,5 +848,12 @@
         /// <param name="n"></param>
         /// <returns></returns>
         IList<string> GenerateParenthesis(int n);
+
+        /// <summary>
+        /// https://leetcode.com/problems/single-element-in-a-sorted-array/
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int SingleElementInASortedArray(int[] nums);
     }
 }

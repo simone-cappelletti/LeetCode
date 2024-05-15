@@ -3823,5 +3823,28 @@ namespace LeetCode
             // Time Complexity: O(log n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int CarFleet(int target, int[] position, int[] speed)
+        {
+            var stack = new Stack<double>();
+
+            Array.Sort(position, speed);
+
+            for (int i = 0; i < position.Length; i++)
+            {
+                var car = (double)(target - position[i]) / speed[i];
+
+                while (stack.Any() && car >= stack.Peek())
+                    stack.Pop();
+
+                stack.Push(car);
+            }
+
+            return stack.Count();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

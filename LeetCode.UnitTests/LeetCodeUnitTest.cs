@@ -1314,5 +1314,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(12, new int[] { 10, 8, 0, 5, 3 }, new int[] { 2, 4, 1, 1, 3 }, 3)]
+        [InlineData(1, new int[] { 0, 2, 4 }, new int[] { 4, 2, 1 }, 1)]
+        public void CarFleet(int target, int[] position, int[] speed, int solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.CarFleet(target, position, speed);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

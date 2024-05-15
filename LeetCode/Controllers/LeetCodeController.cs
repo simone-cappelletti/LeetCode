@@ -1116,5 +1116,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int CarFleet(int target, int[] position, int[] speed)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(CarFleet), target, position, speed);
+
+            var result = _leetCodeBusiness.CarFleet(target, position, speed);
+
+            return result;
+        }
     }
 }

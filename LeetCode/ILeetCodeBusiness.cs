@@ -1,4 +1,7 @@
-﻿namespace LeetCode
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+
+namespace LeetCode
 {
     public interface ILeetCodeBusiness
     {
@@ -36,6 +39,11 @@
         /// https://leetcode.com/problems/encode-and-decode-strings/
         /// </summary>
         EncodeAndDecodeStrings EncodeAndDecodeStrings { get; }
+
+        /// <summary>
+        /// https://leetcode.com/problems/online-stock-span/
+        /// </summary>
+        StockSpanner StockSpanner { get; }
 
         /// <summary>
         /// https://leetcode.com/problems/two-sum/
@@ -864,5 +872,13 @@
         /// <param name="speed"></param>
         /// <returns></returns>
         int CarFleet(int target, int[] position, int[] speed);
+
+        /// <summary>
+        /// https://leetcode.com/problems/next-greater-element-i/
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        int[] NextGreaterElementI(int[] nums1, int[] nums2);
     }
 }

@@ -1126,5 +1126,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] NextGreaterElementI(int[] nums1, int[] nums2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(NextGreaterElementI), nums1, nums2);
+
+            var result = _leetCodeBusiness.NextGreaterElementI(nums1, nums2);
+
+            return result;
+        }
     }
 }

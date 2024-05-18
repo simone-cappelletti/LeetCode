@@ -27,6 +27,9 @@ namespace LeetCode
         /// <inheritdoc/>
         public EncodeAndDecodeStrings EncodeAndDecodeStrings { get; }
 
+        /// <inheritdoc/>
+        public StockSpanner StockSpanner { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;
@@ -3843,6 +3846,35 @@ namespace LeetCode
 
             return stack.Count();
 
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
+
+        /// <inheritdoc/>
+        public int[] NextGreaterElementI(int[] nums1, int[] nums2)
+        {
+            var dic = new Dictionary<int, int>();
+            var stack = new Stack<int>();
+
+            for (var i = 0; i < nums2.Length; i++)
+            {
+                var num = nums2[i];
+
+                while (stack.Count > 0 && stack.Peek() < num)
+                    dic[stack.Pop()] = num;
+
+                stack.Push(num);
+                dic[num] = -1;
+            }
+
+            var result = new int[nums1.Length];
+
+            for (var i = 0; i < nums1.Length; i++)
+                result[i] = dic[nums1[i]];
+
+            return result;
+
+            // n = nums2.Length
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }

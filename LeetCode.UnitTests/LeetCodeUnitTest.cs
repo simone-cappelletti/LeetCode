@@ -1329,5 +1329,20 @@ namespace LeetCode.UnitTests
             // Assert
             Assert.Equal(result, solution);
         }
+
+        [Theory]
+        [InlineData(new int[] { 4, 1, 2 }, new int[] { 1, 3, 4, 2 }, new int[] { -1, 3, -1 })]
+        [InlineData(new int[] { 2, 4 }, new int[] { 1, 2, 3, 4 }, new int[] { 3, -1 })]
+        public void NextGreaterElementI(int[] nums1, int[] nums2, int[] solution)
+        {
+            // Arrange
+            var business = CreateBusiness();
+
+            // Act
+            var result = business.NextGreaterElementI(nums1, nums2);
+
+            // Assert
+            Assert.Equal(result, solution);
+        }
     }
 }

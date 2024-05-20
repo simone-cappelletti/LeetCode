@@ -3878,5 +3878,29 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public ListNode RemoveLinkedListElements(ListNode head, int val)
+        {
+            while (head is not null && head.val == val)
+                head = head.next;
+
+            if (head is null)
+                return head;
+
+            var current = head;
+            while (current.next is not null)
+            {
+                if (current.next.val == val)
+                    current.next = current.next.next;
+                else
+                    current = current.next;
+            }
+
+            return head;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

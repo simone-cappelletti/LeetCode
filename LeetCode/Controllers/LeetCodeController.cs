@@ -1136,5 +1136,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode RemoveLinkedListElements(ListNode head, int val)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(RemoveLinkedListElements), head, val);
+
+            var result = _leetCodeBusiness.RemoveLinkedListElements(head, val);
+
+            return result;
+        }
     }
 }

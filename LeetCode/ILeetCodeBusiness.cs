@@ -880,5 +880,13 @@ namespace LeetCode
         /// <param name="nums2"></param>
         /// <returns></returns>
         int[] NextGreaterElementI(int[] nums1, int[] nums2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/remove-linked-list-elements/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        ListNode RemoveLinkedListElements(ListNode head, int val);
     }
 }

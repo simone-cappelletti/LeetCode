@@ -1146,5 +1146,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int MaximumTwinSumOfALinkedList(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MaximumTwinSumOfALinkedList), head);
+
+            var result = _leetCodeBusiness.MaximumTwinSumOfALinkedList(head);
+
+            return result;
+        }
     }
 }

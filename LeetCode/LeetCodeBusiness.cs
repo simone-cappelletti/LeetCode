@@ -3902,5 +3902,48 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int MaximumTwinSumOfALinkedList(ListNode head)
+        {
+            var result = 0;
+
+            if (head is null)
+                return result;
+
+            // Midpoint
+            var slow = head;
+            var fast = head;
+            while (fast?.next is not null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            // Reversing
+            var reversed = slow;
+            ListNode prev = null;
+            while (reversed is not null)
+            {
+                var temp = reversed.next;
+                reversed.next = prev;
+                prev = reversed;
+                reversed = temp;
+            }
+
+            // Computing result
+            while (head is not null && prev is not null)
+            {
+                result = Math.Max(head.val + prev.val, result);
+
+                head = head.next;
+                prev = prev.next;
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

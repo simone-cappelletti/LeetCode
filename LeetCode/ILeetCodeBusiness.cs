@@ -888,5 +888,12 @@ namespace LeetCode
         /// <param name="val"></param>
         /// <returns></returns>
         ListNode RemoveLinkedListElements(ListNode head, int val);
+
+        /// <summary>
+        /// https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        int MaximumTwinSumOfALinkedList(ListNode head);
     }
 }

@@ -3945,5 +3945,36 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public ListNode SwappingNodesInALinkedList(ListNode head, int k)
+        {
+            var first = head;
+            var second = head;
+            ListNode toBeSwapped = null;
+
+            while (first is not null)
+            {
+                if (k == 1)
+                    // This is the Kth node
+                    toBeSwapped = first;
+
+                first = first.next;
+                k--;
+
+                if (k < 0)
+                    // This is the List.Length - Kth node
+                    second = second.next;
+            }
+
+            var temp = toBeSwapped.val;
+            toBeSwapped.val = second.val;
+            second.val = temp;
+
+            return head;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

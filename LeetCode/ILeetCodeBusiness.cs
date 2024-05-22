@@ -895,5 +895,13 @@ namespace LeetCode
         /// <param name="head"></param>
         /// <returns></returns>
         int MaximumTwinSumOfALinkedList(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        ListNode SwappingNodesInALinkedList(ListNode head, int k);
     }
 }

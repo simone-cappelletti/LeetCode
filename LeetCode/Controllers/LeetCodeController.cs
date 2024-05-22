@@ -1156,5 +1156,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNode SwappingNodesInALinkedList(ListNode head, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SwappingNodesInALinkedList), head, k);
+
+            var result = _leetCodeBusiness.SwappingNodesInALinkedList(head, k);
+
+            return result;
+        }
     }
 }

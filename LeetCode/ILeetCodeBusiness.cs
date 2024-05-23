@@ -903,5 +903,12 @@ namespace LeetCode
         /// <param name="k"></param>
         /// <returns></returns>
         ListNode SwappingNodesInALinkedList(ListNode head, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/copy-list-with-random-pointer/
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        ListNodeWithRandom CopyListWithRandomPointer(ListNodeWithRandom head);
     }
 }

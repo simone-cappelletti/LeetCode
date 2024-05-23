@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace LeetCode
 {
@@ -3975,6 +3977,52 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complexity: O(1)
+        }
+
+        /// <inheritdoc/>
+        public ListNodeWithRandom CopyListWithRandomPointer(ListNodeWithRandom head)
+        {
+            
+            if (head is null)
+                return null;
+
+            var dic = new Dictionary<ListNodeWithRandom, ListNodeWithRandom>();
+
+            var oldNode = head;
+            var newNode = new ListNodeWithRandom(oldNode.val);
+
+            dic[oldNode] = newNode;
+
+            while (oldNode is not null)
+            {
+                newNode.next = GetNode(oldNode.next);
+                newNode.random = GetNode(oldNode.random);
+
+                oldNode = oldNode.next;
+                newNode = newNode.next;
+            }
+
+            ListNodeWithRandom GetNode(ListNodeWithRandom node)
+            {
+                if (node is null)
+                    return null;
+
+                if (dic.TryGetValue(node, out var oldNode))
+                {
+                    return oldNode;
+                }
+                else
+                {
+                    var newNode = new ListNodeWithRandom(node.val);
+                    dic[node] = newNode;
+                    return newNode;
+                }
+            }
+
+            return dic[head];
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
         }
     }
 }

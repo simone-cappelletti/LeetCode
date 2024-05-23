@@ -1166,5 +1166,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public ListNodeWithRandom CopyListWithRandomPointer(ListNodeWithRandom head)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(CopyListWithRandomPointer), head);
+
+            var result = _leetCodeBusiness.CopyListWithRandomPointer(head);
+
+            return result;
+        }
     }
 }

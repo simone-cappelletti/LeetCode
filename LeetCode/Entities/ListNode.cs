@@ -11,4 +11,16 @@
             this.next = next;
         }
     }
+
+    public class ListNodeWithRandom
+    {
+        public int val;
+        public ListNodeWithRandom next;
+        public ListNodeWithRandom random;
+
+        public ListNodeWithRandom(int val = 0)
+        {
+            this.val = val;
+        }
+    }
 }

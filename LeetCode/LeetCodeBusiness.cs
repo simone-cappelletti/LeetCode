@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+﻿using System.Text;
 
 namespace LeetCode
 {
@@ -3982,7 +3980,7 @@ namespace LeetCode
         /// <inheritdoc/>
         public ListNodeWithRandom CopyListWithRandomPointer(ListNodeWithRandom head)
         {
-            
+
             if (head is null)
                 return null;
 
@@ -4023,6 +4021,21 @@ namespace LeetCode
 
             // Time Complexity: O(n)
             // Space Complexity: O(n)
+        }
+
+        /// <inheritdoc/>
+        public TreeNode InsertIntoABinarySearchTree(TreeNode root, int val)
+        {
+            if (root is null)
+                return new TreeNode(val);
+
+            if (val < root.val)
+                root.left = InsertIntoABinarySearchTree(root.left, val);
+
+            else if (val > root.val)
+                root.right = InsertIntoABinarySearchTree(root.right, val);
+
+            return root;
         }
     }
 }

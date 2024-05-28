@@ -1176,5 +1176,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode InsertIntoABinarySearchTree(TreeNode root, int val)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(InsertIntoABinarySearchTree), root, val);
+
+            var result = _leetCodeBusiness.InsertIntoABinarySearchTree(root, val);
+
+            return result;
+        }
     }
 }

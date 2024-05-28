@@ -910,5 +910,13 @@ namespace LeetCode
         /// <param name="head"></param>
         /// <returns></returns>
         ListNodeWithRandom CopyListWithRandomPointer(ListNodeWithRandom head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/insert-into-a-binary-search-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        TreeNode InsertIntoABinarySearchTree(TreeNode root, int val);
     }
 }

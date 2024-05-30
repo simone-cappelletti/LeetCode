@@ -918,5 +918,13 @@ namespace LeetCode
         /// <param name="val"></param>
         /// <returns></returns>
         TreeNode InsertIntoABinarySearchTree(TreeNode root, int val);
+
+        /// <summary>
+        /// https://leetcode.com/problems/delete-node-in-a-bst/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        TreeNode DeleteNodeInABST(TreeNode root, int key);
     }
 }

@@ -4037,5 +4037,43 @@ namespace LeetCode
 
             return root;
         }
+
+        /// <inheritdoc/>
+        public TreeNode DeleteNodeInABST(TreeNode root, int key)
+        {
+            if (root is null)
+                return null;
+
+            if (key < root.val)
+                root.left = DeleteNodeInABST(root.left, key);
+            else if (key > root.val)
+                root.right = DeleteNodeInABST(root.right, key);
+            else
+            {
+                if (root.left is null)
+                    return root.right;
+                else if (root.right is null)
+                    return root.left;
+
+                var successor = InOrderSuccessor(root.right);
+                root.val = successor.val;
+                root.right = DeleteNodeInABST(root.right, root.val);
+            }
+
+            return root;
+
+            // Time Complexity: O(log n)
+            // Space Complexity: O(log n)
+
+            TreeNode InOrderSuccessor(TreeNode node)
+            {
+                var successor = node;
+
+                while (successor.left is not null)
+                    successor = successor.left;
+
+                return successor;
+            }
+        }
     }
 }

@@ -1186,5 +1186,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode DeleteNodeInABST(TreeNode root, int val)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(DeleteNodeInABST), root, val);
+
+            var result = _leetCodeBusiness.DeleteNodeInABST(root, val);
+
+            return result;
+        }
     }
 }

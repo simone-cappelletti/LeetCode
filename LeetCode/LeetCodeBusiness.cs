@@ -4075,5 +4075,49 @@ namespace LeetCode
                 return successor;
             }
         }
+
+        /// <inheritdoc/>
+        public int MinimumTimeToCollectAllApplesInATree(int n, int[][] edges, IList<bool> hasApple)
+        {
+            var dic = new Dictionary<int, List<int>>();
+
+            foreach (var edge in edges)
+            {
+                int a = edge[0];
+                int b = edge[1];
+
+                if (!dic.ContainsKey(a))
+                    dic[a] = new List<int>();
+
+                if (!dic.ContainsKey(b))
+                    dic[b] = new List<int>();
+
+                dic[a].Add(b);
+                dic[b].Add(a);
+            }
+
+            return Dfs(0, -1, dic, hasApple);
+
+            int Dfs(int node, int parent, Dictionary<int, List<int>> dic, IList<bool> hasApple)
+            {
+                if (!dic.ContainsKey(node))
+                    return 0; // Leaf node
+
+                var totalTime = 0;
+
+                foreach (var child in dic[node])
+                {
+                    if (child == parent)
+                        continue;
+
+                    var childTime = Dfs(child, node, dic, hasApple);
+
+                    if (childTime > 0 || hasApple[child])
+                        totalTime += childTime + 2;
+                }
+
+                return totalTime;
+            }
+        }
     }
 }

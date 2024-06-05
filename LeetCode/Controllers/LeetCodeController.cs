@@ -1196,5 +1196,14 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        public int MinimumTimeToCollectAllApplesInATree(int n, int[][] edges, IList<bool> hasApple)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(MinimumTimeToCollectAllApplesInATree), n, edges, hasApple);
+
+            var result = _leetCodeBusiness.MinimumTimeToCollectAllApplesInATree(n, edges, hasApple);
+
+            return result;
+        }
     }
 }

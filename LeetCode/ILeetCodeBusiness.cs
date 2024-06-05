@@ -926,5 +926,14 @@ namespace LeetCode
         /// <param name="key"></param>
         /// <returns></returns>
         TreeNode DeleteNodeInABST(TreeNode root, int key);
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="edges"></param>
+        /// <param name="hasApple"></param>
+        /// <returns></returns>
+        int MinimumTimeToCollectAllApplesInATree(int n, int[][] edges, IList<bool> hasApple);
     }
 }

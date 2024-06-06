@@ -935,5 +935,12 @@ namespace LeetCode
         /// <param name="hasApple"></param>
         /// <returns></returns>
         int MinimumTimeToCollectAllApplesInATree(int n, int[][] edges, IList<bool> hasApple);
+
+        /// <summary>
+        /// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        IList<IList<int>> BinaryTreeZigzagLevelOrderTraversal(TreeNode root);
     }
 }

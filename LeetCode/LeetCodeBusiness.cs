@@ -4119,5 +4119,54 @@ namespace LeetCode
                 return totalTime;
             }
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> BinaryTreeZigzagLevelOrderTraversal(TreeNode root)
+        {
+            var result = new List<IList<int>>();
+
+            if (root is null)
+                return result;
+
+            var left = false;
+            var mainStack = new Stack<TreeNode>();
+            var tempStack = new Stack<TreeNode>();
+
+            tempStack.Push(root);
+
+            while (tempStack.Count > 0)
+            {
+                mainStack = tempStack;
+                tempStack = new Stack<TreeNode>();
+
+                var level = new List<int>();
+
+                while (mainStack.Count > 0)
+                {
+                    var node = mainStack.Pop();
+                    level.Add(node.val);
+
+                    if (left)
+                    {
+                        if (node.right is not null) tempStack.Push(node.right);
+                        if (node.left is not null) tempStack.Push(node.left);
+                    }
+                    else
+                    {
+                        if (node.left is not null) tempStack.Push(node.left);
+                        if (node.right is not null) tempStack.Push(node.right);
+                    }
+                }
+
+                left = !left;
+
+                result.Add(level);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -1205,5 +1205,14 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        public IList<IList<int>> BinaryTreeZigzagLevelOrderTraversal(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(BinaryTreeZigzagLevelOrderTraversal), root);
+
+            var result = _leetCodeBusiness.BinaryTreeZigzagLevelOrderTraversal(root);
+
+            return result;
+        }
     }
 }

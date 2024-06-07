@@ -4168,5 +4168,42 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public IList<TreeNode> FindDuplicateSubtrees(TreeNode root)
+        {
+            var result = new List<TreeNode>();
+            var dic = new Dictionary<string, int>(10);
+
+            Dfs(root);
+
+            return result;
+
+            // Time Complexity: O(n^2)
+            // Space Complexity: O(n^2)
+
+            string Dfs(TreeNode node)
+            {
+                if (node is null)
+                    return "-";
+
+                var currentPath = $"{node.val},{Dfs(node.left)},{Dfs(node.right)}";
+
+                if (!dic.TryGetValue(currentPath, out var currentPathCount))
+                {
+                    dic.Add(currentPath, 1);
+                }
+                else
+                {
+                    if (currentPathCount == 1)
+                    {
+                        result.Add(node);
+                        dic[currentPath]++;
+                    }
+                }
+
+                return currentPath;
+            }
+        }
     }
 }

@@ -942,5 +942,12 @@ namespace LeetCode
         /// <param name="root"></param>
         /// <returns></returns>
         IList<IList<int>> BinaryTreeZigzagLevelOrderTraversal(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-duplicate-subtrees/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        IList<TreeNode> FindDuplicateSubtrees(TreeNode root);
     }
 }

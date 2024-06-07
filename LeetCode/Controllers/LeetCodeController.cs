@@ -1214,5 +1214,14 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        public IList<TreeNode> FindDuplicateSubtrees(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(FindDuplicateSubtrees), root);
+
+            var result = _leetCodeBusiness.FindDuplicateSubtrees(root);
+
+            return result;
+        }
     }
 }

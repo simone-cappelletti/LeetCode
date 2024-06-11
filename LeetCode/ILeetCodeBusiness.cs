@@ -949,5 +949,12 @@ namespace LeetCode
         /// <param name="root"></param>
         /// <returns></returns>
         IList<TreeNode> FindDuplicateSubtrees(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        bool CheckCompletenessOfABinaryTree(TreeNode root);
     }
 }

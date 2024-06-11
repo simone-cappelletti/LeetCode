@@ -4205,5 +4205,39 @@ namespace LeetCode
                 return currentPath;
             }
         }
+
+        public bool CheckCompletenessOfABinaryTree(TreeNode root)
+        {
+                    if(root is null)
+            return true;
+
+        var queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+
+        var nullNodeFound = false;
+
+        while(queue.Count > 0)
+        {
+            var node = queue.Dequeue();
+
+            if(node is null)
+            {
+                nullNodeFound = true;
+            }
+            else
+            {
+                if(nullNodeFound)
+                    return false;
+
+                queue.Enqueue(node.left);
+                queue.Enqueue(node.right);
+            }
+        }
+
+        return true;
+
+        // Time Complexity: O(n)
+        // Space Complexity: O(n)
+        }
     }
 }

@@ -1223,5 +1223,14 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        public bool CheckCompletenessOfABinaryTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(CheckCompletenessOfABinaryTree), root);
+
+            var result = _leetCodeBusiness.CheckCompletenessOfABinaryTree(root);
+
+            return result;
+        }
     }
 }

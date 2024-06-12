@@ -1232,5 +1232,14 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        public TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(ConstructBinaryTreeFromInorderAndPostorderTraversal), inorder, postorder);
+
+            var result = _leetCodeBusiness.ConstructBinaryTreeFromInorderAndPostorderTraversal(inorder, postorder);
+
+            return result;
+        }
     }
 }

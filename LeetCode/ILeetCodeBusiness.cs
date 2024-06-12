@@ -956,5 +956,13 @@ namespace LeetCode
         /// <param name="root"></param>
         /// <returns></returns>
         bool CheckCompletenessOfABinaryTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/submissions/1286382108/
+        /// </summary>
+        /// <param name="inorder"></param>
+        /// <param name="postorder"></param>
+        /// <returns></returns>
+        TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder);
     }
 }

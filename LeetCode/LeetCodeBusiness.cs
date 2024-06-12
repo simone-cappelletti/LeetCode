@@ -4208,36 +4208,64 @@ namespace LeetCode
 
         public bool CheckCompletenessOfABinaryTree(TreeNode root)
         {
-                    if(root is null)
+            if (root is null)
+                return true;
+
+            var queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+
+            var nullNodeFound = false;
+
+            while (queue.Count > 0)
+            {
+                var node = queue.Dequeue();
+
+                if (node is null)
+                {
+                    nullNodeFound = true;
+                }
+                else
+                {
+                    if (nullNodeFound)
+                        return false;
+
+                    queue.Enqueue(node.left);
+                    queue.Enqueue(node.right);
+                }
+            }
+
             return true;
 
-        var queue = new Queue<TreeNode>();
-        queue.Enqueue(root);
-
-        var nullNodeFound = false;
-
-        while(queue.Count > 0)
-        {
-            var node = queue.Dequeue();
-
-            if(node is null)
-            {
-                nullNodeFound = true;
-            }
-            else
-            {
-                if(nullNodeFound)
-                    return false;
-
-                queue.Enqueue(node.left);
-                queue.Enqueue(node.right);
-            }
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
         }
 
-        return true;
+        public TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder)
+        {
+            var rightMostElement = postorder.Length - 1;
+            var indexes = new Dictionary<int, int>();
 
-        // Time Complexity: O(n)
-        // Space Complexity: O(n)
+            for (int i = 0; i < inorder.Length; i++)
+                indexes[inorder[i]] = i;
+
+            return Helper(0, postorder.Length - 1, inorder, postorder);
+
+            TreeNode Helper(int leftIndex, int rightIndex, int[] inorder, int[] postorder)
+            {
+                if (leftIndex > rightIndex)
+                    return null;
+
+                var nodeValue = postorder[rightMostElement];
+                var nodeIndex = indexes[nodeValue];
+                var node = new TreeNode(nodeValue);
+
+                rightMostElement--;
+
+                node.right = Helper(nodeIndex + 1, rightIndex, inorder, postorder);
+                node.left = Helper(leftIndex, nodeIndex - 1, inorder, postorder);
+
+                return node;
+            }
         }
     }
 }

@@ -1197,6 +1197,7 @@ namespace LeetCode.Controllers
             return result;
         }
 
+        [HttpPost]
         public int MinimumTimeToCollectAllApplesInATree(int n, int[][] edges, IList<bool> hasApple)
         {
             _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(MinimumTimeToCollectAllApplesInATree), n, edges, hasApple);
@@ -1206,6 +1207,7 @@ namespace LeetCode.Controllers
             return result;
         }
 
+        [HttpPost]
         public IList<IList<int>> BinaryTreeZigzagLevelOrderTraversal(TreeNode root)
         {
             _logger.LogInformation("{method} - {arg1}", nameof(BinaryTreeZigzagLevelOrderTraversal), root);
@@ -1215,6 +1217,7 @@ namespace LeetCode.Controllers
             return result;
         }
 
+        [HttpPost]
         public IList<TreeNode> FindDuplicateSubtrees(TreeNode root)
         {
             _logger.LogInformation("{method} - {arg1}", nameof(FindDuplicateSubtrees), root);
@@ -1224,6 +1227,7 @@ namespace LeetCode.Controllers
             return result;
         }
 
+        [HttpPost]
         public bool CheckCompletenessOfABinaryTree(TreeNode root)
         {
             _logger.LogInformation("{method} - {arg1}", nameof(CheckCompletenessOfABinaryTree), root);
@@ -1233,11 +1237,22 @@ namespace LeetCode.Controllers
             return result;
         }
 
+        [HttpPost]
         public TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder)
         {
             _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(ConstructBinaryTreeFromInorderAndPostorderTraversal), inorder, postorder);
 
             var result = _leetCodeBusiness.ConstructBinaryTreeFromInorderAndPostorderTraversal(inorder, postorder);
+
+            return result;
+        }
+
+        [HttpPost]
+        public bool SymmetricTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(SymmetricTree), root);
+
+            var result = _leetCodeBusiness.SymmetricTree(root);
 
             return result;
         }

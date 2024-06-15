@@ -4206,6 +4206,7 @@ namespace LeetCode
             }
         }
 
+        /// <inheritdoc/>
         public bool CheckCompletenessOfABinaryTree(TreeNode root)
         {
             if (root is null)
@@ -4240,6 +4241,7 @@ namespace LeetCode
             // Space Complexity: O(n)
         }
 
+        /// <inheritdoc/>
         public TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder)
         {
             var rightMostElement = postorder.Length - 1;
@@ -4266,6 +4268,45 @@ namespace LeetCode
 
                 return node;
             }
+        }
+
+        /// <inheritdoc/>
+        public bool SymmetricTree(TreeNode root)
+        {
+            var result = true;
+
+            if (root is null)
+                return result;
+
+            var queue = new Queue<TreeNode>();
+
+            queue.Enqueue(root);
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                var leftNode = queue.Dequeue();
+                var rightNode = queue.Dequeue();
+
+                if (leftNode is null && rightNode is null)
+                    continue;
+
+                if (leftNode is null || rightNode is null)
+                    return false;
+
+                if (leftNode.val != rightNode.val)
+                    return false;
+
+                queue.Enqueue(leftNode.left);
+                queue.Enqueue(rightNode.right);
+                queue.Enqueue(leftNode.right);
+                queue.Enqueue(rightNode.left);
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
         }
     }
 }

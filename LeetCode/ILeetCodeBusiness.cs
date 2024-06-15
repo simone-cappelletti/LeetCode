@@ -964,5 +964,12 @@ namespace LeetCode
         /// <param name="postorder"></param>
         /// <returns></returns>
         TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] inorder, int[] postorder);
+
+        /// <summary>
+        /// https://leetcode.com/problems/symmetric-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        bool SymmetricTree(TreeNode root);
     }
 }

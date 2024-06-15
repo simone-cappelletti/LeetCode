@@ -971,5 +971,12 @@ namespace LeetCode
         /// <param name="root"></param>
         /// <returns></returns>
         bool SymmetricTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        int CountGoodNodesInBinaryTree(TreeNode root);
     }
 }

@@ -1256,5 +1256,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int CountGoodNodesInBinaryTree(TreeNode root)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(CountGoodNodesInBinaryTree), root);
+
+            var result = _leetCodeBusiness.CountGoodNodesInBinaryTree(root);
+
+            return result;
+        }
     }
 }

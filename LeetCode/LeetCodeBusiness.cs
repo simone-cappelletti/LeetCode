@@ -4308,5 +4308,35 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int CountGoodNodesInBinaryTree(TreeNode root)
+        {
+            var result = 0;
+
+            if (root is null)
+                return result;
+
+            Dfs(root, root.val);
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            void Dfs(TreeNode node, int max)
+            {
+                if (node is null)
+                    return;
+
+                if (node.val >= max)
+                    result++;
+
+                max = Math.Max(node.val, max);
+
+                Dfs(node.left, max);
+                Dfs(node.right, max);
+            }
+        }
     }
 }

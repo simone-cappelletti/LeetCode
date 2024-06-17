@@ -30,6 +30,9 @@ namespace LeetCode
         /// <inheritdoc/>
         public StockSpanner StockSpanner { get; }
 
+        /// <inheritdoc/>
+        public KthLargestElementInAStream KthLargestElementInAStream { get; }
+
         public LeetCodeBusiness(ILogger<LeetCodeBusiness> logger)
         {
             _logger = logger;

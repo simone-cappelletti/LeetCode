@@ -46,6 +46,11 @@ namespace LeetCode
         StockSpanner StockSpanner { get; }
 
         /// <summary>
+        /// https://leetcode.com/problems/kth-largest-element-in-a-stream/
+        /// </summary>
+        KthLargestElementInAStream KthLargestElementInAStream { get; }
+
+        /// <summary>
         /// https://leetcode.com/problems/two-sum/
         /// </summary>
         /// <param name="nums"></param>

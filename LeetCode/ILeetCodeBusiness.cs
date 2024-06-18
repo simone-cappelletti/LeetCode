@@ -983,5 +983,12 @@ namespace LeetCode
         /// <param name="root"></param>
         /// <returns></returns>
         int CountGoodNodesInBinaryTree(TreeNode root);
+
+        /// <summary>
+        /// https://leetcode.com/problems/last-stone-weight/
+        /// </summary>
+        /// <param name="stones"></param>
+        /// <returns></returns>
+        int LastStoneWeight(int[] stones);
     }
 }

@@ -1266,5 +1266,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LastStoneWeight(int[] stones)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(LastStoneWeight), stones);
+
+            var result = _leetCodeBusiness.LastStoneWeight(stones);
+
+            return result;
+        }
     }
 }

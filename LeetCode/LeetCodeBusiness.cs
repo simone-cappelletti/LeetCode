@@ -4341,5 +4341,32 @@ namespace LeetCode
                 Dfs(node.right, max);
             }
         }
+
+        /// <inheritdoc/>
+        public int LastStoneWeight(int[] stones)
+        {
+            var queue = new PriorityQueue<int, int>();
+
+            foreach (var stone in stones)
+                queue.Enqueue(stone, -stone);
+
+            while (queue.Count > 1)
+            {
+                var stone1 = -queue.Dequeue();
+                var stone2 = -queue.Dequeue();
+                var diff = Math.Abs(stone1 - stone2);
+
+                if (diff > 0)
+                    queue.Enqueue(diff, -diff);
+            }
+
+            if (queue.Count > 0)
+                return queue.Peek();
+
+            return 0;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -990,5 +990,13 @@ namespace LeetCode
         /// <param name="stones"></param>
         /// <returns></returns>
         int LastStoneWeight(int[] stones);
+
+        /// <summary>
+        /// https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int LeastNumberOfUniqueIntegersAfterKRemovals(int[] arr, int k);
     }
 }

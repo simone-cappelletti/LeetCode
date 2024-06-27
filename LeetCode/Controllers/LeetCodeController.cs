@@ -1276,5 +1276,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int LeastNumberOfUniqueIntegersAfterKRemovals(int[] arr, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(LeastNumberOfUniqueIntegersAfterKRemovals), arr, k);
+
+            var result = _leetCodeBusiness.LeastNumberOfUniqueIntegersAfterKRemovals(arr, k);
+
+            return result;
+        }
     }
 }

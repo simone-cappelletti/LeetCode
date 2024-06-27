@@ -4368,5 +4368,39 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int LeastNumberOfUniqueIntegersAfterKRemovals(int[] arr, int k)
+        {
+            var dic = new Dictionary<int, int>();
+            var elements = new HashSet<int>();
+            var queue = new PriorityQueue<int, int>();
+
+            foreach (var num in arr)
+            {
+                dic.TryGetValue(num, out var value);
+                dic[num] = value + 1;
+            }
+
+            foreach (var num in arr)
+            {
+                if (elements.Contains(num))
+                    continue;
+
+                queue.Enqueue(num, dic[num]);
+                elements.Add(num);
+            }
+
+            while (k > 0)
+                k -= dic[queue.Dequeue()];
+
+            if (k < 0)
+                return queue.Count + 1;
+
+            return queue.Count;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

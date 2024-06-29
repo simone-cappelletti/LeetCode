@@ -998,5 +998,14 @@ namespace LeetCode
         /// <param name="k"></param>
         /// <returns></returns>
         int LeastNumberOfUniqueIntegersAfterKRemovals(int[] arr, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/furthest-building-you-can-reach/
+        /// </summary>
+        /// <param name="heights"></param>
+        /// <param name="bricks"></param>
+        /// <param name="ladders"></param>
+        /// <returns></returns>
+        int FurthestBuildingYouCanReach(int[] heights, int bricks, int ladders);
     }
 }

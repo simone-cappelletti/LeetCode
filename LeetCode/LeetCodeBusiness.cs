@@ -4402,5 +4402,65 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int FurthestBuildingYouCanReach(int[] heights, int bricks, int ladders)
+        {
+            var result = 0;
+            var queue = new PriorityQueue<int, int>();
+
+            for (var i = 1; i < heights.Length; i++)
+            {
+                var difference = heights[i] - heights[i - 1];
+
+                if (difference <= 0)
+                {
+                    result++;
+                    continue;
+                }
+
+                if (ladders > 0)
+                {
+                    queue.Enqueue(difference, difference);
+
+                    ladders--;
+                    result++;
+                }
+                else
+                {
+                    if (queue.Count > 0)
+                    {
+                        var lastLadderHeightDifference = queue.Peek();
+
+                        if (lastLadderHeightDifference < difference &&
+                            bricks >= lastLadderHeightDifference)
+                        {
+                            queue.DequeueEnqueue(difference, difference);
+
+                            bricks -= lastLadderHeightDifference;
+                            result++;
+
+                            continue;
+                        }
+                    }
+
+                    if (bricks >= difference)
+                    {
+                        bricks -= difference;
+                        result++;
+                    }
+                    else
+                    {
+                        return result;
+                    }
+                }
+
+            }
+
+            return result;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

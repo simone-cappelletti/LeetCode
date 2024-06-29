@@ -1286,5 +1286,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FurthestBuildingYouCanReach(int[] heights, int bricks, int ladders)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(FurthestBuildingYouCanReach), heights, bricks, ladders);
+
+            var result = _leetCodeBusiness.FurthestBuildingYouCanReach(heights, bricks, ladders);
+
+            return result;
+        }
     }
 }

@@ -4462,5 +4462,36 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int[] IntersectionOfTwoArraysII(int[] nums1, int[] nums2)
+        {
+            var result = new List<int>();
+            var dic = new Dictionary<int, int>();
+
+            foreach (var num in nums1)
+            {
+                dic.TryGetValue(num, out var value);
+                dic[num] = ++value;
+            }
+
+            foreach (var num in nums2)
+            {
+                if (dic.TryGetValue(num, out var value))
+                {
+                    result.Add(num);
+
+                    dic[num] = --value;
+
+                    if (value == 0)
+                        dic.Remove(num);
+                }
+            }
+
+            return result.ToArray();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(min(n, m))
+        }
     }
 }

@@ -1296,5 +1296,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] IntersectionOfTwoArraysII(int[] nums1, int[] nums2)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(IntersectionOfTwoArraysII), nums1, nums2);
+
+            var result = _leetCodeBusiness.IntersectionOfTwoArraysII(nums1, nums2);
+
+            return result;
+        }
     }
 }

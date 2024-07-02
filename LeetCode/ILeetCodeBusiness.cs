@@ -1007,5 +1007,13 @@ namespace LeetCode
         /// <param name="ladders"></param>
         /// <returns></returns>
         int FurthestBuildingYouCanReach(int[] heights, int bricks, int ladders);
+
+        /// <summary>
+        /// https://leetcode.com/problems/intersection-of-two-arrays-ii/?envType=daily-question&envId=2024-07-02
+        /// </summary>
+        /// <param name="nums1"></param>
+        /// <param name="nums2"></param>
+        /// <returns></returns>
+        int[] IntersectionOfTwoArraysII(int[] nums1, int[] nums2);
     }
 }

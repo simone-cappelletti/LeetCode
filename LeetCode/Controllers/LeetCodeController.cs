@@ -1306,5 +1306,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves(int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves), nums);
+
+            var result = _leetCodeBusiness.MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves(nums);
+
+            return result;
+        }
     }
 }

@@ -1015,5 +1015,12 @@ namespace LeetCode
         /// <param name="nums2"></param>
         /// <returns></returns>
         int[] IntersectionOfTwoArraysII(int[] nums1, int[] nums2);
+
+        /// <summary>
+        /// https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/?source=submission-noac
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public int MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves(int[] nums);
     }
 }

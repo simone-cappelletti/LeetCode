@@ -4493,5 +4493,24 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(min(n, m))
         }
+
+        /// <inheritdoc/>
+        public int MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves(int[] nums)
+        {
+            if (nums.Length < 4)
+                return 0;
+
+            Array.Sort(nums);
+
+            var minDiff = int.MaxValue;
+
+            for (int left = 0, right = nums.Length - 4; left < 4; left++, right++)
+                minDiff = Math.Min(minDiff, nums[right] - nums[left]);
+
+            return minDiff;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

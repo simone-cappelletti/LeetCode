@@ -1022,5 +1022,12 @@ namespace LeetCode
         /// <param name="nums"></param>
         /// <returns></returns>
         public int MinimumDifferenceBetweenLargestAndSmallestValueInThreeMoves(int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/?envType=daily-question&envId=2024-07-05
+        /// </summary>
+        /// <param name="head"></param>
+        /// <returns></returns>
+        int[] FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints(ListNode head);
     }
 }

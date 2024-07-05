@@ -4512,5 +4512,47 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int[] FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints(ListNode head)
+        {
+            var minDistance = int.MaxValue;
+            var previousNode = head;
+            var currentNode = head.next;
+            var index = 1;
+            var previousCriticalIndex = 0;
+            var firstCriticalIndex = 0;
+
+            while (currentNode.next != null)
+            {
+                if ((currentNode.val < previousNode.val && currentNode.val < currentNode.next.val) ||
+                    (currentNode.val > previousNode.val && currentNode.val > currentNode.next.val))
+                {
+                    if (previousCriticalIndex == 0)
+                    {
+                        previousCriticalIndex = index;
+                        firstCriticalIndex = index;
+                    }
+                    else
+                    {
+                        minDistance = Math.Min(minDistance, index - previousCriticalIndex);
+                        previousCriticalIndex = index;
+                    }
+                }
+
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+
+                index++;
+            }
+
+            if (minDistance != int.MaxValue)
+                return new int[] { minDistance, previousCriticalIndex - firstCriticalIndex };
+
+            return new int[] { -1, -1 };
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

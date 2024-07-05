@@ -1316,5 +1316,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints(ListNode head)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints), head);
+
+            var result = _leetCodeBusiness.FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints(head);
+
+            return result;
+        }
     }
 }

@@ -1326,5 +1326,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int PassThePillow(int n, int time)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(PassThePillow), n, time);
+
+            var result = _leetCodeBusiness.PassThePillow(n, time);
+
+            return result;
+        }
     }
 }

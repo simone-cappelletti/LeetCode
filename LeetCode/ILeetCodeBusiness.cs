@@ -1029,5 +1029,13 @@ namespace LeetCode
         /// <param name="head"></param>
         /// <returns></returns>
         int[] FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints(ListNode head);
+
+        /// <summary>
+        /// https://leetcode.com/problems/pass-the-pillow/?envType=daily-question&envId=2024-07-06
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        int PassThePillow(int n, int time);
     }
 }

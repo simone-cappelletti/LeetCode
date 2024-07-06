@@ -4554,5 +4554,20 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int PassThePillow(int n, int time)
+        {
+            var direction = time / (n - 1);
+            var personIndex = time % (n - 1);
+
+            if (direction % 2 == 0)
+                return personIndex + 1;
+            else
+                return n - personIndex;
+
+            // Time Complexity: O(1)
+            // Space Complexity: O(1)
+        }
     }
 }

@@ -1037,5 +1037,13 @@ namespace LeetCode
         /// <param name="time"></param>
         /// <returns></returns>
         int PassThePillow(int n, int time);
+
+        /// <summary>
+        /// https://leetcode.com/problems/water-bottles/?envType=daily-question&envId=2024-07-07
+        /// </summary>
+        /// <param name="numBottles"></param>
+        /// <param name="numExchange"></param>
+        /// <returns></returns>
+        int WaterBottles(int numBottles, int numExchange);
     }
 }

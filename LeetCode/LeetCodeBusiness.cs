@@ -4569,5 +4569,27 @@ namespace LeetCode
             // Time Complexity: O(1)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int WaterBottles(int numBottles, int numExchange)
+        {
+            var result = 0;
+            var fullBottles = numBottles;
+            var emptyBottles = 0;
+
+            while (fullBottles > 0)
+            {
+                result += fullBottles;
+
+                var temp = fullBottles;
+                fullBottles = (fullBottles + emptyBottles) / numExchange;
+                emptyBottles = (temp + emptyBottles) % numExchange;
+            }
+
+            return result;
+
+            // Time Complexity: O(log n)
+            // Space Complexity: O(1)
+        }
     }
 }

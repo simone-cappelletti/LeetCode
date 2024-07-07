@@ -1336,5 +1336,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int WaterBottles(int numBottles, int numExchange)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(WaterBottles), numBottles, numExchange);
+
+            var result = _leetCodeBusiness.WaterBottles(numBottles, numExchange);
+
+            return result;
+        }
     }
 }

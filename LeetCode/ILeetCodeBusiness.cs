@@ -1045,5 +1045,13 @@ namespace LeetCode
         /// <param name="numExchange"></param>
         /// <returns></returns>
         int WaterBottles(int numBottles, int numExchange);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-the-winner-of-the-circular-game/?envType=daily-question&envId=2024-07-08
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        int FindTheWinnerOfTheCircularGame(int n, int k);
     }
 }

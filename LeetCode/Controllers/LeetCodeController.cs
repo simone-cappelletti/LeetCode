@@ -1346,5 +1346,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int FindTheWinnerOfTheCircularGame(int n, int k)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(FindTheWinnerOfTheCircularGame), n, k);
+
+            var result = _leetCodeBusiness.FindTheWinnerOfTheCircularGame(n, k);
+
+            return result;
+        }
     }
 }

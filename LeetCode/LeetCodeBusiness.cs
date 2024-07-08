@@ -4591,5 +4591,32 @@ namespace LeetCode
             // Time Complexity: O(log n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int FindTheWinnerOfTheCircularGame(int n, int k)
+        {
+            var queue = new Queue<int>();
+
+            for (var i = 1; i <= n; i++)
+                queue.Enqueue(i);
+
+            while (queue.Count > 1)
+            {
+                var localK = k;
+
+                while (localK > 1)
+                {
+                    queue.Enqueue(queue.Dequeue());
+                    localK--;
+                }
+
+                queue.Dequeue();
+            }
+
+            return queue.Peek();
+
+            // Time Complexity: O(nk)
+            // Space Complexity: O(n)
+        }
     }
 }

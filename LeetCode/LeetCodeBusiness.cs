@@ -4618,5 +4618,34 @@ namespace LeetCode
             // Time Complexity: O(nk)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public double AverageWaitingTime(int[][] customers)
+        {
+            double result = 0;
+            var currentTime = customers[0][0];
+
+            foreach (var customer in customers)
+            {
+                var arrival = customer[0];
+                var time = customer[1];
+
+                if (currentTime >= arrival)
+                {
+                    result += currentTime - arrival + time;
+                    currentTime += time;
+                }
+                else
+                {
+                    result += time;
+                    currentTime += arrival - currentTime + time;
+                }
+            }
+
+            return result / customers.Length;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

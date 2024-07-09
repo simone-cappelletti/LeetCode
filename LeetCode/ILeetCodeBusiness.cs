@@ -1053,5 +1053,12 @@ namespace LeetCode
         /// <param name="k"></param>
         /// <returns></returns>
         int FindTheWinnerOfTheCircularGame(int n, int k);
+
+        /// <summary>
+        /// https://leetcode.com/problems/average-waiting-time/?envType=daily-question&envId=2024-07-09
+        /// </summary>
+        /// <param name="customers"></param>
+        /// <returns></returns>
+        double AverageWaitingTime(int[][] customers);
     }
 }

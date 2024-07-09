@@ -1356,5 +1356,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public double AverageWaitingTime(int[][] customers)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(AverageWaitingTime), customers);
+
+            var result = _leetCodeBusiness.AverageWaitingTime(customers);
+
+            return result;
+        }
     }
 }

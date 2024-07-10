@@ -4647,5 +4647,29 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int CrawlerLogFolder(string[] logs)
+        {
+            var result = 0;
+
+            foreach (var log in logs)
+            {
+                if (log.Equals("../"))
+                {
+                    if (result > 0)
+                        result--;
+                }
+                else if (!log.Equals("./"))
+                {
+                    result++;
+                }
+            }
+
+            return result;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
+        }
     }
 }

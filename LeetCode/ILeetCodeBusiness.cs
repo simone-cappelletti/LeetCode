@@ -1060,5 +1060,12 @@ namespace LeetCode
         /// <param name="customers"></param>
         /// <returns></returns>
         double AverageWaitingTime(int[][] customers);
+
+        /// <summary>
+        /// https://leetcode.com/problems/crawler-log-folder/?envType=daily-question&envId=2024-07-10
+        /// </summary>
+        /// <param name="logs"></param>
+        /// <returns></returns>
+        int CrawlerLogFolder(string[] logs);
     }
 }

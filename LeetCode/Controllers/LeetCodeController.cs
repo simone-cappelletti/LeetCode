@@ -1366,5 +1366,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int CrawlerLogFolder(string[] logs)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(CrawlerLogFolder), logs);
+
+            var result = _leetCodeBusiness.CrawlerLogFolder(logs);
+
+            return result;
+        }
     }
 }

@@ -1376,5 +1376,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public string ReverseSubstringsBetweenEachPairOfParentheses(string s)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(ReverseSubstringsBetweenEachPairOfParentheses), s);
+
+            var result = _leetCodeBusiness.ReverseSubstringsBetweenEachPairOfParentheses(s);
+
+            return result;
+        }
     }
 }

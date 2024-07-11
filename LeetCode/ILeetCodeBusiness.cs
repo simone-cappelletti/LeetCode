@@ -1067,5 +1067,12 @@ namespace LeetCode
         /// <param name="logs"></param>
         /// <returns></returns>
         int CrawlerLogFolder(string[] logs);
+
+        /// <summary>
+        /// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/?envType=daily-question&envId=2024-07-11
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        string ReverseSubstringsBetweenEachPairOfParentheses(string s);
     }
 }

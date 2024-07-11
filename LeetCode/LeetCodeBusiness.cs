@@ -4671,5 +4671,54 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        public string ReverseSubstringsBetweenEachPairOfParentheses(string s)
+        {
+            var result = new StringBuilder();
+            var stack = new Stack<int>();
+
+            for (var i = 0; i < s.Length; i++)
+            {
+                if (s[i].Equals('(') ||
+                    s[i].Equals('[') ||
+                    s[i].Equals('{'))
+                {
+                    stack.Push(result.Length);
+
+                    continue;
+                }
+
+                if (s[i].Equals(')') ||
+                    s[i].Equals(']') ||
+                    s[i].Equals('}'))
+                {
+                    var start = stack.Pop();
+
+                    Reverse(result, start, result.Length - 1);
+
+                    continue;
+                }
+
+                result.Append(s[i]);
+            }
+
+            return result.ToString();
+
+            void Reverse(StringBuilder result, int start, int end)
+            {
+                while (start < end)
+                {
+                    var temp = result[start];
+                    result[start] = result[end];
+                    result[end] = temp;
+
+                    start++;
+                    end--;
+                }
+            }
+
+            // Time Complexity: O(nˆ2)
+            // Space Complexity: O(n)
+        }
     }
 }

@@ -1074,5 +1074,14 @@ namespace LeetCode
         /// <param name="s"></param>
         /// <returns></returns>
         string ReverseSubstringsBetweenEachPairOfParentheses(string s);
+
+        /// <summary>
+        /// https://leetcode.com/problems/robot-collisions/?envType=daily-question&envId=2024-07-13
+        /// </summary>
+        /// <param name="positions"></param>
+        /// <param name="healths"></param>
+        /// <param name="directions"></param>
+        /// <returns></returns>
+        IList<int> RobotCollisions(int[] positions, int[] healths, string directions);
     }
 }

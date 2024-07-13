@@ -4720,5 +4720,73 @@ namespace LeetCode
             // Time Complexity: O(nˆ2)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public IList<int> RobotCollisions(int[] positions, int[] healths, string directions)
+        {
+            var result = new List<int>();
+            var robots = new List<Robot>();
+            var robotsStack = new Stack<Robot>();
+
+            for (var i = 0; i < positions.Length; i++)
+            {
+                robots.Add(new Robot()
+                {
+                    Id = i,
+                    Position = positions[i],
+                    Health = healths[i],
+                    Direction = directions[i]
+                });
+            }
+
+            var sortedRobots = robots
+                .OrderBy(x => x.Position)
+                .ToList();
+
+            foreach (var robot in sortedRobots)
+            {
+                if (robot.Direction.Equals('R'))
+                {
+                    robotsStack.Push(robot);
+                    continue;
+                }
+
+                while (robotsStack.Count > 0)
+                {
+                    var previousRobot = robotsStack.Peek();
+
+                    if (previousRobot.Health > robot.Health)
+                    {
+                        previousRobot.Health--;
+                        robot.Health = 0;
+
+                        break;
+                    }
+                    else if (previousRobot.Health == robot.Health)
+                    {
+                        previousRobot.Health = 0;
+                        robot.Health = 0;
+                        robotsStack.Pop();
+
+                        break;
+                    }
+                    else
+                    {
+                        robotsStack.Pop();
+                        previousRobot.Health = 0;
+                        robot.Health--;
+                    }
+                }
+            }
+
+            foreach (var robot in robots)
+                if (robot.Health > 0)
+                    result.Add(robot.Health);
+
+            return result;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

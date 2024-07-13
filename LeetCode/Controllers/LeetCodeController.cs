@@ -1386,5 +1386,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public IList<int> RobotCollisions(int[] positions, int[] healths, string directions)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}, {arg3}", nameof(RobotCollisions), positions, healths, directions);
+
+            var result = _leetCodeBusiness.RobotCollisions(positions, healths, directions);
+
+            return result;
+        }
     }
 }

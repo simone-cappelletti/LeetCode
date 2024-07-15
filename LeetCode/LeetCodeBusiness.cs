@@ -4788,5 +4788,44 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public TreeNode CreateBinaryTreeFromDescriptions(int[][] descriptions)
+        {
+            var seen = new HashSet<int>();
+            var dic = new Dictionary<int, TreeNode>();
+
+            foreach (var description in descriptions)
+            {
+                var parentValue = description[0];
+                var childValue = description[1];
+                var isLeft = description[2] == 1;
+
+                dic.TryGetValue(parentValue, out var parentNode);
+                dic.TryGetValue(childValue, out var childNode);
+
+                parentNode ??= new TreeNode(parentValue);
+                childNode ??= new TreeNode(childValue);
+
+                if (isLeft)
+                    parentNode.left = childNode;
+                else
+                    parentNode.right = childNode;
+
+                dic[parentValue] = parentNode;
+                dic[childValue] = childNode;
+
+                seen.Add(childValue);
+            }
+
+            foreach (var description in descriptions)
+                if (!seen.Contains(description[0]))
+                    return dic[description[0]];
+
+            return null;
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+        }
     }
 }

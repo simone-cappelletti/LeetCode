@@ -1396,5 +1396,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public TreeNode CreateBinaryTreeFromDescriptions(int[][] descriptions)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(CreateBinaryTreeFromDescriptions), descriptions);
+
+            var result = _leetCodeBusiness.CreateBinaryTreeFromDescriptions(descriptions);
+
+            return result;
+        }
     }
 }

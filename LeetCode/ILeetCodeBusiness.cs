@@ -1083,5 +1083,12 @@ namespace LeetCode
         /// <param name="directions"></param>
         /// <returns></returns>
         IList<int> RobotCollisions(int[] positions, int[] healths, string directions);
+
+        /// <summary>
+        /// https://leetcode.com/problems/create-binary-tree-from-descriptions/?envType=daily-question&envId=2024-07-15
+        /// </summary>
+        /// <param name="descriptions"></param>
+        /// <returns></returns>
+        TreeNode CreateBinaryTreeFromDescriptions(int[][] descriptions);
     }
 }

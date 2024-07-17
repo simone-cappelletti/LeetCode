@@ -1090,5 +1090,14 @@ namespace LeetCode
         /// <param name="descriptions"></param>
         /// <returns></returns>
         TreeNode CreateBinaryTreeFromDescriptions(int[][] descriptions);
+
+        /// <summary>
+        /// https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/?envType=daily-question&envId=2024-07-16
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="startValue"></param>
+        /// <param name="destValue"></param>
+        /// <returns></returns>
+        string StepByStepDirectionsFromABinaryTreeNodeToAnother(TreeNode root, int startValue, int destValue);
     }
 }

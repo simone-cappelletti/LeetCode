@@ -4827,5 +4827,66 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public string StepByStepDirectionsFromABinaryTreeNodeToAnother(TreeNode root, int startValue, int destValue)
+        {
+            var lca = LCA(root, startValue, destValue);
+
+            var startPath = new StringBuilder();
+            var destPath = new StringBuilder();
+            var directions = new StringBuilder();
+
+            GetPath(lca, startValue, startPath);
+            GetPath(lca, destValue, destPath);
+
+            directions.Append(new string('U', startPath.Length));
+            directions.Append(destPath);
+
+            return directions.ToString();
+
+            // Time Complexity: O(n)
+            // Space Complexity: O(n)
+
+            TreeNode LCA(TreeNode node, int value1, int value2)
+            {
+                if (node is null)
+                    return null;
+
+                if (node.val == value1 || node.val == value2)
+                    return node;
+
+                var leftSubtree = LCA(node.left, value1, value2);
+                var rightSubtree = LCA(node.right, value1, value2);
+
+                if (leftSubtree is null)
+                    return rightSubtree;
+                else if (rightSubtree is null)
+                    return leftSubtree;
+                else
+                    return node;
+            }
+
+            bool GetPath(TreeNode node, int value, StringBuilder path)
+            {
+                if (node is null)
+                    return false;
+
+                if (node.val == value)
+                    return true;
+
+                path.Append("L");
+                if (GetPath(node.left, value, path))
+                    return true;
+                path.Length = path.Length - 1;
+
+                path.Append("R");
+                if (GetPath(node.right, value, path))
+                    return true;
+                path.Length = path.Length - 1;
+
+                return false;
+            }
+        }
     }
 }

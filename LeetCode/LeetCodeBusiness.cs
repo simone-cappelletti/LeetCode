@@ -4888,5 +4888,29 @@ namespace LeetCode
                 return false;
             }
         }
+
+        /// <inheritdoc/>
+        public int[] SortTheJumbledNumbers(int[] mapping, int[] nums)
+        {
+            var resultMap = new int[nums.Length];
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                var numString = nums[i].ToString();
+                var mappedNum = 0;
+
+                for (var ii = 0; ii < numString.Length; ii++)
+                    mappedNum += ((int)Math.Pow(10, numString.Length - 1 - ii) * mapping[numString[ii] - '0']);
+
+                resultMap[i] = mappedNum;
+            }
+
+            Array.Sort(resultMap, nums);
+
+            return nums;
+
+            // Time Complexity: O(n log n)
+            // Space Complexity: O(n)
+        }
     }
 }

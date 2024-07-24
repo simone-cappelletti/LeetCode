@@ -1099,5 +1099,13 @@ namespace LeetCode
         /// <param name="destValue"></param>
         /// <returns></returns>
         string StepByStepDirectionsFromABinaryTreeNodeToAnother(TreeNode root, int startValue, int destValue);
+
+        /// <summary>
+        /// https://leetcode.com/problems/sort-the-jumbled-numbers/
+        /// </summary>
+        /// <param name="mapping"></param>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        int[] SortTheJumbledNumbers(int[] mapping, int[] nums);
     }
 }

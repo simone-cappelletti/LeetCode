@@ -1406,5 +1406,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int[] SortTheJumbledNumbers(int[] mapping, int[] nums)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(SortTheJumbledNumbers), mapping, nums);
+
+            var result = _leetCodeBusiness.SortTheJumbledNumbers(mapping, nums);
+
+            return result;
+        }
     }
 }

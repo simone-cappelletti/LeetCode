@@ -1416,5 +1416,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int IslandPerimeter(int[][] grid)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(IslandPerimeter), grid);
+
+            var result = _leetCodeBusiness.IslandPerimeter(grid);
+
+            return result;
+        }
     }
 }

@@ -4912,5 +4912,40 @@ namespace LeetCode
             // Time Complexity: O(n log n)
             // Space Complexity: O(n)
         }
+
+        /// <inheritdoc/>
+        public int IslandPerimeter(int[][] grid)
+        {
+            var result = 0;
+
+            for (var i = 0; i < grid.Length; i++)
+                for (var ii = 0; ii < grid[0].Length; ii++)
+                {
+                    if (grid[i][ii] == 1)
+                    {
+                        // Up
+                        if (i - 1 < 0 || grid[i - 1][ii] == 0)
+                            result++;
+
+                        // Down
+                        if (i + 1 >= grid.Length || grid[i + 1][ii] == 0)
+                            result++;
+
+                        // Left
+                        if (ii - 1 < 0 || grid[i][ii - 1] == 0)
+                            result++;
+
+                        // Right
+                        if (ii + 1 >= grid[0].Length || grid[i][ii + 1] == 0)
+                            result++;
+                    }
+                }
+
+            return result;
+
+            // m = grid rows, n = grid columns
+            // Time Complexity: O(m x n)
+            // Space Complexity: O(1)
+        }
     }
 }

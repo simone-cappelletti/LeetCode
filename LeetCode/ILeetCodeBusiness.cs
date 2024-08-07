@@ -1107,5 +1107,12 @@ namespace LeetCode
         /// <param name="nums"></param>
         /// <returns></returns>
         int[] SortTheJumbledNumbers(int[] mapping, int[] nums);
+
+        /// <summary>
+        /// https://leetcode.com/problems/island-perimeter/
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        int IslandPerimeter(int[][] grid);
     }
 }

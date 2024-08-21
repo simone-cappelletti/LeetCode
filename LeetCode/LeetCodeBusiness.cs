@@ -4947,5 +4947,55 @@ namespace LeetCode
             // Time Complexity: O(m x n)
             // Space Complexity: O(1)
         }
+
+        public bool IsAlienSorted(string[] words, string order)
+        {
+            if (words.Length <= 1)
+                return true;
+
+            var dic = new Dictionary<char, int>();
+
+            for (var i = 0; i < order.Length; i++)
+                dic.Add(order[i], i);
+
+            for (var i = 1; i < words.Length; i++)
+            {
+                var precedingWord = words[i - 1];
+                var currentWord = words[i];
+
+                if (IsPreceding(precedingWord, currentWord, dic) == false)
+                    return false;
+            }
+
+            return true;
+
+            // N = total number of characters in words
+            // Time Complexity: O(N)
+            // Space Complexity: O(1)
+
+            bool IsPreceding(string precedingWord, string nextWord, Dictionary<char, int> order)
+            {
+                for (var i = 0; i < precedingWord.Length; i++)
+                {
+                    if (nextWord.Length > i)
+                    {
+                        var precedingWordChar = precedingWord[i];
+                        var nextWordChar = nextWord[i];
+
+                        if (precedingWordChar == nextWordChar)
+                            continue;
+
+                        if (order[precedingWordChar] > order[nextWordChar])
+                            return false;
+                        else
+                            return true;
+                    }
+
+                    return false;
+                }
+
+                return true;
+            }
+        }
     }
 }

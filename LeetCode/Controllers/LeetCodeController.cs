@@ -1426,5 +1426,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public bool IsAlienSorted(string[] words, string order)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(IsAlienSorted), words, order);
+
+            var result = _leetCodeBusiness.IsAlienSorted(words, order);
+
+            return result;
+        }
     }
 }

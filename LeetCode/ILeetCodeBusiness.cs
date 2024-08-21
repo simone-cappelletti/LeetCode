@@ -1114,5 +1114,13 @@ namespace LeetCode
         /// <param name="grid"></param>
         /// <returns></returns>
         int IslandPerimeter(int[][] grid);
+
+        /// <summary>
+        /// https://leetcode.com/problems/verifying-an-alien-dictionary/
+        /// </summary>
+        /// <param name="words"></param>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        bool IsAlienSorted(string[] words, string order);
     }
 }

@@ -1428,11 +1428,21 @@ namespace LeetCode.Controllers
         }
 
         [HttpPost]
-        public bool IsAlienSorted(string[] words, string order)
+        public bool VerifyingAnAlienDictionary(string[] words, string order)
         {
-            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(IsAlienSorted), words, order);
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(VerifyingAnAlienDictionary), words, order);
 
-            var result = _leetCodeBusiness.IsAlienSorted(words, order);
+            var result = _leetCodeBusiness.VerifyingAnAlienDictionary(words, order);
+
+            return result;
+        }
+
+        [HttpPost]
+        public int FindTheTownJudge(int n, int[][] trust)
+        {
+            _logger.LogInformation("{method} - {arg1}, {arg2}", nameof(FindTheTownJudge), n, trust);
+
+            var result = _leetCodeBusiness.FindTheTownJudge(n, trust);
 
             return result;
         }

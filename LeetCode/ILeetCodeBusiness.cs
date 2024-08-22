@@ -1121,6 +1121,14 @@ namespace LeetCode
         /// <param name="words"></param>
         /// <param name="order"></param>
         /// <returns></returns>
-        bool IsAlienSorted(string[] words, string order);
+        bool VerifyingAnAlienDictionary(string[] words, string order);
+
+        /// <summary>
+        /// https://leetcode.com/problems/find-the-town-judge/
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="trust"></param>
+        /// <returns></returns>
+        int FindTheTownJudge(int n, int[][] trust);
     }
 }

@@ -4948,7 +4948,8 @@ namespace LeetCode
             // Space Complexity: O(1)
         }
 
-        public bool IsAlienSorted(string[] words, string order)
+        /// <inheritdoc/>
+        public bool VerifyingAnAlienDictionary(string[] words, string order)
         {
             if (words.Length <= 1)
                 return true;
@@ -4996,6 +4997,28 @@ namespace LeetCode
 
                 return true;
             }
+        }
+
+        /// <inheritdoc/>
+        public int FindTheTownJudge(int n, int[][] trust)
+        {
+            var people = new int[n];
+
+            foreach (var couple in trust)
+            {
+                people[couple[1] - 1]++;
+                people[couple[0] - 1]--;
+            }
+
+            for (var i = 0; i < n; i++)
+                if (people[i] == n - 1)
+                    return i + 1;
+
+            return -1;
+
+            // n = trust.Length;
+            // Time Complexity: O(n)
+            // Space Complexity: O(1)
         }
     }
 }

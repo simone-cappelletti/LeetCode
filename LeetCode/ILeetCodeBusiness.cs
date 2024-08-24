@@ -1130,5 +1130,12 @@ namespace LeetCode
         /// <param name="trust"></param>
         /// <returns></returns>
         int FindTheTownJudge(int n, int[][] trust);
+
+        /// <summary>
+        /// https://leetcode.com/problems/max-area-of-island/
+        /// </summary>
+        /// <param name="grid"></param>
+        /// <returns></returns>
+        int MaxAreaOfIsland(int[][] grid);
     }
 }

@@ -5020,5 +5020,64 @@ namespace LeetCode
             // Time Complexity: O(n)
             // Space Complexity: O(1)
         }
+
+        /// <inheritdoc/>
+        public int MaxAreaOfIsland(int[][] grid)
+        {
+            var maxSize = 0;
+            var directions = new List<(int Row, int Column)>()
+        {
+            (1, 0),     // right
+            (-1, 0),    // left
+            (0, 1),     // up
+            (0, -1),    // down    
+        };
+
+            for (var row = 0; row < grid.Length; row++)
+                for (var column = 0; column < grid[row].Length; column++)
+                {
+                    if (grid[row][column] == 0)
+                        continue;
+
+                    var currentSize = 0;
+                    var queue = new Queue<(int Row, int Column)>();
+                    queue.Enqueue((row, column));
+                    grid[row][column] = 0;
+
+                    while (queue.Count > 0)
+                    {
+                        var (currentRow, currentColumn) = queue.Dequeue();
+                        currentSize++;
+
+                        foreach (var direction in directions)
+                        {
+                            var nextRow = currentRow + direction.Row;
+                            var nextColumn = currentColumn + direction.Column;
+
+                            if (
+                                nextRow >= 0 &&
+                                nextColumn >= 0 &&
+                                nextRow < grid.Length &&
+                                nextColumn < grid[row].Length &&
+                                grid[nextRow][nextColumn] == 1
+                            )
+                            {
+                                queue.Enqueue((nextRow, nextColumn));
+
+                                grid[nextRow][nextColumn] = 0;
+                            }
+                        }
+                    }
+
+                    maxSize = Math.Max(maxSize, currentSize);
+                }
+
+            return maxSize;
+
+            // M = number of rows
+            // N = number of columns
+            // Time Complexity: O(M x N)
+            // Space Complexity: O(M x N)
+        }
     }
 }

@@ -1446,5 +1446,15 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public int MaxAreaOfIsland(int[][] grid)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(MaxAreaOfIsland), grid);
+
+            var result = _leetCodeBusiness.MaxAreaOfIsland(grid);
+
+            return result;
+        }
     }
 }

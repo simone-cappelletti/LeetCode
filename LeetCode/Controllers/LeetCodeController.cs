@@ -1456,5 +1456,13 @@ namespace LeetCode.Controllers
 
             return result;
         }
+
+        [HttpPost]
+        public void WallsAndGates(int[][] rooms)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(WallsAndGates), rooms);
+
+            _leetCodeBusiness.WallsAndGates(rooms);
+        }
     }
 }

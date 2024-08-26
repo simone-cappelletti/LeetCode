@@ -1137,5 +1137,11 @@ namespace LeetCode
         /// <param name="grid"></param>
         /// <returns></returns>
         int MaxAreaOfIsland(int[][] grid);
+
+        /// <summary>
+        /// https://leetcode.com/problems/walls-and-gates/
+        /// </summary>
+        /// <param name="rooms"></param>
+        void WallsAndGates(int[][] rooms);
     }
 }

@@ -5079,5 +5079,52 @@ namespace LeetCode
             // Time Complexity: O(M x N)
             // Space Complexity: O(M x N)
         }
+
+        /// <inheritdoc/>
+        public void WallsAndGates(int[][] rooms)
+        {
+            const int EMPTY = 2147483647;
+            const int GATE = 0;
+
+            var queue = new Queue<(int Row, int Column)>();
+            var directions = new List<(int Row, int Column)>()
+            {
+                (1, 0), // up
+                (-1, 0),// down
+                (0, 1), // right
+                (0, -1),// left
+            };
+
+            for (var row = 0; row < rooms.Length; row++)
+                for (var column = 0; column < rooms[row].Length; column++)
+                    if (rooms[row][column] == GATE)
+                        queue.Enqueue((row, column));
+
+            while (queue.Count > 0)
+            {
+                var (roomRow, roomColumn) = queue.Dequeue();
+
+                foreach (var direction in directions)
+                {
+                    var currentRow = roomRow + direction.Row;
+                    var currentColumn = roomColumn + direction.Column;
+
+                    if (
+                        currentRow >= 0 &&
+                        currentColumn >= 0 &&
+                        currentRow < rooms.Length &&
+                        currentColumn < rooms[0].Length &&
+                        rooms[currentRow][currentColumn] == EMPTY
+                    )
+                    {
+                        rooms[currentRow][currentColumn] = rooms[roomRow][roomColumn] + 1;
+                        queue.Enqueue((currentRow, currentColumn));
+                    }
+                }
+            }
+
+            // Time Complexity: O(M x N)
+            // Space Complexity: O(M x N)
+        }
     }
 }

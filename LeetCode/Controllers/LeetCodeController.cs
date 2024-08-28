@@ -1464,5 +1464,15 @@ namespace LeetCode.Controllers
 
             _leetCodeBusiness.WallsAndGates(rooms);
         }
+
+        [HttpPost]
+        public IList<IList<int>> PacificAtlanticWaterFlow(int[][] heights)
+        {
+            _logger.LogInformation("{method} - {arg1}", nameof(PacificAtlanticWaterFlow), heights);
+
+            var result = _leetCodeBusiness.PacificAtlanticWaterFlow(heights);
+
+            return result;
+        }
     }
 }

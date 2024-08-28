@@ -5126,5 +5126,77 @@ namespace LeetCode
             // Time Complexity: O(M x N)
             // Space Complexity: O(M x N)
         }
+
+        /// <inheritdoc/>
+        public IList<IList<int>> PacificAtlanticWaterFlow(int[][] heights)
+        {
+            var pacificCells = new HashSet<(int, int)>();
+            var atlanticCells = new HashSet<(int, int)>();
+            var directions = new List<(int Row, int Col)>()
+            {
+                (1, 0),
+                (-1, 0),
+                (0, 1),
+                (0, -1)
+            };
+
+            var rows = heights.Length;
+            var columns = heights[0].Length;
+
+            var result = new List<IList<int>>();
+
+            // Pacific cells
+            for (var i = 0; i < columns; i++)
+                DFS(heights, 0, i, true);
+            for (var i = 0; i < rows; i++)
+                DFS(heights, i, 0, true);
+
+            // Atlantic cells
+            for (var i = 0; i < rows; i++)
+                DFS(heights, i, columns - 1, false);
+            for (var i = 0; i < columns; i++)
+                DFS(heights, rows - 1, i, false);
+
+            foreach (var pacificCell in pacificCells)
+                if (atlanticCells.Contains(pacificCell))
+                    result.Add(new List<int>() { pacificCell.Item1, pacificCell.Item2 });
+
+            return result;
+
+            // Time Complexity: (M x N)
+            // Space Complexity: (M x N)
+
+            void DFS(int[][] heights, int row, int col, bool itsPacific)
+            {
+                var height = heights[row][col];
+
+                if (itsPacific)
+                    pacificCells.Add((row, col));
+                else
+                    atlanticCells.Add((row, col));
+
+                foreach (var (directionRow, directionCol) in directions)
+                {
+                    var nextRow = row + directionRow;
+                    var nextCol = col + directionCol;
+
+                    if (
+                        nextRow >= 0 &&
+                        nextCol >= 0 &&
+                        nextRow < rows &&
+                        nextCol < columns &&
+                        height <= heights[nextRow][nextCol]
+                    )
+                    {
+                        if (itsPacific && pacificCells.Contains((nextRow, nextCol)))
+                            continue;
+                        else if (!itsPacific && atlanticCells.Contains((nextRow, nextCol)))
+                            continue;
+                        else
+                            DFS(heights, nextRow, nextCol, itsPacific);
+                    }
+                }
+            }
+        }
     }
 }

@@ -1143,5 +1143,12 @@ namespace LeetCode
         /// </summary>
         /// <param name="rooms"></param>
         void WallsAndGates(int[][] rooms);
+
+        /// <summary>
+        /// https://leetcode.com/problems/pacific-atlantic-water-flow/
+        /// </summary>
+        /// <param name="heights"></param>
+        /// <returns></returns>
+        IList<IList<int>> PacificAtlanticWaterFlow(int[][] heights);
     }
 }
